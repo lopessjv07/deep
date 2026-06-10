@@ -1,4 +1,6 @@
 import styles from "./page.module.css";
+import CountdownBar from "../components/CountdownBar";
+import LiveViewersToast from "../components/LiveViewersToast";
 
 const IconX = () => (
   <svg className={styles.painIcon} width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -49,6 +51,8 @@ const Star = () => <span>★</span>;
 export default function Home() {
   return (
     <>
+      <CountdownBar />
+      <LiveViewersToast />
       {/* Header */}
       <header className={styles.header}>
         <nav className={styles.nav}>
