@@ -89,7 +89,6 @@ export default function Home() {
       <section className={`${styles.section} ${styles.light}`}>
         <div className={styles.wrap}>
           <div className={styles.secHead}>
-            <span className={`${styles.badge} ${styles.badgeLight}`}>Realidade Clínica</span>
             <h2 className={styles.secTitle}>Você já viveu alguma dessas situações?</h2>
           </div>
 
@@ -122,23 +121,19 @@ export default function Home() {
       <section className={`${styles.sectionSm} ${styles.light}`} style={{ borderTop: "1px solid var(--border-light)" }}>
         <div className={styles.wrap}>
           <div className={styles.secHead}>
-            <span className={`${styles.badge} ${styles.badgeLight}`}>Mecanismo</span>
             <h2 className={styles.secTitle}>Por que a fala trava no trauma?</h2>
           </div>
 
           <div className={styles.cardGrid3}>
             <div className={styles.mechCard}>
-              <span className={styles.mechBadge}>O Vilão</span>
               <h3 className={styles.mechTitle}>O trauma não mora nas memórias.</h3>
               <p className={styles.mechDesc}>A pesquisa mostra que o trauma codifica no sistema nervoso. O paciente entende tudo, mas o corpo ainda sinaliza perigo.</p>
             </div>
             <div className={styles.mechCard}>
-              <span className={styles.mechBadge}>Neurobiologia</span>
               <h3 className={styles.mechTitle}>Insight não é regulação.</h3>
               <p className={styles.mechDesc}>O processamento verbal não se comunica diretamente com a resposta de estresse. Para mudar o estado, é preciso entrar pelo corpo.</p>
             </div>
             <div className={styles.mechCard}>
-              <span className={styles.mechBadge}>A Solução</span>
               <h3 className={styles.mechTitle}>A Arte Somática.</h3>
               <p className={styles.mechDesc}>Técnicas corporais acessam o sistema nervoso autônomo diretamente, liberando o que a fala não alcança.</p>
             </div>
@@ -150,7 +145,6 @@ export default function Home() {
       <section className={`${styles.sectionSm} ${styles.light}`} style={{ borderTop: "1px solid var(--border-light)" }}>
         <div className={styles.wrap}>
           <div className={`${styles.secHead} ${styles.secHeadCenter}`}>
-            <span className={`${styles.badge} ${styles.badgeLight}`}>Preview</span>
             <h2 className={styles.secTitle}>Veja os protocolos por dentro</h2>
             <p className={styles.secSub}>Uma metodologia clínica replicável e estruturada</p>
           </div>

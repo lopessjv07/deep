@@ -53,9 +53,13 @@
 .heroTitle {
   font-size: clamp(2.2rem, 4.5vw, 3.2rem); font-weight: 800;
   line-height: 1.08; letter-spacing: -0.03em; margin-bottom: 20px;
+  text-align: left; width: 100%;
 }
 .heroTitle span { color: var(--accent-teal); }
-.heroSub { font-size: 1.1rem; color: var(--text-on-dark-soft); line-height: 1.6; margin-bottom: 32px; max-width: 540px; }
+.heroSub {
+  font-size: 1.1rem; color: var(--text-on-dark-soft); line-height: 1.6; margin-bottom: 32px; max-width: 540px;
+  text-align: left; width: 100%;
+}
 
 .mockup {
   width: 100%; aspect-ratio: 4/3; border-radius: 8px;
