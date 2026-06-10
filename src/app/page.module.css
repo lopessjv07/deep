@@ -62,12 +62,18 @@
 }
 
 .mockup {
-  width: 100%; aspect-ratio: 4/3; border-radius: 8px;
+  width: 100%;
+  border-radius: 8px;
   background: linear-gradient(135deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));
   border: 1px solid var(--border-dark);
-  display: flex; align-items: center; justify-content: center;
-  color: var(--text-on-dark-soft); font-size: 0.85rem; font-weight: 600;
-  letter-spacing: 0.05em; text-transform: uppercase;
+  overflow: hidden;
+  display: flex;
+}
+
+.mockupImg {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 /* ── Section Titles ── */

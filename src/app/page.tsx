@@ -85,7 +85,9 @@ export default function Home() {
             </a>
             <p className={styles.ctaSub}>Acesso imediato · Garantia de 7 dias</p>
           </div>
-          <div className={styles.mockup}>Mockup do Kit</div>
+          <div className={styles.mockup}>
+            <img src="/mockup.svg" alt="Mockup do Kit" className={styles.mockupImg} />
+          </div>
         </div>
       </section>
 
