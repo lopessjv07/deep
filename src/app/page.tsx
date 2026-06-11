@@ -86,7 +86,7 @@ export default function Home() {
             <p className={styles.ctaSub}>Acesso imediato · Garantia de 7 dias</p>
           </div>
           <div className={styles.mockup}>
-            <img src="/mockup.svg" alt="Mockup do Kit" className={styles.mockupImg} />
+            <img src="/mockup.webp" alt="Mockup do Kit" className={styles.mockupImg} />
           </div>
         </div>
       </section>
@@ -156,10 +156,18 @@ export default function Home() {
           </div>
 
           <div className={styles.previewGrid}>
-            <div className={styles.previewSlot}>Página 01</div>
-            <div className={styles.previewSlot}>Página 02</div>
-            <div className={styles.previewSlot}>Página 03</div>
-            <div className={styles.previewSlot}>Página 04</div>
+            <div className={styles.previewSlot}>
+              <img src="/1.webp" alt="Página 01" className={styles.previewImg} />
+            </div>
+            <div className={styles.previewSlot}>
+              <img src="/2.webp" alt="Página 02" className={styles.previewImg} />
+            </div>
+            <div className={styles.previewSlot}>
+              <img src="/3.webp" alt="Página 03" className={styles.previewImg} />
+            </div>
+            <div className={styles.previewSlot}>
+              <img src="/4.webp" alt="Página 04" className={styles.previewImg} />
+            </div>
           </div>
         </div>
       </section>

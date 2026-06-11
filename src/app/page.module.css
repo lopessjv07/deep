@@ -109,11 +109,21 @@
   display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
 }
 .previewSlot {
-  aspect-ratio: 3/4; border-radius: 6px;
-  background: #E4E2DA; border: 1px solid var(--border-light);
-  display: flex; align-items: center; justify-content: center;
-  color: var(--text-secondary); font-size: 0.75rem; font-weight: 600;
-  text-transform: uppercase; letter-spacing: 0.05em;
+  aspect-ratio: 1 / 1.414; /* A4 Aspect Ratio */
+  border-radius: 6px;
+  background: #fff;
+  border: 1px solid var(--border-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.previewImg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
 }
 
 /* ── Offer Grid ── */
