@@ -87,7 +87,7 @@ export default function Home() {
             <p className={styles.ctaSub}>Acesso imediato · Garantia de 7 dias</p>
           </div>
           <div className={styles.mockup}>
-            <Image src="/mockup.webp" alt="Mockup do Kit de Protocolos Somáticos NeuroSoma" width={550} height={779} className={styles.mockupImg} preload sizes="(max-width: 1024px) 100vw, 45vw" />
+            <Image src="/mockup.webp" alt="Mockup do Kit de Protocolos Somáticos NeuroSoma" width={550} height={412} className={styles.mockupImg} preload sizes="(max-width: 1024px) 100vw, 45vw" />
           </div>
         </div>
       </section>
