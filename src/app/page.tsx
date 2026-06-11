@@ -1,3 +1,4 @@
+import Image from "next/image";
 import styles from "./page.module.css";
 import CountdownBar from "../components/CountdownBar";
 import LiveViewersToast from "../components/LiveViewersToast";
@@ -86,7 +87,7 @@ export default function Home() {
             <p className={styles.ctaSub}>Acesso imediato · Garantia de 7 dias</p>
           </div>
           <div className={styles.mockup}>
-            <img src="/mockup.webp" alt="Mockup do Kit" className={styles.mockupImg} />
+            <Image src="/mockup.webp" alt="Mockup do Kit de Protocolos Somáticos NeuroSoma" width={550} height={779} className={styles.mockupImg} preload sizes="(max-width: 1024px) 100vw, 45vw" />
           </div>
         </div>
       </section>
@@ -157,16 +158,16 @@ export default function Home() {
 
           <div className={styles.previewGrid}>
             <div className={styles.previewSlot}>
-              <img src="/1.webp" alt="Página 01" className={styles.previewImg} />
+              <Image src="/1.webp" alt="Protocolo Somático - Página de exemplo 01" width={500} height={707} className={styles.previewImg} sizes="(max-width: 1024px) 50vw, 25vw" />
             </div>
             <div className={styles.previewSlot}>
-              <img src="/2.webp" alt="Página 02" className={styles.previewImg} />
+              <Image src="/2.webp" alt="Protocolo Somático - Página de exemplo 02" width={500} height={708} className={styles.previewImg} sizes="(max-width: 1024px) 50vw, 25vw" />
             </div>
             <div className={styles.previewSlot}>
-              <img src="/3.webp" alt="Página 03" className={styles.previewImg} />
+              <Image src="/3.webp" alt="Protocolo Somático - Página de exemplo 03" width={500} height={750} className={styles.previewImg} sizes="(max-width: 1024px) 50vw, 25vw" />
             </div>
             <div className={styles.previewSlot}>
-              <img src="/4.webp" alt="Página 04" className={styles.previewImg} />
+              <Image src="/4.webp" alt="Protocolo Somático - Página de exemplo 04" width={500} height={707} className={styles.previewImg} sizes="(max-width: 1024px) 50vw, 25vw" />
             </div>
           </div>
         </div>
