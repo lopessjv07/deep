@@ -14,6 +14,8 @@ const IMAGES = [
 
 export default function PreviewCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [touchStartX, setTouchStartX] = useState<number | null>(null);
+  const [touchEndX, setTouchEndX] = useState<number | null>(null);
 
   const prevSlide = () => {
     setCurrentIndex((prev) => (prev === 0 ? IMAGES.length - 1 : prev - 1));
@@ -21,6 +23,62 @@ export default function PreviewCarousel() {
 
   const nextSlide = () => {
     setCurrentIndex((prev) => (prev === IMAGES.length - 1 ? 0 : prev + 1));
+  };
+
+  // Touch handlers for mobile swipe
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStartX(e.targetTouches[0].clientX);
+    setTouchEndX(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    setTouchEndX(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (touchStartX === null || touchEndX === null) return;
+    const distance = touchStartX - touchEndX;
+    const minSwipeDistance = 50;
+
+    if (distance > minSwipeDistance) {
+      nextSlide();
+    } else if (distance < -minSwipeDistance) {
+      prevSlide();
+    }
+
+    setTouchStartX(null);
+    setTouchEndX(null);
+  };
+
+  // Mouse drag handlers for desktop/devtools simulation
+  const handleMouseDown = (e: React.MouseEvent) => {
+    setTouchStartX(e.clientX);
+    setTouchEndX(e.clientX);
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (touchStartX === null) return;
+    setTouchEndX(e.clientX);
+  };
+
+  const handleMouseUp = () => {
+    if (touchStartX === null || touchEndX === null) return;
+    const distance = touchStartX - touchEndX;
+    const minSwipeDistance = 50;
+
+    if (distance > minSwipeDistance) {
+      nextSlide();
+    } else if (distance < -minSwipeDistance) {
+      prevSlide();
+    }
+
+    setTouchStartX(null);
+    setTouchEndX(null);
+  };
+
+  const handleMouseLeave = () => {
+    setTouchStartX(null);
+    setTouchEndX(null);
   };
 
   return (
@@ -47,7 +105,17 @@ export default function PreviewCarousel() {
           <ChevronLeft size={20} />
         </button>
         
-        <div className={styles.carouselTrackWrapper}>
+        <div 
+          className={styles.carouselTrackWrapper}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+          onMouseDown={handleMouseDown}
+          onMouseMove={handleMouseMove}
+          onMouseUp={handleMouseUp}
+          onMouseLeave={handleMouseLeave}
+          style={{ cursor: touchStartX !== null ? 'grabbing' : 'grab' }}
+        >
           <div 
             className={styles.carouselTrack}
             style={{ transform: `translateX(-${currentIndex * 100}%)` }}
@@ -62,6 +130,7 @@ export default function PreviewCarousel() {
                     height={img.height}
                     className={styles.previewImg}
                     sizes="100vw"
+                    draggable={false} // Prevents default browser image drag
                   />
                 </div>
               </div>

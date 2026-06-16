@@ -7,8 +7,22 @@ export default function CountdownBar() {
   const [timeLeft, setTimeLeft] = useState<number | null>(null);
 
   useEffect(() => {
+    const STORAGE_KEY = 'neurosoma_countdown_target';
+    const now = Date.now();
+    const storedTarget = localStorage.getItem(STORAGE_KEY);
+
+    if (storedTarget) {
+      const targetTime = parseInt(storedTarget, 10);
+      if (targetTime > now) {
+        setTimeLeft(Math.floor((targetTime - now) / 1000));
+        return;
+      }
+    }
+
     // Generate a random time between 10 minutes (600s) and 20 minutes (1200s)
     const randomSeconds = Math.floor(Math.random() * (1200 - 600 + 1)) + 600;
+    const newTarget = now + randomSeconds * 1000;
+    localStorage.setItem(STORAGE_KEY, newTarget.toString());
     setTimeLeft(randomSeconds);
   }, []);
 
@@ -16,7 +30,7 @@ export default function CountdownBar() {
     if (timeLeft === null || timeLeft <= 0) return;
 
     const intervalId = setInterval(() => {
-      setTimeLeft(prev => prev !== null && prev > 0 ? prev - 1 : 0);
+      setTimeLeft(prev => (prev !== null && prev > 0 ? prev - 1 : 0));
     }, 1000);
 
     return () => clearInterval(intervalId);
