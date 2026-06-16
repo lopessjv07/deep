@@ -2,6 +2,21 @@ import Image from "next/image";
 import styles from "./page.module.css";
 import CountdownBar from "../components/CountdownBar";
 import LiveViewersToast from "../components/LiveViewersToast";
+import PreviewCarousel from "../components/PreviewCarousel";
+import {
+  Brain,
+  Unlock,
+  Zap,
+  Eye,
+  AlertTriangle,
+  Dna,
+  Moon,
+  Leaf,
+  FileText,
+  BarChart2,
+  Gift,
+  CheckCircle2
+} from "lucide-react";
 
 const IconX = () => (
   <svg className={styles.painIcon} width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -59,9 +74,9 @@ export default function Home() {
         <nav className={styles.nav}>
           <div className={styles.brand}>
             <svg width="28" height="28" viewBox="0 0 100 100" fill="none">
-              <circle cx="50" cy="50" r="44" stroke="#fff" strokeWidth="1.5" strokeDasharray="3 3" />
-              <path d="M28 50C28 37.85 37.85 28 50 28C62.15 28 72 37.85 72 50" stroke="#5DCAA5" strokeWidth="3" strokeLinecap="round" />
-              <circle cx="50" cy="50" r="8" fill="#fff" />
+              <circle cx="50" cy="50" r="44" stroke="currentColor" strokeWidth="1.5" strokeDasharray="3 3" />
+              <path d="M28 50C28 37.85 37.85 28 50 28C62.15 28 72 37.85 72 50" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
+              <circle cx="50" cy="50" r="8" fill="currentColor" />
             </svg>
             NeuroSoma
           </div>
@@ -70,16 +85,22 @@ export default function Home() {
       </header>
 
       {/* 1 ─ HERO */}
-      <section className={`${styles.hero} ${styles.dark}`}>
+      <section className={styles.hero}>
         <div className={styles.heroInner}>
           <div className={styles.heroContent}>
             <span className={`${styles.badge} ${styles.badgeDark}`}>Para psicólogos, psiquiatras e terapeutas</span>
             <h1 className={styles.heroTitle}>
-              +90 Protocolos Somáticos — Para <span>Destravar o Corpo</span> Quando a Fala Chega no Limite
+              +90 Protocolos Somáticos Para <span>Destravar o Corpo</span> Quando a Fala Chegou no Limite
             </h1>
             <p className={styles.heroSub}>
-              Seu paciente fez anos de terapia verbal e ainda carrega o trauma. A mente entende. O corpo não liberou. Acesse a ferramenta certa para mudar isso.
+              A primeira biblioteca clínica que une Neurobiologia e Teoria Polivagal em protocolos prontos para aplicar em sessão.
             </p>
+            <div className={styles.warningBlock}>
+              <p className={styles.warningText}>
+                <AlertTriangle size={18} className={styles.warningIcon} />
+                <strong>AVISO IMPORTANTE:</strong> Se você ainda acredita que só a fala é suficiente para tratar trauma, NÃO adquira este material. Ele vai confrontar tudo que você aprendeu na graduação.
+              </p>
+            </div>
             <a href="#checkout" className={styles.cta}>
               Quero Acessar os Protocolos
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg>
@@ -87,63 +108,66 @@ export default function Home() {
             <p className={styles.ctaSub}>Acesso imediato · Garantia de 7 dias</p>
           </div>
           <div className={styles.mockup}>
-            <Image src="/mockup.webp" alt="Mockup do Kit de Protocolos Somáticos NeuroSoma" width={550} height={412} className={styles.mockupImg} preload sizes="(max-width: 1024px) 100vw, 45vw" />
+            <Image src="/herodasktop.webp" alt="Mockup do Kit de Protocolos Somáticos NeuroSoma - Desktop" width={600} height={450} className={styles.mockupDesktop} priority sizes="(max-width: 1024px) 100vw, 45vw" />
+            <Image src="/heromobile.webp" alt="Mockup do Kit de Protocolos Somáticos NeuroSoma - Mobile" width={600} height={600} className={styles.mockupMobile} priority sizes="(max-width: 1024px) 100vw, 45vw" />
           </div>
         </div>
       </section>
 
-      {/* 2 ─ DORES */}
+      {/* 2 ─ BENEFÍCIOS */}
       <section className={`${styles.section} ${styles.light}`}>
         <div className={styles.wrap}>
           <div className={styles.secHead}>
-            <h2 className={styles.secTitle}>Você já viveu alguma dessas situações?</h2>
+            <h2 className={styles.secTitle}>Tudo que você vai conseguir com esse material:</h2>
           </div>
 
-          <div className={styles.painList}>
-            <div className={styles.painItem}>
-              <IconX />
-              <span>Paciente que verbaliza o trauma perfeitamente, mas o corpo continua em estado de alerta.</span>
+          <div className={styles.benefitList}>
+            <div className={styles.benefitItem}>
+              <Brain className={styles.benefitIcon} />
+              <div>
+                <h3 className={styles.benefitTitle}>Regulação Real</h3>
+                <p className={styles.benefitDesc}>Acesse o sistema nervoso do seu paciente pelo único caminho que o trauma respeita — o corpo.</p>
+              </div>
             </div>
-            <div className={styles.painItem}>
-              <IconX />
-              <span>Sessões que chegam num teto: o insight está lá, mas a melhora não vem.</span>
+            <div className={styles.benefitItem}>
+              <Unlock className={styles.benefitIcon} />
+              <div>
+                <h3 className={styles.benefitTitle}>Desbloqueio de Casos Travados</h3>
+                <p className={styles.benefitDesc}>Pacientes que ficaram meses sem evoluir começam a se mover nas primeiras sessões com os protocolos.</p>
+              </div>
             </div>
-            <div className={styles.painItem}>
-              <IconX />
-              <span>Sintomas somáticos (dor crônica, tensão) que não respondem à fala.</span>
+            <div className={styles.benefitItem}>
+              <Zap className={styles.benefitIcon} />
+              <div>
+                <h3 className={styles.benefitTitle}>Aplicação Imediata</h3>
+                <p className={styles.benefitDesc}>Cada protocolo vem com script de fala pronto. Você abre, lê e aplica. Sem adaptação, sem improviso.</p>
+              </div>
             </div>
-            <div className={styles.painItem}>
-              <IconX />
-              <span>Paciente em constante dissociação e distanciamento emocional.</span>
+            <div className={styles.benefitItem}>
+              <Eye className={styles.benefitIcon} />
+              <div>
+                <h3 className={styles.benefitTitle}>Mapa Autonômico Completo</h3>
+                <p className={styles.benefitDesc}>Saiba exatamente em qual estado o seu paciente está e qual protocolo usar — sem chute, sem tentativa.</p>
+              </div>
             </div>
           </div>
-
-          <p className={styles.painImpact}>
-            Você não chegou no limite.<br />Você só está usando a ferramenta errada.
-          </p>
         </div>
       </section>
 
-      {/* 3 ─ MECANISMO */}
+      {/* 3 ─ AVISO IMPORTANTE + PARA QUEM É */}
       <section className={`${styles.sectionSm} ${styles.light}`} style={{ borderTop: "1px solid var(--border-light)" }}>
         <div className={styles.wrap}>
-          <div className={styles.secHead}>
-            <h2 className={styles.secTitle}>Por que a fala trava no trauma?</h2>
-          </div>
-
-          <div className={styles.cardGrid3}>
-            <div className={styles.mechCard}>
-              <h3 className={styles.mechTitle}>O trauma não mora nas memórias.</h3>
-              <p className={styles.mechDesc}>A pesquisa mostra que o trauma codifica no sistema nervoso. O paciente entende tudo, mas o corpo ainda sinaliza perigo.</p>
-            </div>
-            <div className={styles.mechCard}>
-              <h3 className={styles.mechTitle}>Insight não é regulação.</h3>
-              <p className={styles.mechDesc}>O processamento verbal não se comunica diretamente com a resposta de estresse. Para mudar o estado, é preciso entrar pelo corpo.</p>
-            </div>
-            <div className={styles.mechCard}>
-              <h3 className={styles.mechTitle}>A Arte Somática.</h3>
-              <p className={styles.mechDesc}>Técnicas corporais acessam o sistema nervoso autônomo diretamente, liberando o que a fala não alcança.</p>
-            </div>
+          <div className={styles.importantNotice}>
+            <h3 className={styles.importantTitle}>
+              <AlertTriangle size={18} className={styles.importantIcon} />
+              Importante:
+            </h3>
+            <p className={styles.importantText}>
+              Este material pode ser usado de forma flexível, de acordo com seu propósito clínico ou pessoal.
+            </p>
+            <p className={styles.importantText}>
+              Se você é psicólogo, psiquiatra, terapeuta ou qualquer profissional que trabalha com sofrimento humano, esses protocolos vão se tornar sua ferramenta de maior impacto — especialmente com pacientes que verbalizaram tudo e ainda assim não se moveram.
+            </p>
           </div>
         </div>
       </section>
@@ -152,125 +176,67 @@ export default function Home() {
       <section className={`${styles.sectionSm} ${styles.light}`} style={{ borderTop: "1px solid var(--border-light)" }}>
         <div className={styles.wrap}>
           <div className={`${styles.secHead} ${styles.secHeadCenter}`}>
-            <h2 className={styles.secTitle}>Veja os protocolos por dentro</h2>
-            <p className={styles.secSub}>Uma metodologia clínica replicável e estruturada</p>
+            <h2 className={styles.secTitle}>Veja como é o material por dentro:</h2>
+            <p className={styles.secSub}>Da regulação do sistema nervoso ao processamento completo do trauma somático.</p>
           </div>
 
-          <div className={styles.previewGrid}>
-            <div className={styles.previewSlot}>
-              <Image src="/1.webp" alt="Protocolo Somático - Página de exemplo 01" width={500} height={707} className={styles.previewImg} sizes="(max-width: 1024px) 50vw, 25vw" />
-            </div>
-            <div className={styles.previewSlot}>
-              <Image src="/2.webp" alt="Protocolo Somático - Página de exemplo 02" width={500} height={708} className={styles.previewImg} sizes="(max-width: 1024px) 50vw, 25vw" />
-            </div>
-            <div className={styles.previewSlot}>
-              <Image src="/3.webp" alt="Protocolo Somático - Página de exemplo 03" width={500} height={750} className={styles.previewImg} sizes="(max-width: 1024px) 50vw, 25vw" />
-            </div>
-            <div className={styles.previewSlot}>
-              <Image src="/4.webp" alt="Protocolo Somático - Página de exemplo 04" width={500} height={707} className={styles.previewImg} sizes="(max-width: 1024px) 50vw, 25vw" />
-            </div>
-          </div>
-        </div>
-      </section>
+          <PreviewCarousel />
 
-      {/* 5 ─ OFERTA */}
-      <section className={`${styles.section} ${styles.light}`} style={{ borderTop: "1px solid var(--border-light)" }}>
-        <div className={styles.wrap}>
-          <div className={`${styles.secHead} ${styles.secHeadCenter}`}>
-            <span className={`${styles.badge} ${styles.badgeLight}`}>Conteúdo Completo</span>
-            <h2 className={styles.secTitle}>Tudo que você vai receber</h2>
-          </div>
-
-          <div className={styles.offerLayout}>
-            <div className={styles.mainProduct}>
-              <span className={styles.mainProductTag}>Produto Principal</span>
-              <h3 className={styles.mainProductTitle}>Livro de Protocolos Somáticos</h3>
-              <p className={styles.mainProductDesc}>+90 técnicas corporais organizadas por estado autonômico, com scripts de fala, fichas de acompanhamento e guias visuais prontos para aplicar em sessão.</p>
-              <ul className={styles.checkList}>
-                <li className={styles.checkItem}><IconCheck /><span>Protocolos divididos por simpático, dorsal e ventral</span></li>
-                <li className={styles.checkItem}><IconCheck /><span>Scripts de fala do terapeuta prontos para uso</span></li>
-                <li className={styles.checkItem}><IconCheck /><span>Fichas de rastreamento de sintomas somáticos</span></li>
-                <li className={styles.checkItem}><IconCheck /><span>Tabela de respostas fisiológicas de referência rápida</span></li>
-              </ul>
+          <div className={styles.materialContents}>
+            <div className={styles.materialItem}>
+              <Dna size={18} className={styles.materialIcon} />
+              <span><strong>Protocolos Simpáticos</strong> — Para estados de hiperativação, luta e fuga</span>
             </div>
-
-            <div className={styles.bonusGrid}>
-              <div className={styles.bonusCard}>
-                <span className={styles.bonusLabel}>Bônus 01</span>
-                <h4 className={styles.bonusTitle}>Guia de Avaliação Somática Rápida</h4>
-                <p className={styles.bonusPrice}><span className={styles.bonusPriceOld}>De R$ 67</span> → Grátis</p>
-              </div>
-              <div className={styles.bonusCard}>
-                <span className={styles.bonusLabel}>Bônus 02</span>
-                <h4 className={styles.bonusTitle}>Manejo de Dissociação em Sessão</h4>
-                <p className={styles.bonusPrice}><span className={styles.bonusPriceOld}>De R$ 47</span> → Grátis</p>
-              </div>
-              <div className={styles.bonusCard}>
-                <span className={styles.bonusLabel}>Bônus 03</span>
-                <h4 className={styles.bonusTitle}>Regulando o Nervo Vago</h4>
-                <p className={styles.bonusPrice}><span className={styles.bonusPriceOld}>De R$ 47</span> → Grátis</p>
-              </div>
-              <div className={styles.bonusCard}>
-                <span className={styles.bonusLabel}>Bônus 04</span>
-                <h4 className={styles.bonusTitle}>Baralho Somático Lúdico</h4>
-                <p className={styles.bonusPrice}><span className={styles.bonusPriceOld}>De R$ 37</span> → Grátis</p>
-              </div>
+            <div className={styles.materialItem}>
+              <Moon size={18} className={styles.materialIcon} />
+              <span><strong>Protocolos Dorsais</strong> — Para colapso, congelamento e dissociação profunda</span>
+            </div>
+            <div className={styles.materialItem}>
+              <Leaf size={18} className={styles.materialIcon} />
+              <span><strong>Protocolos Ventrais</strong> — Para ancoragem, presença e reconexão segura</span>
+            </div>
+            <div className={styles.materialItem}>
+              <FileText size={18} className={styles.materialIcon} />
+              <span><strong>Scripts de Fala do Terapeuta</strong> — Prontos para uso, sessão a sessão</span>
+            </div>
+            <div className={styles.materialItem}>
+              <BarChart2 size={18} className={styles.materialIcon} />
+              <span><strong>Fichas de Rastreamento Somático</strong> — Para mapear evolução com precisão clínica</span>
+            </div>
+            <div className={styles.materialExtra}>
+              E mais: Tabela de respostas fisiológicas, guia de avaliação rápida, manejo de dissociação e regulação do nervo vago.
             </div>
           </div>
         </div>
       </section>
 
-      {/* 6 ─ DEPOIMENTOS */}
-      <section className={`${styles.sectionSm} ${styles.light}`} style={{ borderTop: "1px solid var(--border-light)" }}>
-        <div className={styles.wrap}>
-          <div className={`${styles.secHead} ${styles.secHeadCenter}`}>
-            <span className={`${styles.badge} ${styles.badgeLight}`}>Depoimentos</span>
-            <h2 className={styles.secTitle}>O que dizem os profissionais</h2>
-          </div>
-
-          <div className={styles.testGrid}>
-            <div className={styles.testCard}>
-              <div className={styles.testStars}><Star /><Star /><Star /><Star /><Star /></div>
-              <p className={styles.testQuote}>&ldquo;Destravou pacientes que estavam parados há meses. Vale cada centavo.&rdquo;</p>
-              <p className={styles.testAuthor}>Ana M.</p>
-              <p className={styles.testRole}>Psicóloga</p>
-            </div>
-            <div className={styles.testCard}>
-              <div className={styles.testStars}><Star /><Star /><Star /><Star /><Star /></div>
-              <p className={styles.testQuote}>&ldquo;Ajudou demais na minha clínica. O guia de dissociação me salvou em várias sessões.&rdquo;</p>
-              <p className={styles.testAuthor}>Carlos T.</p>
-              <p className={styles.testRole}>Psiquiatra</p>
-            </div>
-            <div className={styles.testCard}>
-              <div className={styles.testStars}><Star /><Star /><Star /><Star /><Star /></div>
-              <p className={styles.testQuote}>&ldquo;Material riquíssimo, uso tanto no individual quanto em grupo.&rdquo;</p>
-              <p className={styles.testAuthor}>Beatriz S.</p>
-              <p className={styles.testRole}>Terapeuta Corporal</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 7 ─ AUTORIDADE */}
+      {/* 5 ─ BASE CIENTÍFICA */}
       <section className={`${styles.section} ${styles.dark}`}>
         <div className={styles.wrap}>
           <div className={styles.secHead}>
-            <span className={`${styles.badge} ${styles.badgeDark}`}>Sobre nós</span>
-            <h2 className={`${styles.secTitle}`} style={{ color: "#fff" }}>A Ciência por trás da NeuroSoma</h2>
+            <span className={`${styles.badge} ${styles.badgeDark}`}>Fundamentação</span>
+            <h2 className={`${styles.secTitle}`} style={{ color: "#fff" }}>A Base Científica dos Nossos Protocolos</h2>
           </div>
 
           <p className={styles.authText}>
-            Nascemos da pergunta que todo clínico já fez: por que a fala não é suficiente? O Instituto NeuroSoma reúne especialistas dedicados a traduzir a neurobiologia e a teoria polivagal em ferramentas de consultório práticas, seguras e baseadas em evidências.
+            São +90 protocolos somáticos estruturados sobre os pilares da Neurobiologia do Trauma e da Teoria Polivagal de Stephen Porges.
           </p>
+          <p className={styles.authText}>
+            Não são técnicas aleatórias. É uma metodologia clínica replicável, organizada para intervir diretamente no sistema nervoso autônomo — onde o trauma realmente mora — usando a precisão da ciência para liberar o que a fala não alcança.
+          </p>
+
+          <blockquote className={styles.scienceQuote}>
+            &ldquo;O corpo guarda o placar.&rdquo; — Bessel van der Kolk
+          </blockquote>
 
           <div className={styles.metricsBar}>
             <div className={styles.metric}>
-              <p className={styles.metricValue}>+12.000</p>
-              <p className={styles.metricLabel}>Horas de pesquisa clínica</p>
-            </div>
-            <div className={styles.metric}>
               <p className={styles.metricValue}>+3.000</p>
               <p className={styles.metricLabel}>Profissionais certificados</p>
+            </div>
+            <div className={styles.metric}>
+              <p className={styles.metricValue}>+90</p>
+              <p className={styles.metricLabel}>Protocolos estruturados</p>
             </div>
             <div className={styles.metric}>
               <p className={styles.metricValue}>100%</p>
@@ -280,30 +246,122 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 8 ─ GARANTIA & CHECKOUT */}
+      {/* 6 ─ PARA QUEM É */}
+      <section className={`${styles.sectionSm} ${styles.light}`}>
+        <div className={styles.wrap}>
+          <div className={`${styles.secHead} ${styles.secHeadCenter}`}>
+            <h2 className={styles.secTitle}>Para quem é?</h2>
+          </div>
+
+          <div className={styles.audienceGrid}>
+            <div className={styles.audienceCard}>
+              <h3 className={styles.audienceTitle}>Profissionais clínicos</h3>
+              <p className={styles.audienceDesc}>
+                Psicólogos, psiquiatras e terapeutas que querem ir além do insight verbal e produzir mudança real no estado do paciente.
+              </p>
+            </div>
+            <div className={styles.audienceCard}>
+              <h3 className={styles.audienceTitle}>Terapeutas corporais e integradores</h3>
+              <p className={styles.audienceDesc}>
+                Que buscam estrutura clínica, linguagem técnica e protocolos validados para elevar a credibilidade da sua prática.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 7 ─ OFERTA / BÔNUS */}
+      <section className={`${styles.section} ${styles.light}`} style={{ borderTop: "1px solid var(--border-light)" }}>
+        <div className={styles.wrap}>
+          <div className={`${styles.secHead} ${styles.secHeadCenter}`}>
+            <span className={`${styles.badge} ${styles.badgeLight}`}>Conteúdo Completo</span>
+            <h2 className={styles.secTitle}>Adquira hoje e leve 4 bônus exclusivos:</h2>
+          </div>
+
+          <div className={styles.bonusGrid}>
+            <div className={styles.bonusCard}>
+              <span className={styles.bonusLabel}><Gift size={14} className={styles.bonusIcon} /> Bônus 1</span>
+              <h4 className={styles.bonusTitle}>Guia de Avaliação Somática Rápida</h4>
+              <p className={styles.bonusPrice}><span className={styles.bonusPriceOld}>De R$ 67</span> → Grátis</p>
+              <p className={styles.bonusDescText}>Avalie o estado autonômico do paciente em menos de 5 minutos antes de escolher o protocolo certo.</p>
+            </div>
+            <div className={styles.bonusCard}>
+              <span className={styles.bonusLabel}><Gift size={14} className={styles.bonusIcon} /> Bônus 2</span>
+              <h4 className={styles.bonusTitle}>Manejo de Dissociação em Sessão</h4>
+              <p className={styles.bonusPrice}><span className={styles.bonusPriceOld}>De R$ 47</span> → Grátis</p>
+              <p className={styles.bonusDescText}>Um guia clínico para reconhecer, nomear e trabalhar dissociação sem perder o paciente durante o processo.</p>
+            </div>
+            <div className={styles.bonusCard}>
+              <span className={styles.bonusLabel}><Gift size={14} className={styles.bonusIcon} /> Bônus 3</span>
+              <h4 className={styles.bonusTitle}>Regulando o Nervo Vago</h4>
+              <p className={styles.bonusPrice}><span className={styles.bonusPriceOld}>De R$ 47</span> → Grátis</p>
+              <p className={styles.bonusDescText}>Técnicas diretas de estimulação vagal que você pode prescrever em sessão e como tarefa entre encontros.</p>
+            </div>
+            <div className={styles.bonusCard}>
+              <span className={styles.bonusLabel}><Gift size={14} className={styles.bonusIcon} /> Bônus 4</span>
+              <h4 className={styles.bonusTitle}>Baralho Somático Lúdico</h4>
+              <p className={styles.bonusPrice}><span className={styles.bonusPriceOld}>De R$ 37</span> → Grátis</p>
+              <p className={styles.bonusDescText}>Uma ferramenta visual e tátil para facilitar o acesso somático com pacientes resistentes, racionais ou com dificuldade de contato corporal.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 8 ─ DEPOIMENTOS */}
+      <section className={`${styles.sectionSm} ${styles.light}`} style={{ borderTop: "1px solid var(--border-light)" }}>
+        <div className={styles.wrap}>
+          <div className={`${styles.secHead} ${styles.secHeadCenter}`}>
+            <span className={`${styles.badge} ${styles.badgeLight}`}>Depoimentos</span>
+            <h2 className={styles.secTitle}>Nossas ferramentas já transformaram a prática de +3.000 profissionais certificados.</h2>
+          </div>
+
+          <div className={styles.testGrid}>
+            <div className={styles.testCard}>
+              <div className={styles.testStars}><Star /><Star /><Star /><Star /><Star /></div>
+              <p className={styles.testQuote}>&ldquo;Destravou pacientes que estavam parados há meses. Vale cada centavo.&rdquo;</p>
+              <p className={styles.testAuthor}>Ana M.</p>
+              <p className={styles.testRole}>Psicóloga <span className={styles.verified}><CheckCircle2 size={12} className={styles.verifiedIcon} /> Verificada</span></p>
+            </div>
+            <div className={styles.testCard}>
+              <div className={styles.testStars}><Star /><Star /><Star /><Star /><Star /></div>
+              <p className={styles.testQuote}>&ldquo;O guia de dissociação me salvou em várias sessões. Nunca mais entro em sessão sem ele.&rdquo;</p>
+              <p className={styles.testAuthor}>Carlos T.</p>
+              <p className={styles.testRole}>Psiquiatra <span className={styles.verified}><CheckCircle2 size={12} className={styles.verifiedIcon} /> Verificado</span></p>
+            </div>
+            <div className={styles.testCard}>
+              <div className={styles.testStars}><Star /><Star /><Star /><Star /><Star /></div>
+              <p className={styles.testQuote}>&ldquo;Material riquíssimo. Uso tanto no individual quanto em grupo. As fichas de rastreamento são ouro.&rdquo;</p>
+              <p className={styles.testAuthor}>Beatriz S.</p>
+              <p className={styles.testRole}>Terapeuta Corporal <span className={styles.verified}><CheckCircle2 size={12} className={styles.verifiedIcon} /> Verificada</span></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 9 ─ GARANTIA & CHECKOUT */}
       <section id="checkout" className={styles.checkout}>
         <div className={styles.checkoutCard}>
           <span className={styles.guaranteeSeal}>
             <IconShield />
-            Garantia de 7 dias — Risco Zero
+            Garantia Incondicional — 7 dias
           </span>
-          <h2 className={styles.secTitle} style={{ color: "#fff", marginBottom: 12 }}>Kit de Protocolos NeuroSoma</h2>
+          <h2 className={styles.secTitle} style={{ color: "#fff", marginBottom: 12 }}>Preço promocional de lançamento somente por tempo limitado</h2>
           <p className={styles.guaranteeText}>
-            Use os protocolos. Se sentir que não transformou sua prática, devolvemos 100% do valor. Sem perguntas.
+            Se nas próximas 7 sessões você não sentir que expandiu sua capacidade clínica de uma forma que nunca viveu antes, envie um e-mail e devolvemos cada centavo — sem perguntas.
           </p>
 
           <div className={styles.priceBlock}>
             <p className={styles.priceOld}>De R$ 197,00 por apenas</p>
             <p className={styles.priceMain}>5x de <span>R$ 6,51</span></p>
-            <p className={styles.priceCash}>ou R$ 29,00 à vista no cartão/PIX</p>
+            <p className={styles.priceCash}>ou R$ 29,00 à vista no cartão</p>
           </div>
 
           <div className={styles.ctaWrap}>
             <a href="https://pay.hotmart.com" className={`${styles.cta} ${styles.ctaFull}`}>
               <IconLock />
-              Quero acessar os protocolos agora
+              CLIQUE AQUI E ACESSE AGORA
             </a>
-            <p className={styles.ctaSub}>Acesso imediato após confirmação do pagamento</p>
+            <p className={styles.ctaSub}>Acesso imediato. 7 dias de garantia.</p>
           </div>
 
           <div className={styles.trustRow}>
@@ -314,7 +372,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 9 ─ FAQ */}
+      {/* 10 ─ FAQ */}
       <section className={`${styles.section} ${styles.light}`}>
         <div className={styles.wrap}>
           <div className={`${styles.secHead} ${styles.secHeadCenter}`}>

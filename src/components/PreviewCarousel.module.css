@@ -1,0 +1,120 @@
+.container {
+  width: 100%;
+}
+
+/* Desktop Grid Styles */
+.desktopGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.previewSlot {
+  aspect-ratio: 1 / 1.414; /* A4 Aspect Ratio */
+  border-radius: 6px;
+  background: #fff;
+  border: 1px solid var(--border-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.previewImg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* Mobile Carousel Styles */
+.mobileCarousel {
+  display: none;
+  position: relative;
+  width: 100%;
+  max-width: 320px; /* A4 proportions look best compact */
+  margin: 0 auto;
+  padding: 0 44px; /* Space for arrows so they don't overlay the image too much */
+}
+
+.carouselTrackWrapper {
+  overflow: hidden;
+  width: 100%;
+  border-radius: 6px;
+  box-shadow: 0 4px 20px rgba(4, 44, 83, 0.08);
+}
+
+.carouselTrack {
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+  width: 100%;
+}
+
+.carouselSlide {
+  flex-shrink: 0;
+  width: 100%;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #fff;
+  border: 1px solid var(--border-light);
+  color: var(--text-on-light);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+  box-shadow: 0 2px 8px rgba(4, 44, 83, 0.1);
+  transition: transform 0.15s, background 0.15s;
+}
+
+.arrow:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+.arrowLeft {
+  left: 0;
+}
+
+.arrowRight {
+  right: 0;
+}
+
+.indicators {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(4, 44, 83, 0.2);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.2s;
+}
+
+.dotActive {
+  background: var(--text-on-light);
+}
+
+/* Responsive Overrides */
+@media (max-width: 768px) {
+  .desktopGrid {
+    display: none;
+  }
+  .mobileCarousel {
+    display: block;
+  }
+}

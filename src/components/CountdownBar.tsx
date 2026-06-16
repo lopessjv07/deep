@@ -1,5 +1,6 @@
 'use client';
 import { useEffect, useState } from 'react';
+import { Hourglass } from 'lucide-react';
 import styles from './CountdownBar.module.css';
 
 export default function CountdownBar() {
@@ -31,7 +32,8 @@ export default function CountdownBar() {
 
   return (
     <div className={styles.banner}>
-      <span className={styles.text}>Atenção: Acesso ao Kit com desconto encerra em:</span>
+      <Hourglass size={16} className={styles.icon} />
+      <span className={styles.text}>Acesso ao Kit com desconto encerra em:</span>
       <span className={styles.timer}>
         {minutes.toString().padStart(2, '0')}:{seconds.toString().padStart(2, '0')}
       </span>
