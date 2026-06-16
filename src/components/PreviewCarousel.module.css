@@ -106,6 +106,14 @@
   justify-content: flex-start;
   padding-left: 2px;
 }
+.arrowLeft::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: -16px;
+  bottom: 0;
+}
 
 .arrowRight {
   right: 0;
@@ -113,6 +121,14 @@
   border-right: none;
   justify-content: flex-end;
   padding-right: 2px;
+}
+.arrowRight::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -16px;
+  right: 0;
+  bottom: 0;
 }
 
 .indicators {
@@ -131,6 +147,15 @@
   cursor: pointer;
   padding: 0;
   transition: background 0.2s;
+  position: relative;
+}
+.dot::before {
+  content: '';
+  position: absolute;
+  top: -16px;
+  left: -16px;
+  right: -16px;
+  bottom: -16px;
 }
 
 .dotActive {

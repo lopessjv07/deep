@@ -84,8 +84,9 @@ export default function Home() {
         </nav>
       </header>
 
-      {/* 1 ─ HERO */}
-      <section className={styles.hero}>
+      <main>
+        {/* 1 ─ HERO */}
+        <section className={styles.hero}>
         <div className={styles.heroInner}>
           <div className={styles.heroContent}>
             <span className={`${styles.badge} ${styles.badgeDark}`}>Para psicólogos, psiquiatras e terapeutas</span>
@@ -108,8 +109,8 @@ export default function Home() {
             <p className={styles.ctaSub}>Acesso imediato · Garantia de 7 dias</p>
           </div>
           <div className={styles.mockup}>
-            <Image src="/herodasktop.webp" alt="Mockup do Kit de Protocolos Somáticos NeuroSoma - Desktop" width={600} height={450} className={styles.mockupDesktop} priority sizes="(max-width: 1024px) 100vw, 45vw" />
-            <Image src="/heromobile.webp" alt="Mockup do Kit de Protocolos Somáticos NeuroSoma - Mobile" width={600} height={600} className={styles.mockupMobile} priority sizes="(max-width: 1024px) 100vw, 45vw" />
+            <Image src="/herodasktop.webp" alt="Mockup do Kit de Protocolos Somáticos NeuroSoma - Desktop" width={800} height={400} className={styles.mockupDesktop} priority sizes="(max-width: 1024px) 100vw, 45vw" />
+            <Image src="/heromobile.webp" alt="Mockup do Kit de Protocolos Somáticos NeuroSoma - Mobile" width={450} height={550} className={styles.mockupMobile} priority sizes="(max-width: 1024px) 100vw, 45vw" />
           </div>
         </div>
       </section>
@@ -158,10 +159,10 @@ export default function Home() {
       <section className={`${styles.sectionSm} ${styles.light}`} style={{ borderTop: "1px solid var(--border-light)" }}>
         <div className={styles.wrap}>
           <div className={styles.importantNotice}>
-            <h3 className={styles.importantTitle}>
+            <p className={styles.importantTitle}>
               <AlertTriangle size={18} className={styles.importantIcon} />
               Importante:
-            </h3>
+            </p>
             <p className={styles.importantText}>
               Este material pode ser usado de forma flexível, de acordo com seu propósito clínico ou pessoal.
             </p>
@@ -281,25 +282,25 @@ export default function Home() {
           <div className={styles.bonusGrid}>
             <div className={styles.bonusCard}>
               <span className={styles.bonusLabel}><Gift size={14} className={styles.bonusIcon} /> Bônus 1</span>
-              <h4 className={styles.bonusTitle}>Guia de Avaliação Somática Rápida</h4>
+              <h3 className={styles.bonusTitle}>Guia de Avaliação Somática Rápida</h3>
               <p className={styles.bonusPrice}><span className={styles.bonusPriceOld}>De R$ 67</span> → Grátis</p>
               <p className={styles.bonusDescText}>Avalie o estado autonômico do paciente em menos de 5 minutos antes de escolher o protocolo certo.</p>
             </div>
             <div className={styles.bonusCard}>
               <span className={styles.bonusLabel}><Gift size={14} className={styles.bonusIcon} /> Bônus 2</span>
-              <h4 className={styles.bonusTitle}>Manejo de Dissociação em Sessão</h4>
+              <h3 className={styles.bonusTitle}>Manejo de Dissociação em Sessão</h3>
               <p className={styles.bonusPrice}><span className={styles.bonusPriceOld}>De R$ 47</span> → Grátis</p>
               <p className={styles.bonusDescText}>Um guia clínico para reconhecer, nomear e trabalhar dissociação sem perder o paciente durante o processo.</p>
             </div>
             <div className={styles.bonusCard}>
               <span className={styles.bonusLabel}><Gift size={14} className={styles.bonusIcon} /> Bônus 3</span>
-              <h4 className={styles.bonusTitle}>Regulando o Nervo Vago</h4>
+              <h3 className={styles.bonusTitle}>Regulando o Nervo Vago</h3>
               <p className={styles.bonusPrice}><span className={styles.bonusPriceOld}>De R$ 47</span> → Grátis</p>
               <p className={styles.bonusDescText}>Técnicas diretas de estimulação vagal que você pode prescrever em sessão e como tarefa entre encontros.</p>
             </div>
             <div className={styles.bonusCard}>
               <span className={styles.bonusLabel}><Gift size={14} className={styles.bonusIcon} /> Bônus 4</span>
-              <h4 className={styles.bonusTitle}>Baralho Somático Lúdico</h4>
+              <h3 className={styles.bonusTitle}>Baralho Somático Lúdico</h3>
               <p className={styles.bonusPrice}><span className={styles.bonusPriceOld}>De R$ 37</span> → Grátis</p>
               <p className={styles.bonusDescText}>Uma ferramenta visual e tátil para facilitar o acesso somático com pacientes resistentes, racionais ou com dificuldade de contato corporal.</p>
             </div>
@@ -396,6 +397,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      </main>
 
       {/* Footer */}
       <footer className={styles.footer}>

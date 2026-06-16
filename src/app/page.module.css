@@ -55,7 +55,7 @@
   line-height: 1.08; letter-spacing: -0.03em; margin-bottom: 24px;
   text-align: left; width: 100%; max-width: 860px;
 }
-.heroTitle span { color: #ffffff; }
+.heroTitle span { color: #084c3b; }
 .heroSub {
   font-size: 1.15rem; color: rgba(4, 44, 83, 0.85); line-height: 1.6; margin-bottom: 32px; max-width: 760px;
   text-align: left; width: 100%;
@@ -91,8 +91,8 @@
 
 /* ── Hero Warning Block ── */
 .warningBlock {
-  background: rgba(192, 57, 43, 0.08);
-  border: 1px solid rgba(192, 57, 43, 0.25);
+  background: #ffffff;
+  border: 1px solid rgba(4, 44, 83, 0.1);
   border-left: 3px solid #C0392B;
   border-radius: 4px;
   padding: 18px 22px;
