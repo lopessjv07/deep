@@ -10,22 +10,41 @@
 }
 
 .previewSlot {
-  aspect-ratio: 1 / 1.414; /* A4 Aspect Ratio */
+  height: 320px;
   border-radius: 6px;
   background: #fff;
   border: 1px solid var(--border-light);
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 36px 28px;
   overflow: hidden;
   position: relative;
+  text-align: left;
+  user-select: none;
 }
 
-.previewImg {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: block;
+.cardIcon {
+  color: var(--accent-green-dark);
+  width: 32px;
+  height: 32px;
+  margin-bottom: 20px;
+  flex-shrink: 0;
+}
+
+.cardTitle {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--text-on-light);
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.cardDesc {
+  font-size: 0.95rem;
+  color: #4A5B6D;
+  line-height: 1.6;
 }
 
 /* Mobile Carousel Styles */

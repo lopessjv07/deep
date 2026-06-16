@@ -1,15 +1,30 @@
 'use client';
 
 import { useState } from 'react';
-import Image from 'next/image';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Brain, Sparkles, BookOpen, ShieldAlert } from 'lucide-react';
 import styles from './PreviewCarousel.module.css';
 
-const IMAGES = [
-  { src: '/1.webp', alt: 'Protocolo Somático - Página de exemplo 01', width: 500, height: 707 },
-  { src: '/2.webp', alt: 'Protocolo Somático - Página de exemplo 02', width: 500, height: 708 },
-  { src: '/3.webp', alt: 'Protocolo Somático - Página de exemplo 03', width: 500, height: 750 },
-  { src: '/4.webp', alt: 'Protocolo Somático - Página de exemplo 04', width: 500, height: 707 },
+const CONTENT_CARDS = [
+  { 
+    icon: <Brain className={styles.cardIcon} />,
+    title: 'Regulação do Sistema Nervoso', 
+    desc: 'Mapeie o estado autonômico do paciente e aplique a intervenção correta para tirá-lo de estados de luta, fuga ou congelamento.' 
+  },
+  { 
+    icon: <Sparkles className={styles.cardIcon} />,
+    title: 'Desbloqueio Somático', 
+    desc: 'Técnicas precisas para acessar e processar memórias traumáticas que ficaram presas no corpo, muito além do alcance da fala.' 
+  },
+  { 
+    icon: <BookOpen className={styles.cardIcon} />,
+    title: 'Scripts Clínicos Prontos', 
+    desc: 'Mais de 90 protocolos com falas roteirizadas, indicando exatamente o que dizer e como conduzir o paciente com segurança.' 
+  },
+  { 
+    icon: <ShieldAlert className={styles.cardIcon} />,
+    title: 'Manejo de Dissociação', 
+    desc: 'Como identificar sinais sutis de dissociação e trazer o paciente de volta ao momento presente sem causar retraumatização.' 
+  },
 ];
 
 export default function PreviewCarousel() {
@@ -18,11 +33,11 @@ export default function PreviewCarousel() {
   const [touchEndX, setTouchEndX] = useState<number | null>(null);
 
   const prevSlide = () => {
-    setCurrentIndex((prev) => (prev === 0 ? IMAGES.length - 1 : prev - 1));
+    setCurrentIndex((prev) => (prev === 0 ? CONTENT_CARDS.length - 1 : prev - 1));
   };
 
   const nextSlide = () => {
-    setCurrentIndex((prev) => (prev === IMAGES.length - 1 ? 0 : prev + 1));
+    setCurrentIndex((prev) => (prev === CONTENT_CARDS.length - 1 ? 0 : prev + 1));
   };
 
   // Touch handlers for mobile swipe
@@ -85,16 +100,11 @@ export default function PreviewCarousel() {
     <div className={styles.container}>
       {/* Grid visible on desktop */}
       <div className={styles.desktopGrid}>
-        {IMAGES.map((img, idx) => (
+        {CONTENT_CARDS.map((card, idx) => (
           <div key={idx} className={styles.previewSlot}>
-            <Image
-              src={img.src}
-              alt={img.alt}
-              width={img.width}
-              height={img.height}
-              className={styles.previewImg}
-              sizes="(max-width: 1024px) 50vw, 25vw"
-            />
+            {card.icon}
+            <h3 className={styles.cardTitle}>{card.title}</h3>
+            <p className={styles.cardDesc}>{card.desc}</p>
           </div>
         ))}
       </div>
@@ -120,18 +130,12 @@ export default function PreviewCarousel() {
             className={styles.carouselTrack}
             style={{ transform: `translateX(-${currentIndex * 100}%)` }}
           >
-            {IMAGES.map((img, idx) => (
+            {CONTENT_CARDS.map((card, idx) => (
               <div key={idx} className={styles.carouselSlide}>
                 <div className={styles.previewSlot}>
-                  <Image
-                    src={img.src}
-                    alt={img.alt}
-                    width={img.width}
-                    height={img.height}
-                    className={styles.previewImg}
-                    sizes="100vw"
-                    draggable={false} // Prevents default browser image drag
-                  />
+                  {card.icon}
+                  <h3 className={styles.cardTitle}>{card.title}</h3>
+                  <p className={styles.cardDesc}>{card.desc}</p>
                 </div>
               </div>
             ))}
@@ -144,7 +148,7 @@ export default function PreviewCarousel() {
 
         {/* Indicators */}
         <div className={styles.indicators}>
-          {IMAGES.map((_, idx) => (
+          {CONTENT_CARDS.map((_, idx) => (
             <button
               key={idx}
               className={`${styles.dot} ${currentIndex === idx ? styles.dotActive : ''}`}
