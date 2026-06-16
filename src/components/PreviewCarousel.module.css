@@ -32,17 +32,19 @@
 .mobileCarousel {
   display: none;
   position: relative;
-  width: 100%;
-  max-width: 320px; /* A4 proportions look best compact */
-  margin: 0 auto;
-  padding: 0 44px; /* Space for arrows so they don't overlay the image too much */
+  width: calc(100% + 88px); /* Break out of 24px wrap padding + 20px section padding */
+  margin-left: -44px;
+  margin-right: -44px;
+  max-width: none;
+  padding: 0;
 }
 
 .carouselTrackWrapper {
   overflow: hidden;
-  width: 100%;
-  border-radius: 6px;
-  box-shadow: 0 4px 20px rgba(4, 44, 83, 0.08);
+  width: 94%; /* Takes 94% of the absolute viewport width */
+  margin: 0 auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(4, 44, 83, 0.12);
 }
 
 .carouselTrack {
@@ -60,18 +62,17 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: #fff;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(4px);
   border: 1px solid var(--border-light);
   color: var(--text-on-light);
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
+  width: 28px;
+  height: 52px;
   display: flex;
   align-items: center;
-  justify-content: center;
   cursor: pointer;
   z-index: 2;
-  box-shadow: 0 2px 8px rgba(4, 44, 83, 0.1);
+  box-shadow: 0 2px 8px rgba(4, 44, 83, 0.12);
   transition: transform 0.15s, background 0.15s;
 }
 
@@ -81,10 +82,18 @@
 
 .arrowLeft {
   left: 0;
+  border-radius: 0 30px 30px 0;
+  border-left: none;
+  justify-content: flex-start;
+  padding-left: 2px;
 }
 
 .arrowRight {
   right: 0;
+  border-radius: 30px 0 0 30px;
+  border-right: none;
+  justify-content: flex-end;
+  padding-right: 2px;
 }
 
 .indicators {
