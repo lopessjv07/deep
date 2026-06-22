@@ -69,20 +69,7 @@ export default function Home() {
     <>
       <CountdownBar />
       <LiveViewersToast />
-      {/* Header */}
-      <header className={styles.header}>
-        <nav className={styles.nav}>
-          <div className={styles.brand}>
-            <svg width="28" height="28" viewBox="0 0 100 100" fill="none">
-              <circle cx="50" cy="50" r="44" stroke="currentColor" strokeWidth="1.5" strokeDasharray="3 3" />
-              <path d="M28 50C28 37.85 37.85 28 50 28C62.15 28 72 37.85 72 50" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
-              <circle cx="50" cy="50" r="8" fill="currentColor" />
-            </svg>
-            NeuroSoma
-          </div>
-          <a href="#checkout" className={styles.navCta}>Acessar Protocolos</a>
-        </nav>
-      </header>
+
 
       <main>
         {/* 1 ─ HERO */}
@@ -353,8 +340,8 @@ export default function Home() {
 
           <div className={styles.priceBlock}>
             <p className={styles.priceOld}>De R$ 197,00 por apenas</p>
-            <p className={styles.priceMain}>5x de <span>R$ 6,51</span></p>
-            <p className={styles.priceCash}>ou R$ 29,00 à vista no cartão</p>
+            <p className={styles.priceMain}>R$ <span>29</span></p>
+            <p className={styles.priceCash}>ou 5x de R$ 6,51 no cartão</p>
           </div>
 
           <div className={styles.ctaWrap}>
@@ -403,8 +390,7 @@ export default function Home() {
       {/* Footer */}
       <footer className={styles.footer}>
         <div className={styles.footerInner}>
-          <span className={styles.footerBrand}>NeuroSoma</span>
-          <span>© {new Date().getFullYear()} NeuroSoma — Todos os direitos reservados.</span>
+          <span>NeuroSoma © {new Date().getFullYear()} — Todos os direitos reservados.</span>
         </div>
       </footer>
     </>

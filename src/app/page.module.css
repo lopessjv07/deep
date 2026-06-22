@@ -382,7 +382,7 @@
 @media (max-width: 768px) {
   .section { padding: 64px 20px; }
   .sectionSm { padding: 56px 20px; }
-  .hero { padding: 164px 20px 32px; }
+  .hero { padding: 110px 20px 32px; }
   .bonusGrid { grid-template-columns: 1fr; }
   .trustRow { flex-direction: column; align-items: center; gap: 14px; }
   .checkoutCard { padding: 40px 24px; }
@@ -391,8 +391,7 @@
 }
 
 @media (max-width: 600px) {
-  .header { top: 60px; }
-  .hero { padding: 180px 20px 32px; }
+  .hero { padding: 100px 20px 32px; }
 }
 
 
