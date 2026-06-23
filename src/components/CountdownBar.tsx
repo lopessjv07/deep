@@ -11,19 +11,24 @@ export default function CountdownBar() {
     const now = Date.now();
     const storedTarget = localStorage.getItem(STORAGE_KEY);
 
+    let timeLeftCalc = 0;
     if (storedTarget) {
       const targetTime = parseInt(storedTarget, 10);
       if (targetTime > now) {
-        setTimeLeft(Math.floor((targetTime - now) / 1000));
-        return;
+        timeLeftCalc = Math.floor((targetTime - now) / 1000);
       }
     }
 
-    // Generate a random time between 10 minutes (600s) and 20 minutes (1200s)
-    const randomSeconds = Math.floor(Math.random() * (1200 - 600 + 1)) + 600;
-    const newTarget = now + randomSeconds * 1000;
-    localStorage.setItem(STORAGE_KEY, newTarget.toString());
-    setTimeLeft(randomSeconds);
+    // Se o tempo restante for menor que 10 minutos (600s), gera um novo tempo
+    if (timeLeftCalc < 600) {
+      // Gera tempo aleatório entre 11 min (660s) e 16 min (960s)
+      const randomSeconds = Math.floor(Math.random() * (960 - 660 + 1)) + 660;
+      const newTarget = now + randomSeconds * 1000;
+      localStorage.setItem(STORAGE_KEY, newTarget.toString());
+      setTimeLeft(randomSeconds);
+    } else {
+      setTimeLeft(timeLeftCalc);
+    }
   }, []);
 
   useEffect(() => {
