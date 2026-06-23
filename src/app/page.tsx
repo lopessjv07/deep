@@ -3,6 +3,7 @@ import styles from "./page.module.css";
 import CountdownBar from "../components/CountdownBar";
 import LiveViewersToast from "../components/LiveViewersToast";
 import PreviewCarousel from "../components/PreviewCarousel";
+
 import {
   Brain,
   Unlock,
@@ -89,11 +90,7 @@ export default function Home() {
                 <strong>AVISO IMPORTANTE:</strong> Se você ainda acredita que só a fala é suficiente para tratar trauma, NÃO adquira este material. Ele vai confrontar tudo que você aprendeu na graduação.
               </p>
             </div>
-            <a href="#checkout" className={styles.cta}>
-              Quero Acessar os Protocolos
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg>
-            </a>
-            <p className={styles.ctaSub}>Acesso imediato · Garantia de 7 dias</p>
+
           </div>
           <div className={styles.mockup}>
             <Image src="/herodasktop.webp" alt="Mockup do Kit de Protocolos Somáticos NeuroSoma - Desktop" width={800} height={400} className={styles.mockupDesktop} priority sizes="(max-width: 1024px) 100vw, 45vw" />
@@ -333,10 +330,9 @@ export default function Home() {
             <IconShield />
             Garantia Incondicional — 7 dias
           </span>
-          <h2 className={styles.secTitle} style={{ color: "#fff", marginBottom: 12 }}>Preço promocional de lançamento somente por tempo limitado</h2>
-          <p className={styles.guaranteeText}>
-            Se nas próximas 7 sessões você não sentir que expandiu sua capacidade clínica de uma forma que nunca viveu antes, envie um e-mail e devolvemos cada centavo — sem perguntas.
-          </p>
+          <div style={{ display: 'flex', justifyContent: 'center', margin: '20px 0 40px 0' }}>
+            <Image src="/bonus.png" alt="Bônus" width={800} height={480} style={{ width: '100%', maxWidth: '600px', height: 'auto', borderRadius: '25px' }} priority />
+          </div>
 
           <div className={styles.priceBlock}>
             <p className={styles.priceOld}>De R$ 197,00 por apenas</p>

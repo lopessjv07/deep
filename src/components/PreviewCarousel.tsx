@@ -4,28 +4,9 @@ import { useState } from 'react';
 import { ChevronLeft, ChevronRight, Brain, Sparkles, BookOpen, ShieldAlert } from 'lucide-react';
 import styles from './PreviewCarousel.module.css';
 
-const CONTENT_CARDS = [
-  { 
-    icon: <Brain className={styles.cardIcon} />,
-    title: 'Regulação do Sistema Nervoso', 
-    desc: 'Mapeie o estado autonômico do paciente e aplique a intervenção correta para tirá-lo de estados de luta, fuga ou congelamento.' 
-  },
-  { 
-    icon: <Sparkles className={styles.cardIcon} />,
-    title: 'Desbloqueio Somático', 
-    desc: 'Técnicas precisas para acessar e processar memórias traumáticas que ficaram presas no corpo, muito além do alcance da fala.' 
-  },
-  { 
-    icon: <BookOpen className={styles.cardIcon} />,
-    title: 'Scripts Clínicos Prontos', 
-    desc: 'Mais de 90 protocolos com falas roteirizadas, indicando exatamente o que dizer e como conduzir o paciente com segurança.' 
-  },
-  { 
-    icon: <ShieldAlert className={styles.cardIcon} />,
-    title: 'Manejo de Dissociação', 
-    desc: 'Como identificar sinais sutis de dissociação e trazer o paciente de volta ao momento presente sem causar retraumatização.' 
-  },
-];
+import Image from 'next/image';
+
+const CARDS = [1, 2, 3, 4];
 
 export default function PreviewCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -33,11 +14,11 @@ export default function PreviewCarousel() {
   const [touchEndX, setTouchEndX] = useState<number | null>(null);
 
   const prevSlide = () => {
-    setCurrentIndex((prev) => (prev === 0 ? CONTENT_CARDS.length - 1 : prev - 1));
+    setCurrentIndex((prev) => (prev === 0 ? CARDS.length - 1 : prev - 1));
   };
 
   const nextSlide = () => {
-    setCurrentIndex((prev) => (prev === CONTENT_CARDS.length - 1 ? 0 : prev + 1));
+    setCurrentIndex((prev) => (prev === CARDS.length - 1 ? 0 : prev + 1));
   };
 
   // Touch handlers for mobile swipe
@@ -100,11 +81,9 @@ export default function PreviewCarousel() {
     <div className={styles.container}>
       {/* Grid visible on desktop */}
       <div className={styles.desktopGrid}>
-        {CONTENT_CARDS.map((card, idx) => (
+        {CARDS.map((card, idx) => (
           <div key={idx} className={styles.previewSlot}>
-            {card.icon}
-            <h3 className={styles.cardTitle}>{card.title}</h3>
-            <p className={styles.cardDesc}>{card.desc}</p>
+            <Image src={`/${card}.png`} alt={`Página ${card}`} width={400} height={488} className={styles.previewImg} />
           </div>
         ))}
       </div>
@@ -130,12 +109,10 @@ export default function PreviewCarousel() {
             className={styles.carouselTrack}
             style={{ transform: `translateX(-${currentIndex * 100}%)` }}
           >
-            {CONTENT_CARDS.map((card, idx) => (
+            {CARDS.map((card, idx) => (
               <div key={idx} className={styles.carouselSlide}>
                 <div className={styles.previewSlot}>
-                  {card.icon}
-                  <h3 className={styles.cardTitle}>{card.title}</h3>
-                  <p className={styles.cardDesc}>{card.desc}</p>
+                  <Image src={`/${card}.png`} alt={`Página ${card}`} width={400} height={488} className={styles.previewImg} />
                 </div>
               </div>
             ))}
@@ -148,7 +125,7 @@ export default function PreviewCarousel() {
 
         {/* Indicators */}
         <div className={styles.indicators}>
-          {CONTENT_CARDS.map((_, idx) => (
+          {CARDS.map((_, idx) => (
             <button
               key={idx}
               className={`${styles.dot} ${currentIndex === idx ? styles.dotActive : ''}`}

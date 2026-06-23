@@ -323,8 +323,8 @@
 .checkout { background: var(--bg-dark); padding: 100px 24px; }
 .checkoutCard {
   max-width: 720px; margin: 0 auto;
-  background: rgba(255,255,255,0.03); border: 1px solid var(--border-dark);
-  border-radius: 8px; padding: 56px 44px; text-align: center;
+  background: rgba(255,255,255,0.12); border: 1px solid var(--border-dark);
+  border-radius: 30px; padding: 56px 44px; text-align: center;
 }
 .guaranteeSeal {
   display: inline-flex; align-items: center; gap: 8px;
