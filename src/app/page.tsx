@@ -93,8 +93,8 @@ export default function Home() {
 
           </div>
           <div className={styles.mockup}>
-            <Image src="/herodasktop.webp" alt="Mockup do Kit de Protocolos Somáticos NeuroSoma - Desktop" width={800} height={400} className={styles.mockupDesktop} priority sizes="(max-width: 1024px) 100vw, 45vw" />
-            <Image src="/heromobile.webp" alt="Mockup do Kit de Protocolos Somáticos NeuroSoma - Mobile" width={450} height={550} className={styles.mockupMobile} priority sizes="(max-width: 1024px) 100vw, 45vw" />
+            <Image src="/imageHero2.png" alt="Mockup do Kit de Protocolos Somáticos NeuroSoma - Desktop" width={800} height={400} className={styles.mockupDesktop} priority sizes="(max-width: 1024px) 100vw, 45vw" style={{ borderRadius: '25px' }} />
+            <Image src="/imageHero2.png" alt="Mockup do Kit de Protocolos Somáticos NeuroSoma - Mobile" width={450} height={550} className={styles.mockupMobile} priority sizes="(max-width: 1024px) 100vw, 45vw" style={{ borderRadius: '25px' }} />
           </div>
         </div>
       </section>
