@@ -83,7 +83,7 @@ export default function PreviewCarousel() {
       <div className={styles.desktopGrid}>
         {CARDS.map((card, idx) => (
           <div key={idx} className={styles.previewSlot}>
-            <Image src={`/${card}.png`} alt={`Página ${card}`} width={400} height={488} className={styles.previewImg} />
+            <Image src={`/${card}.webp`} alt={`Página ${card}`} width={400} height={488} className={styles.previewImg} />
           </div>
         ))}
       </div>
@@ -112,7 +112,7 @@ export default function PreviewCarousel() {
             {CARDS.map((card, idx) => (
               <div key={idx} className={styles.carouselSlide}>
                 <div className={styles.previewSlot}>
-                  <Image src={`/${card}.png`} alt={`Página ${card}`} width={400} height={488} className={styles.previewImg} />
+                  <Image src={`/${card}.webp`} alt={`Página ${card}`} width={400} height={488} className={styles.previewImg} />
                 </div>
               </div>
             ))}
