@@ -263,32 +263,7 @@ export default function Home() {
             <h2 className={styles.secTitle}>Adquira hoje e leve 4 bônus exclusivos:</h2>
           </div>
 
-          <div className={styles.bonusGrid}>
-            <div className={styles.bonusCard}>
-              <span className={styles.bonusLabel}><Gift size={14} className={styles.bonusIcon} /> Bônus 1</span>
-              <h3 className={styles.bonusTitle}>Guia de Avaliação Somática Rápida</h3>
-              <p className={styles.bonusPrice}><span className={styles.bonusPriceOld}>De R$ 67</span> → Grátis</p>
-              <p className={styles.bonusDescText}>Avalie o estado autonômico do paciente em menos de 5 minutos antes de escolher o protocolo certo.</p>
-            </div>
-            <div className={styles.bonusCard}>
-              <span className={styles.bonusLabel}><Gift size={14} className={styles.bonusIcon} /> Bônus 2</span>
-              <h3 className={styles.bonusTitle}>Manejo de Dissociação em Sessão</h3>
-              <p className={styles.bonusPrice}><span className={styles.bonusPriceOld}>De R$ 47</span> → Grátis</p>
-              <p className={styles.bonusDescText}>Um guia clínico para reconhecer, nomear e trabalhar dissociação sem perder o paciente durante o processo.</p>
-            </div>
-            <div className={styles.bonusCard}>
-              <span className={styles.bonusLabel}><Gift size={14} className={styles.bonusIcon} /> Bônus 3</span>
-              <h3 className={styles.bonusTitle}>Regulando o Nervo Vago</h3>
-              <p className={styles.bonusPrice}><span className={styles.bonusPriceOld}>De R$ 47</span> → Grátis</p>
-              <p className={styles.bonusDescText}>Técnicas diretas de estimulação vagal que você pode prescrever em sessão e como tarefa entre encontros.</p>
-            </div>
-            <div className={styles.bonusCard}>
-              <span className={styles.bonusLabel}><Gift size={14} className={styles.bonusIcon} /> Bônus 4</span>
-              <h3 className={styles.bonusTitle}>Baralho Somático Lúdico</h3>
-              <p className={styles.bonusPrice}><span className={styles.bonusPriceOld}>De R$ 37</span> → Grátis</p>
-              <p className={styles.bonusDescText}>Uma ferramenta visual e tátil para facilitar o acesso somático com pacientes resistentes, racionais ou com dificuldade de contato corporal.</p>
-            </div>
-          </div>
+          <PreviewCarousel imagePrefix="" imageExtension="webp" altPrefix="Bônus" aspectRatio="9 / 11" />
         </div>
       </section>
 

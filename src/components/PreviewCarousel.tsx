@@ -8,7 +8,17 @@ import Image from 'next/image';
 
 const CARDS = [1, 2, 3, 4];
 
-export default function PreviewCarousel() {
+export default function PreviewCarousel({
+  imagePrefix = 'material',
+  imageExtension = 'jpeg',
+  altPrefix = 'Página',
+  aspectRatio = '1 / 1.414'
+}: {
+  imagePrefix?: string;
+  imageExtension?: string;
+  altPrefix?: string;
+  aspectRatio?: string;
+} = {}) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [touchStartX, setTouchStartX] = useState<number | null>(null);
   const [touchEndX, setTouchEndX] = useState<number | null>(null);
@@ -82,8 +92,8 @@ export default function PreviewCarousel() {
       {/* Grid visible on desktop */}
       <div className={styles.desktopGrid}>
         {CARDS.map((card, idx) => (
-          <div key={idx} className={styles.previewSlot}>
-            <Image src={`/${card}.webp`} alt={`Página ${card}`} width={400} height={488} className={styles.previewImg} />
+          <div key={idx} className={styles.previewSlot} style={{ aspectRatio }}>
+            <Image src={`/${imagePrefix}${card}.${imageExtension}`} alt={`${altPrefix} ${card}`} width={400} height={566} className={styles.previewImg} />
           </div>
         ))}
       </div>
@@ -111,8 +121,8 @@ export default function PreviewCarousel() {
           >
             {CARDS.map((card, idx) => (
               <div key={idx} className={styles.carouselSlide}>
-                <div className={styles.previewSlot}>
-                  <Image src={`/${card}.webp`} alt={`Página ${card}`} width={400} height={488} className={styles.previewImg} />
+                <div className={styles.previewSlot} style={{ aspectRatio }}>
+                  <Image src={`/${imagePrefix}${card}.${imageExtension}`} alt={`${altPrefix} ${card}`} width={400} height={566} className={styles.previewImg} />
                 </div>
               </div>
             ))}
