@@ -65,6 +65,25 @@ const IconRefresh = () => (
 
 const Star = () => <span>★</span>;
 
+const bonusCaptions = [
+  {
+    title: "Bônus 1: Guia de Avaliação Somática Rápida",
+    text: "Mapeie o estado autonômico do seu paciente em menos de 5 minutos."
+  },
+  {
+    title: "Bônus 2: Manejo de Dissociação em Sessão",
+    text: "Um guia prático para reconhecer, nomear e intervir com segurança."
+  },
+  {
+    title: "Bônus 3: Regulando o Nervo Vago",
+    text: "Técnicas de estimulação para usar em sessão e como tarefa de casa."
+  },
+  {
+    title: "Bônus 4: Baralho Somático Lúdico",
+    text: "A ferramenta ideal para contornar a resistência de pacientes racionais."
+  }
+];
+
 export default function Home() {
   return (
     <>
@@ -263,7 +282,7 @@ export default function Home() {
             <h2 className={styles.secTitle}>Adquira hoje e leve 4 bônus exclusivos:</h2>
           </div>
 
-          <PreviewCarousel imagePrefix="" imageExtension="webp" altPrefix="Bônus" aspectRatio="9 / 11" />
+          <PreviewCarousel imagePrefix="" imageExtension="webp" altPrefix="Bônus" aspectRatio="9 / 11" captions={bonusCaptions} />
         </div>
       </section>
 

@@ -250,6 +250,14 @@
   margin-top: 8px;
 }
 
+.bonusHighlight {
+  font-size: 0.8rem;
+  color: var(--accent-green-dark);
+  font-weight: 700;
+  margin-top: 10px;
+  display: block;
+}
+
 /* ── Amostra ── */
 .previewGrid {
   display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;

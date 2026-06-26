@@ -12,12 +12,14 @@ export default function PreviewCarousel({
   imagePrefix = 'material',
   imageExtension = 'jpeg',
   altPrefix = 'Página',
-  aspectRatio = '1 / 1.414'
+  aspectRatio = '1 / 1.414',
+  captions = []
 }: {
   imagePrefix?: string;
   imageExtension?: string;
   altPrefix?: string;
   aspectRatio?: string;
+  captions?: { title: string; text: string }[];
 } = {}) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [touchStartX, setTouchStartX] = useState<number | null>(null);
@@ -92,8 +94,16 @@ export default function PreviewCarousel({
       {/* Grid visible on desktop */}
       <div className={styles.desktopGrid}>
         {CARDS.map((card, idx) => (
-          <div key={idx} className={styles.previewSlot} style={{ aspectRatio }}>
-            <Image src={`/${imagePrefix}${card}.${imageExtension}`} alt={`${altPrefix} ${card}`} width={400} height={566} className={styles.previewImg} />
+          <div key={idx} className={styles.cardWrapper}>
+            <div className={styles.previewSlot} style={{ aspectRatio }}>
+              <Image src={`/${imagePrefix}${card}.${imageExtension}`} alt={`${altPrefix} ${card}`} width={400} height={566} className={styles.previewImg} />
+            </div>
+            {captions && captions[idx] && (
+              <div className={styles.captionContainer}>
+                <h4 className={styles.captionTitle}>{captions[idx].title}</h4>
+                <p className={styles.captionText}>{captions[idx].text}</p>
+              </div>
+            )}
           </div>
         ))}
       </div>
@@ -121,8 +131,16 @@ export default function PreviewCarousel({
           >
             {CARDS.map((card, idx) => (
               <div key={idx} className={styles.carouselSlide}>
-                <div className={styles.previewSlot} style={{ aspectRatio }}>
-                  <Image src={`/${imagePrefix}${card}.${imageExtension}`} alt={`${altPrefix} ${card}`} width={400} height={566} className={styles.previewImg} />
+                <div className={styles.cardWrapper}>
+                  <div className={styles.previewSlot} style={{ aspectRatio }}>
+                    <Image src={`/${imagePrefix}${card}.${imageExtension}`} alt={`${altPrefix} ${card}`} width={400} height={566} className={styles.previewImg} />
+                  </div>
+                  {captions && captions[idx] && (
+                    <div className={styles.captionContainer} style={{ padding: '0 16px 16px 16px' }}>
+                      <h4 className={styles.captionTitle}>{captions[idx].title}</h4>
+                      <p className={styles.captionText}>{captions[idx].text}</p>
+                    </div>
+                  )}
                 </div>
               </div>
             ))}
