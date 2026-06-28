@@ -335,7 +335,7 @@ export default function Home() {
           </div>
 
           <div className={styles.ctaWrap}>
-            <a href="https://pay.hotmart.com" className={`${styles.cta} ${styles.ctaFull}`}>
+            <a href="https://pay.kirvano.com/5b62b770-7be4-44b3-be73-09ddf401fbaf" className={`${styles.cta} ${styles.ctaFull}`}>
               <IconLock />
               CLIQUE AQUI E ACESSE AGORA
             </a>
