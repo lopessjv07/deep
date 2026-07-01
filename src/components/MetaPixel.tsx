@@ -7,6 +7,10 @@ const PIXEL_ID = process.env.NEXT_PUBLIC_META_PIXEL_ID || '2313907359416805';
 
 export default function MetaPixel() {
   useEffect(() => {
+    // Read test_event_code from URL query params (e.g. ?test_event_code=TEST12345)
+    const urlParams = new URLSearchParams(window.location.search);
+    const testEventCode = urlParams.get('test_event_code') || undefined;
+
     // 1. Initial PageView client + server
     const pageViewEventId = 'pageview_' + Math.random().toString(36).substring(2, 11) + '_' + Date.now();
     
@@ -25,6 +29,7 @@ export default function MetaPixel() {
         eventName: 'PageView',
         eventId: pageViewEventId,
         eventSourceUrl: window.location.href,
+        testEventCode,
       }),
     }).catch((err) => console.error('Failed to send PageView to CAPI:', err));
 
@@ -66,6 +71,7 @@ export default function MetaPixel() {
                 eventId: checkoutEventId,
                 eventSourceUrl: window.location.href,
                 customData,
+                testEventCode,
               }),
             });
           } catch (err) {

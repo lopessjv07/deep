@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from 'next/server';
 
 export async function POST(req: NextRequest) {
   try {
-    const { eventName, eventId, eventSourceUrl, customData } = await req.json();
+    const { eventName, eventId, eventSourceUrl, customData, testEventCode } = await req.json();
     
     const reqHeaders = await headers();
     const reqCookies = await cookies();
@@ -50,7 +50,7 @@ export async function POST(req: NextRequest) {
       }
     }
     
-    const payload = {
+    const payload: any = {
       data: [
         {
           event_name: eventName,
@@ -63,6 +63,12 @@ export async function POST(req: NextRequest) {
         }
       ]
     };
+
+    // Add test event code if provided to debug in Meta Event Manager
+    const testCode = testEventCode || process.env.META_TEST_EVENT_CODE;
+    if (testCode) {
+      payload.test_event_code = testCode;
+    }
     
     const response = await fetch(url, {
       method: 'POST',
