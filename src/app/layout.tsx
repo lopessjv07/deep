@@ -25,6 +25,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-br" className={plusJakarta.className}>
+      <head>
+        {/* Resource Hints to speed up Meta Pixel loading and Kirvano checkout transition */}
+        <link rel="preconnect" href="https://connect.facebook.net" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://connect.facebook.net" />
+        <link rel="preconnect" href="https://pay.kirvano.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://pay.kirvano.com" />
+      </head>
       <body>
         <MetaPixel />
         {children}
