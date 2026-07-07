@@ -10,7 +10,7 @@ const CARDS = [1, 2, 3, 4];
 
 export default function PreviewCarousel({
   imagePrefix = 'material',
-  imageExtension = 'jpeg',
+  imageExtension = 'webp',
   altPrefix = 'Página',
   aspectRatio = '1 / 1.414',
   captions = []

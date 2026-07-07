@@ -68,16 +68,10 @@
   justify-content: center;
 }
 
-.mockupDesktop {
+.mockupImage {
   width: 100%;
   height: auto;
   display: block;
-}
-
-.mockupMobile {
-  width: 100%;
-  height: auto;
-  display: none;
 }
 
 /* ── Section Titles ── */
@@ -384,8 +378,7 @@
   .testGrid { grid-template-columns: 1fr; }
   .metricsBar { grid-template-columns: 1fr; gap: 24px; text-align: center; }
   .audienceGrid { grid-template-columns: 1fr; }
-  .mockupDesktop { display: none; }
-  .mockupMobile { display: block; }
+
 }
 
 @media (max-width: 768px) {
