@@ -89,6 +89,8 @@ export default function PreviewCarousel({
     setTouchEndX(null);
   };
 
+  const blurPlaceholder = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjU2NiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjRjFFRkU4Ii8+PC9zdmc+";
+
   return (
     <div className={styles.container}>
       {/* Grid visible on desktop */}
@@ -96,7 +98,18 @@ export default function PreviewCarousel({
         {CARDS.map((card, idx) => (
           <div key={idx} className={styles.cardWrapper}>
             <div className={styles.previewSlot} style={{ aspectRatio }}>
-              <Image src={`/${imagePrefix}${card}.${imageExtension}`} alt={`${altPrefix} ${card}`} width={400} height={566} className={styles.previewImg} />
+              <Image
+                src={`/${imagePrefix}${card}.${imageExtension}`}
+                alt={`${altPrefix} ${card}`}
+                width={400}
+                height={566}
+                className={styles.previewImg}
+                quality={75}
+                sizes="(max-width: 1024px) 0px, 25vw"
+                loading="lazy"
+                placeholder="blur"
+                blurDataURL={blurPlaceholder}
+              />
             </div>
             {captions && captions[idx] && (
               <div className={styles.captionContainer}>
@@ -133,7 +146,18 @@ export default function PreviewCarousel({
               <div key={idx} className={styles.carouselSlide}>
                 <div className={styles.cardWrapper}>
                   <div className={styles.previewSlot} style={{ aspectRatio }}>
-                    <Image src={`/${imagePrefix}${card}.${imageExtension}`} alt={`${altPrefix} ${card}`} width={400} height={566} className={styles.previewImg} />
+                    <Image
+                      src={`/${imagePrefix}${card}.${imageExtension}`}
+                      alt={`${altPrefix} ${card}`}
+                      width={400}
+                      height={566}
+                      className={styles.previewImg}
+                      quality={75}
+                      sizes="(max-width: 1024px) 80vw, 0px"
+                      loading="lazy"
+                      placeholder="blur"
+                      blurDataURL={blurPlaceholder}
+                    />
                   </div>
                   {captions && captions[idx] && (
                     <div className={styles.captionContainer} style={{ padding: '0 16px 16px 16px' }}>

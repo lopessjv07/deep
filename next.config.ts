@@ -10,9 +10,16 @@ const nextConfig: NextConfig = {
   // Permite proxy reverso (Traefik/Coolify) no modo dev
   allowedDevOrigins: ["neurosoma.online", "*.neurosoma.online"],
 
-  // Desabilita otimização de imagem para self-hosting simples
+  // Otimização de imagem ativa — redimensiona, converte formato e gera srcset automático
   images: {
-    unoptimized: true,
+    // Formatos de saída: AVIF (menor) com fallback WebP
+    formats: ["image/avif", "image/webp"],
+    // Breakpoints de dispositivo alinhados com o layout do site
+    deviceSizes: [640, 750, 828, 1080, 1200],
+    // Tamanhos menores para imagens que não ocupam tela cheia
+    imageSizes: [128, 256, 384],
+    // Cache longo — imagens de marketing são estáticas
+    minimumCacheTTL: 2678400, // 31 dias
   },
 };
 

@@ -118,8 +118,11 @@ export default function Home() {
               width={900} 
               height={1100} 
               className={styles.mockupImage} 
-              priority 
-              sizes="(max-width: 1024px) 100vw, 45vw" 
+              preload 
+              quality={75} 
+              sizes="(max-width: 768px) 90vw, (max-width: 1024px) 50vw, 420px" 
+              placeholder="blur" 
+              blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOTAwIiBoZWlnaHQ9IjExMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2FiZDZkYSIvPjwvc3ZnPg==" 
               style={{ borderRadius: '25px', width: '100%', height: 'auto' }} 
             />
           </div>
@@ -333,7 +336,7 @@ export default function Home() {
             Garantia Incondicional — 7 dias
           </span>
           <div style={{ display: 'flex', justifyContent: 'center', margin: '20px 0 40px 0' }}>
-            <Image src="/bonus.webp" alt="Bônus" width={800} height={480} style={{ width: '100%', maxWidth: '600px', height: 'auto', borderRadius: '25px' }} priority />
+            <Image src="/bonus.webp" alt="Bônus" width={800} height={480} quality={75} sizes="(max-width: 768px) 90vw, 600px" placeholder="blur" blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjQ4MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMDQyQzUzIi8+PC9zdmc+" loading="lazy" style={{ width: '100%', maxWidth: '600px', height: 'auto', borderRadius: '25px' }} />
           </div>
 
           <div className={styles.priceBlock}>
