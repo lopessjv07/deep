@@ -91,6 +91,9 @@ export default function PreviewCarousel({
 
   const blurPlaceholder = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjU2NiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjRjFFRkU4Ii8+PC9zdmc+";
 
+  // Determine which mobile slides to eagerly load (current + neighbors)
+  const eagerMobileSlides = new Set([currentIndex, (currentIndex + 1) % CARDS.length]);
+
   return (
     <div className={styles.container}>
       {/* Grid visible on desktop */}
@@ -101,14 +104,15 @@ export default function PreviewCarousel({
               <Image
                 src={`/${imagePrefix}${card}.${imageExtension}`}
                 alt={`${altPrefix} ${card}`}
-                width={400}
-                height={566}
+                width={500}
+                height={707}
                 className={styles.previewImg}
-                quality={75}
+                quality={65}
                 sizes="(max-width: 1024px) 0px, 25vw"
-                loading="lazy"
+                loading={idx === 0 ? "eager" : "lazy"}
                 placeholder="blur"
                 blurDataURL={blurPlaceholder}
+                fetchPriority={idx === 0 ? "high" : "auto"}
               />
             </div>
             {captions && captions[idx] && (
@@ -149,14 +153,15 @@ export default function PreviewCarousel({
                     <Image
                       src={`/${imagePrefix}${card}.${imageExtension}`}
                       alt={`${altPrefix} ${card}`}
-                      width={400}
-                      height={566}
+                      width={500}
+                      height={707}
                       className={styles.previewImg}
-                      quality={75}
+                      quality={65}
                       sizes="(max-width: 1024px) 80vw, 0px"
-                      loading="lazy"
+                      loading={eagerMobileSlides.has(idx) ? "eager" : "lazy"}
                       placeholder="blur"
                       blurDataURL={blurPlaceholder}
+                      fetchPriority={idx === currentIndex ? "high" : "auto"}
                     />
                   </div>
                   {captions && captions[idx] && (
