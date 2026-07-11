@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import MetaPixel from "../components/MetaPixel";
+import UtmifyScript from "../components/UtmifyScript";
 
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -31,9 +32,12 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://connect.facebook.net" />
         <link rel="preconnect" href="https://pay.kirvano.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://pay.kirvano.com" />
+        <link rel="preconnect" href="https://cdn.utmify.com.br" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://cdn.utmify.com.br" />
       </head>
       <body>
         <MetaPixel />
+        <UtmifyScript />
         {children}
       </body>
     </html>
