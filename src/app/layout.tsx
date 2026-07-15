@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
-import MetaPixel from "../components/MetaPixel";
 import UtmifyScript from "../components/UtmifyScript";
 
 const plusJakarta = Plus_Jakarta_Sans({
@@ -27,16 +26,13 @@ export default function RootLayout({
   return (
     <html lang="pt-br" className={plusJakarta.className}>
       <head>
-        {/* Resource Hints to speed up Meta Pixel loading and Kirvano checkout transition */}
-        <link rel="preconnect" href="https://connect.facebook.net" crossOrigin="anonymous" />
-        <link rel="dns-prefetch" href="https://connect.facebook.net" />
+        {/* Resource Hints to speed up Kirvano checkout transition */}
         <link rel="preconnect" href="https://pay.kirvano.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://pay.kirvano.com" />
         <link rel="preconnect" href="https://cdn.utmify.com.br" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://cdn.utmify.com.br" />
       </head>
       <body>
-        <MetaPixel />
         <UtmifyScript />
         {children}
       </body>
