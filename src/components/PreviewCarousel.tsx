@@ -91,8 +91,6 @@ export default function PreviewCarousel({
 
   const blurPlaceholder = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjU2NiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjRjFFRkU4Ii8+PC9zdmc+";
 
-  // Determine which mobile slides to eagerly load (current + neighbors)
-  const eagerMobileSlides = new Set([currentIndex, (currentIndex + 1) % CARDS.length]);
 
   return (
     <div className={styles.container}>
@@ -109,10 +107,10 @@ export default function PreviewCarousel({
                 className={styles.previewImg}
                 quality={65}
                 sizes="(max-width: 1024px) 0px, 25vw"
-                loading={idx === 0 ? "eager" : "lazy"}
+                loading="lazy"
                 placeholder="blur"
                 blurDataURL={blurPlaceholder}
-                fetchPriority={idx === 0 ? "high" : "auto"}
+                decoding="async"
               />
             </div>
             {captions && captions[idx] && (
@@ -158,10 +156,10 @@ export default function PreviewCarousel({
                       className={styles.previewImg}
                       quality={65}
                       sizes="(max-width: 1024px) 80vw, 0px"
-                      loading={eagerMobileSlides.has(idx) ? "eager" : "lazy"}
+                      loading={idx === currentIndex ? "eager" : "lazy"}
                       placeholder="blur"
                       blurDataURL={blurPlaceholder}
-                      fetchPriority={idx === currentIndex ? "high" : "auto"}
+                      decoding="async"
                     />
                   </div>
                   {captions && captions[idx] && (

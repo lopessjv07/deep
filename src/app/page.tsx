@@ -118,11 +118,12 @@ export default function Home() {
               width={900} 
               height={1100} 
               className={styles.mockupImage} 
-              preload 
+              preload
               quality={75} 
               sizes="(max-width: 768px) 90vw, (max-width: 1024px) 50vw, 420px" 
               placeholder="blur" 
               blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOTAwIiBoZWlnaHQ9IjExMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2FiZDZkYSIvPjwvc3ZnPg==" 
+              decoding="sync"
               style={{ borderRadius: '25px', width: '100%', height: 'auto' }} 
             />
           </div>
