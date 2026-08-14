@@ -106,8 +106,8 @@ export default function PreviewCarousel({
                 width={500}
                 height={707}
                 className={styles.previewImg}
-                quality={65}
-                sizes="(max-width: 1024px) 0px, (max-width: 1200px) 33vw, 25vw"
+                quality={80}
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 loading="lazy"
                 placeholder="blur"
                 blurDataURL={blurPlaceholder}
@@ -155,8 +155,8 @@ export default function PreviewCarousel({
                       width={500}
                       height={707}
                       className={styles.previewImg}
-                      quality={65}
-                      sizes="(max-width: 1024px) 80vw, 0px"
+                      quality={80}
+                      sizes="(max-width: 768px) 90vw, 400px"
                       loading={idx === currentIndex ? "eager" : "lazy"}
                       placeholder="blur"
                       blurDataURL={blurPlaceholder}

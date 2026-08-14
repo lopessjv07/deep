@@ -5,7 +5,6 @@ import UtmifyScript from "../components/UtmifyScript";
 
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
   display: "swap",
 });
 
@@ -31,6 +30,8 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://pay.kirvano.com" />
         <link rel="preconnect" href="https://cdn.utmify.com.br" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://cdn.utmify.com.br" />
+        {/* Preload Hero image so browser fetches it immediately during HTML parse */}
+        <link rel="preload" href="/imageHero2.webp" as="image" type="image/webp" fetchPriority="high" />
       </head>
       <body>
         <UtmifyScript />

@@ -18,13 +18,13 @@ export default function UtmifyScript() {
         data-utmify-prevent-subids=""
         async
         defer
-        strategy="afterInteractive"
+        strategy="lazyOnload"
       />
       
       {/* Pixel Script para enviar eventos */}
       <Script
         id="utmify-pixel"
-        strategy="afterInteractive"
+        strategy="lazyOnload"
         dangerouslySetInnerHTML={{
           __html: `
             window.pixelId = "6a52a95f3e380ffa64a49d07";

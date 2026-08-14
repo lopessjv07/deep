@@ -10,6 +10,11 @@ const nextConfig: NextConfig = {
   // Permite proxy reverso (Traefik/Coolify) no modo dev
   allowedDevOrigins: ["neurosoma.online", "*.neurosoma.online"],
 
+  // Otimização de pacotes para reduzir tamanho do JS bundle
+  experimental: {
+    optimizePackageImports: ["lucide-react"],
+  },
+
   // Otimização de imagem ativa — redimensiona, converte formato e gera srcset automático
   images: {
     // Formatos de saída: AVIF (menor) com fallback WebP
@@ -20,6 +25,20 @@ const nextConfig: NextConfig = {
     imageSizes: [128, 256, 384],
     // Cache longo — imagens de marketing são estáticas
     minimumCacheTTL: 2678400, // 31 dias
+  },
+
+  async headers() {
+    return [
+      {
+        source: "/:path*.(webp|png|jpg|jpeg|svg|ico)",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+        ],
+      },
+    ];
   },
 };
 
