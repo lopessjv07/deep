@@ -116,7 +116,7 @@ export default function PreviewCarousel({
             </div>
             {captions && captions[idx] && (
               <div className={styles.captionContainer}>
-                <h4 className={styles.captionTitle}>{captions[idx].title}</h4>
+                <h3 className={styles.captionTitle}>{captions[idx].title}</h3>
                 <p className={styles.captionText}>{captions[idx].text}</p>
               </div>
             )}
@@ -165,7 +165,7 @@ export default function PreviewCarousel({
                   </div>
                   {captions && captions[idx] && (
                     <div className={styles.captionContainer} style={{ padding: '0 16px 16px 16px' }}>
-                      <h4 className={styles.captionTitle}>{captions[idx].title}</h4>
+                      <h3 className={styles.captionTitle}>{captions[idx].title}</h3>
                       <p className={styles.captionText}>{captions[idx].text}</p>
                     </div>
                   )}

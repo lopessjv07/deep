@@ -389,7 +389,7 @@
 .faqItem[open] .faqIcon { transform: rotate(45deg); color: var(--accent-green-dark); }
 
 /* ── Footer ── */
-.footer { background: #031E3A; padding: 40px 24px; color: rgba(255,255,255,0.35); font-size: 0.75rem; }
+.footer { background: #031E3A; padding: 40px 24px; color: rgba(255,255,255,0.7); font-size: 0.75rem; }
 .footerInner { max-width: var(--max-w); margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
 .footerBrand { color: #fff; font-weight: 800; font-size: 1rem; }
 
