@@ -51,8 +51,6 @@ const IconRefresh = () => (
   </svg>
 );
 
-const Star = () => <span>★</span>;
-
 const bonusCaptions = [
   {
     title: "Bônus 1: Guia de Avaliação Somática Rápida",
@@ -70,6 +68,14 @@ const bonusCaptions = [
     title: "Bônus 4: Baralho Somático Lúdico",
     text: "A ferramenta ideal para contornar a resistência de pacientes racionais."
   }
+];
+
+const reviewImages = [
+  { src: "/dp1.webp", alt: "Avaliação 1", width: 1170, height: 769 },
+  { src: "/dp5.webp", alt: "Avaliação 2", width: 704, height: 578 },
+  { src: "/dp3.webp", alt: "Avaliação 3", width: 1170, height: 903 },
+  { src: "/dp4.webp", alt: "Avaliação 4", width: 1170, height: 1434 },
+  { src: "/dp2.webp", alt: "Avaliação 5", width: 1170, height: 1525 },
 ];
 
 export default function Home() {
@@ -296,24 +302,22 @@ export default function Home() {
           </div>
 
           <div className={styles.testGrid}>
-            <div className={styles.testCard}>
-              <div className={styles.testStars}><Star /><Star /><Star /><Star /><Star /></div>
-              <p className={styles.testQuote}>&ldquo;Material riquíssimo gratidão❤️&rdquo;</p>
-              <p className={styles.testAuthor}>Dra. Luciana Garcia</p>
-              <p className={styles.testRole}>Psicóloga <span className={styles.verified}><CheckCircle2 size={12} className={styles.verifiedIcon} /> Verificada</span></p>
-            </div>
-            <div className={styles.testCard}>
-              <div className={styles.testStars}><Star /><Star /><Star /><Star /><Star /></div>
-              <p className={styles.testQuote}>&ldquo;Pessoal comprem.&rdquo;</p>
-              <p className={styles.testAuthor}>Dr. Gabriel Santos</p>
-              <p className={styles.testRole}>Psiquiatra <span className={styles.verified}><CheckCircle2 size={12} className={styles.verifiedIcon} /> Verificado</span></p>
-            </div>
-            <div className={styles.testCard}>
-              <div className={styles.testStars}><Star /><Star /><Star /><Star /><Star /></div>
-              <p className={styles.testQuote}>&ldquo;Olá boa noite, adquiri os protocolos somáticos e achei o conteudo excelente! Gostei bastante da estrutura e da qualidade de cada protocolo Agardeço desde já!&rdquo;</p>
-              <p className={styles.testAuthor}>Dra. Fernanda Oliveira</p>
-              <p className={styles.testRole}>Psicóloga Clínica <span className={styles.verified}><CheckCircle2 size={12} className={styles.verifiedIcon} /> Verificada</span></p>
-            </div>
+            {reviewImages.map((img, idx) => (
+              <div key={idx} className={styles.testCardImg}>
+                <Image
+                  src={img.src}
+                  alt={img.alt}
+                  width={img.width}
+                  height={img.height}
+                  quality={85}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  loading="lazy"
+                  placeholder="blur"
+                  blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjRjFFRkU4Ii8+PC9zdmc+"
+                  className={styles.reviewImg}
+                />
+              </div>
+            ))}
           </div>
         </div>
       </section>

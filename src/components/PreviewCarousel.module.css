@@ -4,8 +4,9 @@
 
 /* Desktop Grid Styles */
 .desktopGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 20px;
 }
 
@@ -153,12 +154,28 @@
   .mobileCarousel {
     display: block;
   }
+  .mobileCarousel .cardWrapper {
+    width: 100%;
+    max-width: 100%;
+    flex: 1 1 auto;
+  }
 }
 
 .cardWrapper {
   display: flex;
   flex-direction: column;
   height: 100%;
+  flex: 0 0 calc((100% - 60px) / 4);
+  max-width: calc((100% - 60px) / 4);
+  width: calc((100% - 60px) / 4);
+}
+
+@media (max-width: 1024px) and (min-width: 769px) {
+  .cardWrapper {
+    flex: 0 0 calc((100% - 40px) / 3);
+    max-width: calc((100% - 40px) / 3);
+    width: calc((100% - 40px) / 3);
+  }
 }
 
 .captionContainer {

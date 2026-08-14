@@ -305,15 +305,35 @@
 .bonusPriceOld { text-decoration: line-through; opacity: 0.6; }
 
 /* ── Depoimentos ── */
-.testGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-.testCard {
-  background: #fff; border: 1px solid var(--border-light);
-  border-radius: 6px; padding: 32px;
+.testGrid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  align-items: start;
 }
-.testStars { color: #E2A300; font-size: 1rem; letter-spacing: 2px; margin-bottom: 16px; }
-.testQuote { font-size: 0.95rem; font-style: italic; line-height: 1.55; margin-bottom: 20px; color: #333; }
-.testAuthor { font-size: 0.8rem; font-weight: 700; color: var(--text-on-light); }
-.testRole { font-size: 0.75rem; color: var(--text-secondary); margin-top: 2px; }
+.testCardImg {
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex: 0 0 calc((100% - 48px) / 3);
+  max-width: calc((100% - 48px) / 3);
+  width: calc((100% - 48px) / 3);
+}
+.testCardImg:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.09);
+}
+.reviewImg {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 16px;
+}
 
 /* ── Autoridade ── */
 .authText { font-size: 1.1rem; color: var(--text-on-dark-soft); line-height: 1.65; max-width: 780px; margin-bottom: 48px; }
@@ -375,13 +395,22 @@
 
 /* ── Responsive ── */
 @media (max-width: 1024px) {
-  .testGrid { grid-template-columns: 1fr; }
+  .testCardImg {
+    flex: 0 0 calc((100% - 20px) / 2);
+    max-width: calc((100% - 20px) / 2);
+    width: calc((100% - 20px) / 2);
+  }
   .metricsBar { grid-template-columns: 1fr; gap: 24px; text-align: center; }
   .audienceGrid { grid-template-columns: 1fr; }
-
 }
 
 @media (max-width: 768px) {
+  .testGrid { gap: 20px; }
+  .testCardImg {
+    flex: 0 0 100%;
+    max-width: 100%;
+    width: 100%;
+  }
   .section { padding: 64px 20px; }
   .sectionSm { padding: 56px 20px; }
   .hero { padding: 110px 20px 32px; }
