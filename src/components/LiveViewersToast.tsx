@@ -5,23 +5,19 @@ import styles from './LiveViewersToast.module.css';
 
 export default function LiveViewersToast() {
   const [isVisible, setIsVisible] = useState(false);
-  const [viewers, setViewers] = useState(0);
+  const [viewers, setViewers] = useState(() => Math.floor(Math.random() * (75 - 25 + 1)) + 25);
 
   useEffect(() => {
-    // Generate a believable random number of people currently on the page
-    const initialViewers = Math.floor(Math.random() * (75 - 25 + 1)) + 25;
-    setViewers(initialViewers);
-
-    // Wait 4 seconds before showing the toast, so it catches attention after initial read
+    // Aguarda 3 segundos antes de exibir o toast
     const showTimer = setTimeout(() => {
       setIsVisible(true);
-    }, 4000);
+    }, 3000);
 
-    // Make the number fluctuate slightly to seem more realistic/live
+    // Flutua suavemente o número de pessoas online a cada 6 segundos
     const fluctuateTimer = setInterval(() => {
       setViewers(prev => {
-        const change = Math.floor(Math.random() * 5) - 2; // -2 to +2
-        return Math.max(14, prev + change); // Ensure it doesn't drop to an unbelievably low number
+        const change = Math.floor(Math.random() * 5) - 2; // -2 a +2
+        return Math.max(14, prev + change);
       });
     }, 6000);
 

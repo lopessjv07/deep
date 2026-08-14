@@ -2,6 +2,7 @@ import Image from "next/image";
 import styles from "./page.module.css";
 import CountdownBar from "../components/CountdownBar";
 import LiveViewersToast from "../components/LiveViewersToast";
+import SalesToast from "../components/SalesToast";
 import PreviewCarousel from "../components/PreviewCarousel";
 
 import {
@@ -15,23 +16,10 @@ import {
   Leaf,
   FileText,
   BarChart2,
-  Gift,
   CheckCircle2
 } from "lucide-react";
 
-const IconX = () => (
-  <svg className={styles.painIcon} width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-    <circle cx="12" cy="12" r="10" strokeWidth="1.5" />
-    <line x1="15" y1="9" x2="9" y2="15" />
-    <line x1="9" y1="9" x2="15" y2="15" />
-  </svg>
-);
 
-const IconCheck = () => (
-  <svg className={styles.checkIcon} width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-    <polyline points="20 6 9 17 4 12" />
-  </svg>
-);
 
 const IconPlus = () => (
   <svg className={styles.faqIcon} width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -89,6 +77,7 @@ export default function Home() {
     <>
       <CountdownBar />
       <LiveViewersToast />
+      <SalesToast />
 
 
       <main>
@@ -118,7 +107,7 @@ export default function Home() {
               width={900} 
               height={1100} 
               className={styles.mockupImage} 
-              preload
+              priority
               quality={75} 
               sizes="(max-width: 768px) 90vw, (max-width: 1024px) 50vw, 420px" 
               placeholder="blur" 
@@ -196,7 +185,7 @@ export default function Home() {
             <p className={styles.secSub}>Da regulação do sistema nervoso ao processamento completo do trauma somático.</p>
           </div>
 
-          <PreviewCarousel />
+          <PreviewCarousel imagePrefix="a" imageExtension="webp" count={7} altPrefix="Protocolo" />
 
           <div className={styles.materialContents}>
             <div className={styles.materialItem}>
@@ -309,21 +298,21 @@ export default function Home() {
           <div className={styles.testGrid}>
             <div className={styles.testCard}>
               <div className={styles.testStars}><Star /><Star /><Star /><Star /><Star /></div>
-              <p className={styles.testQuote}>&ldquo;Destravou pacientes que estavam parados há meses. Vale cada centavo.&rdquo;</p>
-              <p className={styles.testAuthor}>Ana M.</p>
+              <p className={styles.testQuote}>&ldquo;Material riquíssimo gratidão❤️&rdquo;</p>
+              <p className={styles.testAuthor}>Dra. Luciana Garcia</p>
               <p className={styles.testRole}>Psicóloga <span className={styles.verified}><CheckCircle2 size={12} className={styles.verifiedIcon} /> Verificada</span></p>
             </div>
             <div className={styles.testCard}>
               <div className={styles.testStars}><Star /><Star /><Star /><Star /><Star /></div>
-              <p className={styles.testQuote}>&ldquo;O guia de dissociação me salvou em várias sessões. Nunca mais entro em sessão sem ele.&rdquo;</p>
-              <p className={styles.testAuthor}>Carlos T.</p>
+              <p className={styles.testQuote}>&ldquo;Pessoal comprem.&rdquo;</p>
+              <p className={styles.testAuthor}>Dr. Gabriel Santos</p>
               <p className={styles.testRole}>Psiquiatra <span className={styles.verified}><CheckCircle2 size={12} className={styles.verifiedIcon} /> Verificado</span></p>
             </div>
             <div className={styles.testCard}>
               <div className={styles.testStars}><Star /><Star /><Star /><Star /><Star /></div>
-              <p className={styles.testQuote}>&ldquo;Material riquíssimo. Uso tanto no individual quanto em grupo. As fichas de rastreamento são ouro.&rdquo;</p>
-              <p className={styles.testAuthor}>Beatriz S.</p>
-              <p className={styles.testRole}>Terapeuta Corporal <span className={styles.verified}><CheckCircle2 size={12} className={styles.verifiedIcon} /> Verificada</span></p>
+              <p className={styles.testQuote}>&ldquo;Olá boa noite, adquiri os protocolos somáticos e achei o conteudo excelente! Gostei bastante da estrutura e da qualidade de cada protocolo Agardeço desde já!&rdquo;</p>
+              <p className={styles.testAuthor}>Dra. Fernanda Oliveira</p>
+              <p className={styles.testRole}>Psicóloga Clínica <span className={styles.verified}><CheckCircle2 size={12} className={styles.verifiedIcon} /> Verificada</span></p>
             </div>
           </div>
         </div>

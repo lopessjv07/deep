@@ -1,36 +1,38 @@
 'use client';
 
 import { useState } from 'react';
-import { ChevronLeft, ChevronRight, Brain, Sparkles, BookOpen, ShieldAlert } from 'lucide-react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import styles from './PreviewCarousel.module.css';
 
 import Image from 'next/image';
-
-const CARDS = [1, 2, 3, 4];
 
 export default function PreviewCarousel({
   imagePrefix = 'material',
   imageExtension = 'webp',
   altPrefix = 'Página',
   aspectRatio = '1 / 1.414',
+  count = 4,
   captions = []
 }: {
   imagePrefix?: string;
   imageExtension?: string;
   altPrefix?: string;
   aspectRatio?: string;
+  count?: number;
   captions?: { title: string; text: string }[];
 } = {}) {
+  const cards = Array.from({ length: count }, (_, i) => i + 1);
+
   const [currentIndex, setCurrentIndex] = useState(0);
   const [touchStartX, setTouchStartX] = useState<number | null>(null);
   const [touchEndX, setTouchEndX] = useState<number | null>(null);
 
   const prevSlide = () => {
-    setCurrentIndex((prev) => (prev === 0 ? CARDS.length - 1 : prev - 1));
+    setCurrentIndex((prev) => (prev === 0 ? cards.length - 1 : prev - 1));
   };
 
   const nextSlide = () => {
-    setCurrentIndex((prev) => (prev === CARDS.length - 1 ? 0 : prev + 1));
+    setCurrentIndex((prev) => (prev === cards.length - 1 ? 0 : prev + 1));
   };
 
   // Touch handlers for mobile swipe
@@ -91,12 +93,11 @@ export default function PreviewCarousel({
 
   const blurPlaceholder = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjU2NiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjRjFFRkU4Ii8+PC9zdmc+";
 
-
   return (
     <div className={styles.container}>
       {/* Grid visible on desktop */}
       <div className={styles.desktopGrid}>
-        {CARDS.map((card, idx) => (
+        {cards.map((card, idx) => (
           <div key={idx} className={styles.cardWrapper}>
             <div className={styles.previewSlot} style={{ aspectRatio }}>
               <Image
@@ -106,7 +107,7 @@ export default function PreviewCarousel({
                 height={707}
                 className={styles.previewImg}
                 quality={65}
-                sizes="(max-width: 1024px) 0px, 25vw"
+                sizes="(max-width: 1024px) 0px, (max-width: 1200px) 33vw, 25vw"
                 loading="lazy"
                 placeholder="blur"
                 blurDataURL={blurPlaceholder}
@@ -144,7 +145,7 @@ export default function PreviewCarousel({
             className={styles.carouselTrack}
             style={{ transform: `translateX(-${currentIndex * 100}%)` }}
           >
-            {CARDS.map((card, idx) => (
+            {cards.map((card, idx) => (
               <div key={idx} className={styles.carouselSlide}>
                 <div className={styles.cardWrapper}>
                   <div className={styles.previewSlot} style={{ aspectRatio }}>
@@ -180,7 +181,7 @@ export default function PreviewCarousel({
 
         {/* Indicators */}
         <div className={styles.indicators}>
-          {CARDS.map((_, idx) => (
+          {cards.map((_, idx) => (
             <button
               key={idx}
               className={`${styles.dot} ${currentIndex === idx ? styles.dotActive : ''}`}

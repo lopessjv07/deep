@@ -11,37 +11,39 @@ export default function CountdownBar() {
     const now = Date.now();
     const storedTarget = localStorage.getItem(STORAGE_KEY);
 
-    let timeLeftCalc = 0;
+    let targetTime = 0;
     if (storedTarget) {
-      const targetTime = parseInt(storedTarget, 10);
-      if (targetTime > now) {
-        timeLeftCalc = Math.floor((targetTime - now) / 1000);
-      }
+      targetTime = parseInt(storedTarget, 10);
     }
 
-    // Se o tempo restante for menor que 10 minutos (600s), gera um novo tempo
-    if (timeLeftCalc < 600) {
-      // Gera tempo aleatório entre 11 min (660s) e 16 min (960s)
+    if (!targetTime || targetTime <= now || (targetTime - now) < 600000) {
       const randomSeconds = Math.floor(Math.random() * (960 - 660 + 1)) + 660;
-      const newTarget = now + randomSeconds * 1000;
-      localStorage.setItem(STORAGE_KEY, newTarget.toString());
-      setTimeLeft(randomSeconds);
-    } else {
-      setTimeLeft(timeLeftCalc);
+      targetTime = now + randomSeconds * 1000;
+      localStorage.setItem(STORAGE_KEY, targetTime.toString());
     }
-  }, []);
 
-  useEffect(() => {
-    if (timeLeft === null || timeLeft <= 0) return;
+    const calculateRemaining = () => Math.max(0, Math.floor((targetTime - Date.now()) / 1000));
+
+    // Atualiza o estado em microtask para evitar erro de setState síncrono no efeito
+    const startTimer = setTimeout(() => {
+      setTimeLeft(calculateRemaining());
+    }, 0);
 
     const intervalId = setInterval(() => {
-      setTimeLeft(prev => (prev !== null && prev > 0 ? prev - 1 : 0));
+      const remaining = calculateRemaining();
+      setTimeLeft(remaining);
+      if (remaining <= 0) {
+        clearInterval(intervalId);
+      }
     }, 1000);
 
-    return () => clearInterval(intervalId);
-  }, [timeLeft]);
+    return () => {
+      clearTimeout(startTimer);
+      clearInterval(intervalId);
+    };
+  }, []);
 
-  // Render an empty banner to prevent layout shift before hydration
+  // Previne layout shift antes da hidratação no cliente
   if (timeLeft === null) {
     return <div className={styles.banner}></div>;
   }
