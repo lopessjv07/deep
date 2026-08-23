@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import styles from './PreviewCarousel.module.css';
 
@@ -24,8 +24,9 @@ export default function PreviewCarousel({
   const cards = Array.from({ length: count }, (_, i) => i + 1);
 
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [touchStartX, setTouchStartX] = useState<number | null>(null);
-  const [touchEndX, setTouchEndX] = useState<number | null>(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const touchStartX = useRef<number | null>(null);
+  const touchEndX = useRef<number | null>(null);
 
   const prevSlide = () => {
     setCurrentIndex((prev) => (prev === 0 ? cards.length - 1 : prev - 1));
@@ -37,17 +38,21 @@ export default function PreviewCarousel({
 
   // Touch handlers for mobile swipe
   const handleTouchStart = (e: React.TouchEvent) => {
-    setTouchStartX(e.targetTouches[0].clientX);
-    setTouchEndX(e.targetTouches[0].clientX);
+    touchStartX.current = e.targetTouches[0].clientX;
+    touchEndX.current = e.targetTouches[0].clientX;
+    setIsDragging(true);
   };
 
   const handleTouchMove = (e: React.TouchEvent) => {
-    setTouchEndX(e.targetTouches[0].clientX);
+    touchEndX.current = e.targetTouches[0].clientX;
   };
 
   const handleTouchEnd = () => {
-    if (touchStartX === null || touchEndX === null) return;
-    const distance = touchStartX - touchEndX;
+    if (touchStartX.current === null || touchEndX.current === null) {
+      setIsDragging(false);
+      return;
+    }
+    const distance = touchStartX.current - touchEndX.current;
     const minSwipeDistance = 50;
 
     if (distance > minSwipeDistance) {
@@ -56,24 +61,29 @@ export default function PreviewCarousel({
       prevSlide();
     }
 
-    setTouchStartX(null);
-    setTouchEndX(null);
+    touchStartX.current = null;
+    touchEndX.current = null;
+    setIsDragging(false);
   };
 
   // Mouse drag handlers for desktop/devtools simulation
   const handleMouseDown = (e: React.MouseEvent) => {
-    setTouchStartX(e.clientX);
-    setTouchEndX(e.clientX);
+    touchStartX.current = e.clientX;
+    touchEndX.current = e.clientX;
+    setIsDragging(true);
   };
 
   const handleMouseMove = (e: React.MouseEvent) => {
-    if (touchStartX === null) return;
-    setTouchEndX(e.clientX);
+    if (touchStartX.current === null) return;
+    touchEndX.current = e.clientX;
   };
 
   const handleMouseUp = () => {
-    if (touchStartX === null || touchEndX === null) return;
-    const distance = touchStartX - touchEndX;
+    if (touchStartX.current === null || touchEndX.current === null) {
+      setIsDragging(false);
+      return;
+    }
+    const distance = touchStartX.current - touchEndX.current;
     const minSwipeDistance = 50;
 
     if (distance > minSwipeDistance) {
@@ -82,13 +92,15 @@ export default function PreviewCarousel({
       prevSlide();
     }
 
-    setTouchStartX(null);
-    setTouchEndX(null);
+    touchStartX.current = null;
+    touchEndX.current = null;
+    setIsDragging(false);
   };
 
   const handleMouseLeave = () => {
-    setTouchStartX(null);
-    setTouchEndX(null);
+    touchStartX.current = null;
+    touchEndX.current = null;
+    setIsDragging(false);
   };
 
   const blurPlaceholder = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjU2NiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjRjFFRkU4Ii8+PC9zdmc+";
@@ -106,8 +118,8 @@ export default function PreviewCarousel({
                 width={500}
                 height={707}
                 className={styles.previewImg}
-                quality={80}
-                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                quality={70}
+                sizes="(max-width: 768px) 90vw, (max-width: 1024px) 33vw, 280px"
                 loading="lazy"
                 placeholder="blur"
                 blurDataURL={blurPlaceholder}
@@ -139,7 +151,7 @@ export default function PreviewCarousel({
           onMouseMove={handleMouseMove}
           onMouseUp={handleMouseUp}
           onMouseLeave={handleMouseLeave}
-          style={{ cursor: touchStartX !== null ? 'grabbing' : 'grab' }}
+          style={{ cursor: isDragging ? 'grabbing' : 'grab' }}
         >
           <div 
             className={styles.carouselTrack}
@@ -155,8 +167,8 @@ export default function PreviewCarousel({
                       width={500}
                       height={707}
                       className={styles.previewImg}
-                      quality={80}
-                      sizes="(max-width: 768px) 90vw, 400px"
+                      quality={70}
+                      sizes="(max-width: 768px) 90vw, 360px"
                       loading={idx === currentIndex ? "eager" : "lazy"}
                       placeholder="blur"
                       blurDataURL={blurPlaceholder}

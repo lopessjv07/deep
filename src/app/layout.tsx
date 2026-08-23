@@ -30,8 +30,6 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://pay.kirvano.com" />
         <link rel="preconnect" href="https://cdn.utmify.com.br" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://cdn.utmify.com.br" />
-        {/* Preload Hero image so browser fetches it immediately during HTML parse */}
-        <link rel="preload" href="/imageHero2.webp" as="image" type="image/webp" fetchPriority="high" />
       </head>
       <body>
         <UtmifyScript />

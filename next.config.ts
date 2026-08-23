@@ -22,7 +22,7 @@ const nextConfig: NextConfig = {
     // Breakpoints de dispositivo alinhados com o layout do site
     deviceSizes: [640, 750, 828, 1080, 1200],
     // Tamanhos menores para imagens que não ocupam tela cheia
-    imageSizes: [128, 256, 384],
+    imageSizes: [128, 256, 384, 480],
     // Cache longo — imagens de marketing são estáticas
     minimumCacheTTL: 2678400, // 31 dias
   },

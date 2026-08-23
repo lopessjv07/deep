@@ -241,8 +241,8 @@ export default function Promo() {
                     alt={img.alt}
                     width={img.width}
                     height={img.height}
-                    quality={85}
-                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    quality={70}
+                    sizes="(max-width: 768px) 95vw, (max-width: 1024px) 45vw, 360px"
                     loading="lazy"
                     placeholder="blur"
                     blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjRjFFRkU4Ii8+PC9zdmc+"
@@ -359,7 +359,7 @@ export default function Promo() {
               Garantia Incondicional — 7 dias
             </span>
             <div style={{ display: 'flex', justifyContent: 'center', margin: '20px 0 40px 0' }}>
-              <Image src="/bonus.webp" alt="Bônus" width={800} height={480} quality={75} sizes="(max-width: 768px) 90vw, 600px" placeholder="blur" blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjQ4MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMDQyQzUzIi8+PC9zdmc+" loading="lazy" style={{ width: '100%', maxWidth: '600px', height: 'auto', borderRadius: '25px' }} />
+              <Image src="/bonus.webp" alt="Bônus" width={800} height={480} quality={70} sizes="(max-width: 768px) 90vw, 560px" placeholder="blur" blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjQ4MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMDQyQzUzIi8+PC9zdmc+" loading="lazy" style={{ width: '100%', maxWidth: '600px', height: 'auto', borderRadius: '25px' }} />
             </div>
 
             <div className={styles.priceBlock}>
