@@ -120,12 +120,12 @@ export default function Promo() {
               <span className={`${styles.badge} ${styles.badgeDark}`}>Protocolos Somáticos & Regulação do Sistema Nervoso</span>
               
               <h1 className={styles.heroTitle}>
-                Por que dois terapeutas com a mesma formação cobram preços tão diferentes?
+                O método que separa terapeutas<br />
+                que cobram R$120 dos que cobram R$300.
               </h1>
               
               <p className={styles.heroSub}>
-                <strong>A resposta não está no currículo. Está no método.</strong><br />
-                90 Protocolos Somáticos organizados para diferentes estados do sistema nervoso, sem precisar criar tudo do zero.
+                90 Protocolos Somáticos prontos para aplicar.
               </p>
             </div>
 
