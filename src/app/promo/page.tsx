@@ -1,9 +1,8 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 import CountdownBar from "../../components/CountdownBar";
-import LiveViewersToast from "../../components/LiveViewersToast";
-import SalesToast from "../../components/SalesToast";
 import PreviewCarousel from "../../components/PreviewCarousel";
+import ToastsWrapper from "../../components/ToastsWrapper";
 
 const IconPlus = () => (
   <svg className={styles.faqIcon} width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -109,8 +108,7 @@ export default function Promo() {
   return (
     <>
       <CountdownBar />
-      <LiveViewersToast />
-      <SalesToast />
+      <ToastsWrapper />
 
       <div className={styles.promoTheme}><main>
         {/* 1 ─ HERO */}
@@ -137,6 +135,7 @@ export default function Promo() {
                 height={1100} 
                 className={styles.mockupImage} 
                 priority
+                fetchPriority="high"
                 quality={75} 
                 sizes="(max-width: 768px) 90vw, (max-width: 1024px) 50vw, 460px" 
                 placeholder="blur" 

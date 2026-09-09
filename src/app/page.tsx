@@ -1,9 +1,8 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 import CountdownBar from "../components/CountdownBar";
-import LiveViewersToast from "../components/LiveViewersToast";
-import SalesToast from "../components/SalesToast";
 import PreviewCarousel from "../components/PreviewCarousel";
+import ToastsWrapper from "../components/ToastsWrapper";
 
 import {
   Brain,
@@ -82,8 +81,7 @@ export default function Home() {
   return (
     <>
       <CountdownBar />
-      <LiveViewersToast />
-      <SalesToast />
+      <ToastsWrapper />
 
 
       <main>
@@ -114,6 +112,7 @@ export default function Home() {
               height={1100} 
               className={styles.mockupImage} 
               priority
+              fetchPriority="high"
               quality={75} 
               sizes="(max-width: 768px) 90vw, (max-width: 1024px) 50vw, 420px" 
               placeholder="blur" 

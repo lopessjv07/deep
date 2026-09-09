@@ -311,6 +311,8 @@
   justify-content: center;
   gap: 24px;
   align-items: start;
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 1200px;
 }
 .testCardImg {
   background: #ffffff;
@@ -374,7 +376,15 @@
 .trustItem { display: flex; align-items: center; gap: 6px; font-size: 0.78rem; color: var(--text-on-dark-soft); }
 
 /* ── FAQ ── */
-.faqList { max-width: 720px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+.faqList {
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 400px;
+}
 .faqItem { border: 1px solid var(--border-light); border-radius: 4px; background: transparent; transition: background 0.2s; }
 .faqItem[open] { background: #fff; border-color: var(--text-secondary); }
 .faqQ {

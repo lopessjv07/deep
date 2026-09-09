@@ -4,6 +4,12 @@ const nextConfig: NextConfig = {
   // Habilita o compilador do React para otimização automática de renderização
   reactCompiler: true,
 
+  // Remove o cabeçalho X-Powered-By para economizar bytes e aumentar segurança
+  poweredByHeader: false,
+
+  // Compressão gzip/brotli ativa
+  compress: true,
+
   // Gera um servidor standalone mínimo para deploy Docker
   output: "standalone",
 

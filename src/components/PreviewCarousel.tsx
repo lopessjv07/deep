@@ -170,6 +170,7 @@ export default function PreviewCarousel({
                       quality={70}
                       sizes="(max-width: 768px) 90vw, 360px"
                       loading={idx === currentIndex ? "eager" : "lazy"}
+                      fetchPriority={idx === currentIndex ? "high" : "low"}
                       placeholder="blur"
                       blurDataURL={blurPlaceholder}
                       decoding="async"
