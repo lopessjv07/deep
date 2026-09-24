@@ -124,7 +124,45 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 2 ─ BENEFÍCIOS */}
+      {/* 2 ─ AMOSTRA */}
+      <section className={`${styles.sectionSm} ${styles.light}`} style={{ borderTop: "1px solid var(--border-light)" }}>
+        <div className={styles.wrap}>
+          <div className={`${styles.secHead} ${styles.secHeadCenter}`}>
+            <h2 className={styles.secTitle}>Veja como é o material por dentro:</h2>
+            <p className={styles.secSub}>Da regulação do sistema nervoso ao processamento completo do trauma somático.</p>
+          </div>
+
+          <PreviewCarousel imagePrefix="a" imageExtension="webp" count={7} altPrefix="Protocolo" />
+
+          <div className={styles.materialContents}>
+            <div className={styles.materialItem}>
+              <Dna size={18} className={styles.materialIcon} />
+              <span><strong>Protocolos Simpáticos</strong> — Para estados de hiperativação, luta e fuga</span>
+            </div>
+            <div className={styles.materialItem}>
+              <Moon size={18} className={styles.materialIcon} />
+              <span><strong>Protocolos Dorsais</strong> — Para colapso, congelamento e dissociação profunda</span>
+            </div>
+            <div className={styles.materialItem}>
+              <Leaf size={18} className={styles.materialIcon} />
+              <span><strong>Protocolos Ventrais</strong> — Para ancoragem, presença e reconexão segura</span>
+            </div>
+            <div className={styles.materialItem}>
+              <FileText size={18} className={styles.materialIcon} />
+              <span><strong>Scripts de Fala do Terapeuta</strong> — Prontos para uso, sessão a sessão</span>
+            </div>
+            <div className={styles.materialItem}>
+              <BarChart2 size={18} className={styles.materialIcon} />
+              <span><strong>Fichas de Rastreamento Somático</strong> — Para mapear evolução com precisão clínica</span>
+            </div>
+            <div className={styles.materialExtra}>
+              E mais: Tabela de respostas fisiológicas, guia de avaliação rápida, manejo de dissociação e regulação do nervo vago.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 3 ─ BENEFÍCIOS */}
       <section className={`${styles.section} ${styles.light}`}>
         <div className={styles.wrap}>
           <div className={styles.secHead}>
@@ -164,7 +202,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 3 ─ AVISO IMPORTANTE + PARA QUEM É */}
+      {/* 4 ─ AVISO IMPORTANTE + PARA QUEM É */}
       <section className={`${styles.sectionSm} ${styles.light}`} style={{ borderTop: "1px solid var(--border-light)" }}>
         <div className={styles.wrap}>
           <div className={styles.importantNotice}>
@@ -178,44 +216,6 @@ export default function Home() {
             <p className={styles.importantText}>
               Se você é psicólogo, psiquiatra, terapeuta ou qualquer profissional que trabalha com sofrimento humano, esses protocolos vão se tornar sua ferramenta de maior impacto — especialmente com pacientes que verbalizaram tudo e ainda assim não se moveram.
             </p>
-          </div>
-        </div>
-      </section>
-
-      {/* 4 ─ AMOSTRA */}
-      <section className={`${styles.sectionSm} ${styles.light}`} style={{ borderTop: "1px solid var(--border-light)" }}>
-        <div className={styles.wrap}>
-          <div className={`${styles.secHead} ${styles.secHeadCenter}`}>
-            <h2 className={styles.secTitle}>Veja como é o material por dentro:</h2>
-            <p className={styles.secSub}>Da regulação do sistema nervoso ao processamento completo do trauma somático.</p>
-          </div>
-
-          <PreviewCarousel imagePrefix="a" imageExtension="webp" count={7} altPrefix="Protocolo" />
-
-          <div className={styles.materialContents}>
-            <div className={styles.materialItem}>
-              <Dna size={18} className={styles.materialIcon} />
-              <span><strong>Protocolos Simpáticos</strong> — Para estados de hiperativação, luta e fuga</span>
-            </div>
-            <div className={styles.materialItem}>
-              <Moon size={18} className={styles.materialIcon} />
-              <span><strong>Protocolos Dorsais</strong> — Para colapso, congelamento e dissociação profunda</span>
-            </div>
-            <div className={styles.materialItem}>
-              <Leaf size={18} className={styles.materialIcon} />
-              <span><strong>Protocolos Ventrais</strong> — Para ancoragem, presença e reconexão segura</span>
-            </div>
-            <div className={styles.materialItem}>
-              <FileText size={18} className={styles.materialIcon} />
-              <span><strong>Scripts de Fala do Terapeuta</strong> — Prontos para uso, sessão a sessão</span>
-            </div>
-            <div className={styles.materialItem}>
-              <BarChart2 size={18} className={styles.materialIcon} />
-              <span><strong>Fichas de Rastreamento Somático</strong> — Para mapear evolução com precisão clínica</span>
-            </div>
-            <div className={styles.materialExtra}>
-              E mais: Tabela de respostas fisiológicas, guia de avaliação rápida, manejo de dissociação e regulação do nervo vago.
-            </div>
           </div>
         </div>
       </section>
