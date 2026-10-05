@@ -8,16 +8,16 @@ export default function LandingPage() {
           <div className="animate-fade-in">
             <div className="stars">★ ★ ★ ★ ★</div>
             <div className="reviews-count">+215 avaliações</div>
-            
+
             <h1 className="hero-title">
               <span className="text-highlight">Protocolo de Diferenciação:</span><br />
               Manejo de Comportamento no TEA Nível 2 + TOD
             </h1>
-            
+
             <p className="hero-subtitle">
               <em>O método para saber, em segundos, se aquela crise é sensorial ou é oposição — e o que fazer em cada uma sem reforçar o padrão errado.</em>
             </p>
-            
+
             <div className="alert-box">
               <div className="alert-icon">⚠️</div>
               <div>
@@ -29,26 +29,26 @@ export default function LandingPage() {
 
         <section className="container section-spacing animate-fade-in" style={{ animationDelay: '0.1s' }}>
           <h2 className="section-title">O que você vai conseguir com este material</h2>
-          
+
           <div className="features-grid">
             <div className="feature-card card">
               <div className="feature-icon">🧩</div>
               <h3 className="feature-title">Protocolo de Triagem Imediata</h3>
               <p className="feature-desc">Descubra em menos de 2 minutos se o comportamento é sensorial (TEA), aprendido (TOD) ou misto — antes de reagir.</p>
             </div>
-            
+
             <div className="feature-card card">
               <div className="feature-icon">🛑</div>
               <h3 className="feature-title">Fim do Reforço Sem Querer</h3>
               <p className="feature-desc">Pare de aplicar acomodação onde precisa de limite (e limite onde precisa de acolhimento) — o erro que mantém os dois padrões presos.</p>
             </div>
-            
+
             <div className="feature-card card">
               <div className="feature-icon">⚡</div>
               <h3 className="feature-title">Scripts Prontos Para a Crise</h3>
               <p className="feature-desc">Frases e ações exatas para os primeiros 3 minutos de uma crise, sem depender de "pensar rápido" no calor do momento.</p>
             </div>
-            
+
             <div className="feature-card card">
               <div className="feature-icon">📋</div>
               <h3 className="feature-title">Linguagem Única</h3>
@@ -74,7 +74,7 @@ export default function LandingPage() {
         <section className="container section-spacing">
           <h2 className="section-title">Veja como é o material por dentro</h2>
           <p style={{ textAlign: 'center', color: 'var(--text-secondary)', marginBottom: '3rem' }}>Da triagem do comportamento à generalização entre ambientes.</p>
-          
+
           <ul className="content-list">
             <li>
               <div className="feature-icon">🧩</div>
@@ -121,7 +121,7 @@ export default function LandingPage() {
           <p style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto', color: 'var(--text-secondary)' }}>
             Não são orientações genéricas. É um protocolo de decisão: antes de qualquer intervenção, você identifica a origem real do comportamento — e só então escolhe a estratégia certa.
           </p>
-          
+
           <div className="quote-block">
             "Um comportamento sem função identificada é apenas um sintoma tratado no escuro."
           </div>
@@ -172,7 +172,7 @@ export default function LandingPage() {
             <h2 className="section-title" style={{ marginBottom: '1rem' }}>Preço promocional de lançamento</h2>
             <div className="price-old">De R$ 97,00</div>
             <div className="price-new">
-              <span className="price-currency">R$</span>37,90
+              <span className="price-currency">R$</span>47,90
             </div>
             <a href="#" className="cta-button">CLIQUE AQUI E BAIXE AGORA</a>
             <p className="guarantee-text">Acesso imediato. Garantia de 7 dias.</p>
@@ -185,7 +185,7 @@ export default function LandingPage() {
             <p style={{ fontWeight: '600' }}>4.8/5 · 61 avaliações</p>
             <a href="#" style={{ color: 'var(--accent-primary)', textDecoration: 'underline' }}>Escreva uma avaliação</a>
           </div>
-          
+
           <div className="testimonials-grid">
             <div className="card testimonial-card">
               <div className="testimonial-header">
@@ -198,7 +198,7 @@ export default function LandingPage() {
               <div className="stars" style={{ fontSize: '1rem', marginBottom: '1rem' }}>★ ★ ★ ★ ★</div>
               <p className="testimonial-text">"Eu vivia confundindo crise sensorial com birra de propósito. O protocolo de triagem mudou completamente como eu ajo nos primeiros segundos."</p>
             </div>
-            
+
             <div className="card testimonial-card">
               <div className="testimonial-header">
                 <div className="reviewer-info">
@@ -210,7 +210,7 @@ export default function LandingPage() {
               <div className="stars" style={{ fontSize: '1rem', marginBottom: '1rem' }}>★ ★ ★ ★ ★</div>
               <p className="testimonial-text">"Sou professor de AEE, uso com 3 famílias diferentes. Finalmente um material que fala a mesma língua da terapia ABA."</p>
             </div>
-            
+
             <div className="card testimonial-card">
               <div className="testimonial-header">
                 <div className="reviewer-info">
@@ -222,7 +222,7 @@ export default function LandingPage() {
               <div className="stars" style={{ fontSize: '1rem', marginBottom: '1rem' }}>★ ★ ★ ★ ★</div>
               <p className="testimonial-text">"Os scripts de crise salvaram meu domingo mais difícil em meses. Simples, direto, sem enrolação."</p>
             </div>
-            
+
             <div className="card testimonial-card">
               <div className="testimonial-header">
                 <div className="reviewer-info">
