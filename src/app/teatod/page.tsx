@@ -183,7 +183,7 @@ export default function LandingPage() {
             <div className="price-installments">
               ou <strong>5x de R$ 9,58</strong>
             </div>
-            <a href="#" className="cta-button">CLIQUE AQUI E BAIXE AGORA</a>
+            <a href="https://pay.kirvano.com/4941c501-fba2-4d30-a9a8-6ce1d9c6df27" className="cta-button">CLIQUE AQUI E BAIXE AGORA</a>
             <p className="guarantee-text">Acesso imediato e vitalício. Garantia de 7 dias.</p>
           </div>
         </section>
@@ -252,7 +252,7 @@ export default function LandingPage() {
             <p style={{ maxWidth: '600px', margin: '0 auto 2.5rem', color: 'var(--text-secondary)' }}>
               Se nas próximas 7 crises você não sentir mais clareza e mais controle sobre como agir, envie um e-mail e devolvemos cada centavo, sem perguntas.
             </p>
-            <a href="#" className="cta-button cta-secondary" style={{ padding: '1.25rem 4rem' }}>BAIXAR AGORA</a>
+            <a href="https://pay.kirvano.com/4941c501-fba2-4d30-a9a8-6ce1d9c6df27" className="cta-button cta-secondary" style={{ padding: '1.25rem 4rem' }}>BAIXAR AGORA</a>
           </div>
         </section>
 
