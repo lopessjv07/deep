@@ -1,4 +1,5 @@
 import './teatod.css';
+import ImageCarousel from './ImageCarousel';
 
 export default function LandingPage() {
   return (
@@ -23,6 +24,80 @@ export default function LandingPage() {
               <div>
                 <strong>AVISO IMPORTANTE:</strong> Se você não está disposto a parar de aplicar a mesma técnica para todos os comportamentos do seu filho, este material não é para você. Ele exige que você aprenda a diferenciar antes de agir — e isso muda a forma como você responde a cada crise a partir de hoje.
               </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="container section-spacing">
+          <h2 className="section-title">Veja como é o material por dentro</h2>
+          <p style={{ textAlign: 'center', color: 'var(--text-secondary)', marginBottom: '3rem' }}>Da triagem do comportamento à generalização entre ambientes.</p>
+
+          <ul className="content-list">
+            <li>
+              <div className="feature-icon">🧩</div>
+              <div>
+                <strong style={{ color: 'var(--text-primary)', fontSize: '1.1rem' }}>Apostila 1 — Diferencie Antes de Agir</strong>
+                <p className="feature-desc">O protocolo de triagem TEA x TOD x misto</p>
+              </div>
+            </li>
+            <li>
+              <div className="feature-icon">🌊</div>
+              <div>
+                <strong style={{ color: 'var(--text-primary)', fontSize: '1.1rem' }}>Apostila 2 — Manejo Sensorial no Nível 2 de Suporte</strong>
+                <p className="feature-desc">Acomodação, comunicação alternativa, prevenção de crise</p>
+              </div>
+            </li>
+            <li>
+              <div className="feature-icon">🔄</div>
+              <div>
+                <strong style={{ color: 'var(--text-primary)', fontSize: '1.1rem' }}>Apostila 3 — ABA Aplicada ao TOD</strong>
+                <p className="feature-desc">Reforço, extinção, consistência sem punição</p>
+              </div>
+            </li>
+            <li>
+              <div className="feature-icon">⏱️</div>
+              <div>
+                <strong style={{ color: 'var(--text-primary)', fontSize: '1.1rem' }}>Apostila 4 — Scripts Para os Primeiros 3 Minutos de Crise</strong>
+              </div>
+            </li>
+            <li>
+              <div className="feature-icon">🗺️</div>
+              <div>
+                <strong style={{ color: 'var(--text-primary)', fontSize: '1.1rem' }}>Apostila 5 — Rotina e Generalização</strong>
+                <p className="feature-desc">Mantendo ganhos em casa, escola e clínica</p>
+              </div>
+            </li>
+          </ul>
+        </section>
+
+        <section className="container section-spacing">
+          <ImageCarousel />
+        </section>
+
+        <section className="container section-spacing">
+          <h2 className="section-title">A base técnica do nosso material</h2>
+          <p style={{ marginBottom: '1.5rem', textAlign: 'center', maxWidth: '800px', margin: '0 auto 1.5rem' }}>
+            Este protocolo cruza os princípios da <strong>Análise do Comportamento Aplicada (ABA)</strong> com critérios de avaliação funcional usados para diferenciar origem sensorial de origem comportamental — a mesma lógica usada em avaliações como o VB-MAPP, adaptada para uso prático no dia a dia.
+          </p>
+          <p style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto', color: 'var(--text-secondary)' }}>
+            Não são orientações genéricas. É um protocolo de decisão: antes de qualquer intervenção, você identifica a origem real do comportamento — e só então escolhe a estratégia certa.
+          </p>
+
+          <div className="quote-block">
+            "Um comportamento sem função identificada é apenas um sintoma tratado no escuro."
+          </div>
+        </section>
+
+        <section className="container section-spacing">
+          <h2 className="section-title">Para quem é?</h2>
+          <div className="features-grid">
+            <div className="card">
+              <h3 className="feature-title" style={{ marginBottom: '1rem', color: 'var(--accent-primary)' }}>Pais e cuidadores</h3>
+              <p className="feature-desc">De crianças de 4 a 10 anos com TEA nível 2 de suporte que também apresentam oposição, desafio ou traços de TOD — cansados de aplicar técnicas de autismo que "não funcionam" porque, naquele momento, o comportamento não era sensorial.</p>
+            </div>
+            <div className="card">
+              <h3 className="feature-title" style={{ marginBottom: '1rem', color: 'var(--accent-primary)' }}>Profissionais</h3>
+              <p className="feature-desc">Professores de AEE, acompanhantes terapêuticos e terapeutas que precisam de uma linguagem comum com a família para não perder consistência entre sessão, escola e casa.</p>
             </div>
           </div>
         </section>
@@ -72,76 +147,6 @@ export default function LandingPage() {
         </section>
 
         <section className="container section-spacing">
-          <h2 className="section-title">Veja como é o material por dentro</h2>
-          <p style={{ textAlign: 'center', color: 'var(--text-secondary)', marginBottom: '3rem' }}>Da triagem do comportamento à generalização entre ambientes.</p>
-
-          <ul className="content-list">
-            <li>
-              <div className="feature-icon">🧩</div>
-              <div>
-                <strong style={{ color: 'var(--text-primary)', fontSize: '1.1rem' }}>Apostila 1 — Diferencie Antes de Agir</strong>
-                <p className="feature-desc">O protocolo de triagem TEA x TOD x misto</p>
-              </div>
-            </li>
-            <li>
-              <div className="feature-icon">🌊</div>
-              <div>
-                <strong style={{ color: 'var(--text-primary)', fontSize: '1.1rem' }}>Apostila 2 — Manejo Sensorial no Nível 2 de Suporte</strong>
-                <p className="feature-desc">Acomodação, comunicação alternativa, prevenção de crise</p>
-              </div>
-            </li>
-            <li>
-              <div className="feature-icon">🔄</div>
-              <div>
-                <strong style={{ color: 'var(--text-primary)', fontSize: '1.1rem' }}>Apostila 3 — ABA Aplicada ao TOD</strong>
-                <p className="feature-desc">Reforço, extinção, consistência sem punição</p>
-              </div>
-            </li>
-            <li>
-              <div className="feature-icon">⏱️</div>
-              <div>
-                <strong style={{ color: 'var(--text-primary)', fontSize: '1.1rem' }}>Apostila 4 — Scripts Para os Primeiros 3 Minutos de Crise</strong>
-              </div>
-            </li>
-            <li>
-              <div className="feature-icon">🗺️</div>
-              <div>
-                <strong style={{ color: 'var(--text-primary)', fontSize: '1.1rem' }}>Apostila 5 — Rotina e Generalização</strong>
-                <p className="feature-desc">Mantendo ganhos em casa, escola e clínica</p>
-              </div>
-            </li>
-          </ul>
-        </section>
-
-        <section className="container section-spacing">
-          <h2 className="section-title">A base técnica do nosso material</h2>
-          <p style={{ marginBottom: '1.5rem', textAlign: 'center', maxWidth: '800px', margin: '0 auto 1.5rem' }}>
-            Este protocolo cruza os princípios da <strong>Análise do Comportamento Aplicada (ABA)</strong> com critérios de avaliação funcional usados para diferenciar origem sensorial de origem comportamental — a mesma lógica usada em avaliações como o VB-MAPP, adaptada para uso prático no dia a dia.
-          </p>
-          <p style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto', color: 'var(--text-secondary)' }}>
-            Não são orientações genéricas. É um protocolo de decisão: antes de qualquer intervenção, você identifica a origem real do comportamento — e só então escolhe a estratégia certa.
-          </p>
-
-          <div className="quote-block">
-            "Um comportamento sem função identificada é apenas um sintoma tratado no escuro."
-          </div>
-        </section>
-
-        <section className="container section-spacing">
-          <h2 className="section-title">Para quem é?</h2>
-          <div className="features-grid">
-            <div className="card">
-              <h3 className="feature-title" style={{ marginBottom: '1rem', color: 'var(--accent-primary)' }}>Pais e cuidadores</h3>
-              <p className="feature-desc">De crianças de 4 a 10 anos com TEA nível 2 de suporte que também apresentam oposição, desafio ou traços de TOD — cansados de aplicar técnicas de autismo que "não funcionam" porque, naquele momento, o comportamento não era sensorial.</p>
-            </div>
-            <div className="card">
-              <h3 className="feature-title" style={{ marginBottom: '1rem', color: 'var(--accent-primary)' }}>Profissionais</h3>
-              <p className="feature-desc">Professores de AEE, acompanhantes terapêuticos e terapeutas que precisam de uma linguagem comum com a família para não perder consistência entre sessão, escola e casa.</p>
-            </div>
-          </div>
-        </section>
-
-        <section className="container section-spacing">
           <h2 className="section-title">Adquira hoje e leve 4 bônus exclusivos</h2>
           <div className="features-grid">
             <div className="feature-card card">
@@ -170,12 +175,16 @@ export default function LandingPage() {
         <section className="container section-spacing">
           <div className="price-card">
             <h2 className="section-title" style={{ marginBottom: '1rem' }}>Preço promocional de lançamento</h2>
+            <div className="price-badge">♾️ Acesso vitalício · Pagamento único</div>
             <div className="price-old">De R$ 97,00</div>
             <div className="price-new">
               <span className="price-currency">R$</span>47,90
             </div>
+            <div className="price-installments">
+              ou <strong>5x de R$ 9,58</strong>
+            </div>
             <a href="#" className="cta-button">CLIQUE AQUI E BAIXE AGORA</a>
-            <p className="guarantee-text">Acesso imediato. Garantia de 7 dias.</p>
+            <p className="guarantee-text">Acesso imediato e vitalício. Garantia de 7 dias.</p>
           </div>
         </section>
 
