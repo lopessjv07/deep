@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from 'react';
 
-const IMAGES = Array.from({ length: 10 }, (_, i) => `/teatod/${i + 1}.jpeg`);
+const IMAGES = Array.from({ length: 9 }, (_, i) => `/teatod/${i + 2}.jpeg`);
 
 export default function ImageCarousel() {
   const trackRef = useRef<HTMLDivElement>(null);

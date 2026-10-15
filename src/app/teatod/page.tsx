@@ -19,6 +19,16 @@ export default function LandingPage() {
               <em>O método para saber, em segundos, se aquela crise é sensorial ou é oposição — e o que fazer em cada uma sem reforçar o padrão errado.</em>
             </p>
 
+            <div className="hero-image">
+              <img
+                src="/teatod/heromobile.png"
+                alt="Protocolo de Diferenciação: Manejo de Comportamento no TEA Nível 2 + TOD"
+                width={1013}
+                height={1238}
+                fetchPriority="high"
+              />
+            </div>
+
             <div className="alert-box">
               <div className="alert-icon">⚠️</div>
               <div>
