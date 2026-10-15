@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from 'react';
 
-const IMAGES = Array.from({ length: 9 }, (_, i) => `/teatod/${i + 2}.jpeg`);
+const IMAGES = Array.from({ length: 9 }, (_, i) => i + 2);
 
 export default function ImageCarousel() {
   const trackRef = useRef<HTMLDivElement>(null);
@@ -43,9 +43,18 @@ export default function ImageCarousel() {
       </button>
 
       <div className="carousel-track" ref={trackRef} onScroll={measure}>
-        {IMAGES.map((src, i) => (
-          <div className="carousel-slide" key={src}>
-            <img src={src} alt={`Página do material ${i + 1}`} loading="lazy" />
+        {IMAGES.map((n, i) => (
+          <div className="carousel-slide" key={n}>
+            <img
+              src={`/teatod/opt/${n}-800.webp`}
+              srcSet={`/teatod/opt/${n}-480.webp 480w, /teatod/opt/${n}-800.webp 800w`}
+              sizes="(max-width: 768px) 90vw, 300px"
+              alt={`Página do material ${i + 1}`}
+              width={1055}
+              height={1491}
+              loading="lazy"
+              decoding="async"
+            />
           </div>
         ))}
       </div>

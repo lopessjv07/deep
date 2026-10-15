@@ -21,11 +21,15 @@ export default function LandingPage() {
 
             <div className="hero-image">
               <img
-                src="/teatod/heromobile.png"
+                src="/teatod/opt/heromobile-760.webp"
+                srcSet="/teatod/opt/heromobile-480.webp 480w, /teatod/opt/heromobile-760.webp 760w, /teatod/opt/heromobile-1013.webp 1013w"
+                sizes="(max-width: 768px) 90vw, 630px"
                 alt="Protocolo de Diferenciação: Manejo de Comportamento no TEA Nível 2 + TOD"
                 width={1013}
                 height={1238}
                 fetchPriority="high"
+                loading="eager"
+                decoding="async"
               />
             </div>
 
