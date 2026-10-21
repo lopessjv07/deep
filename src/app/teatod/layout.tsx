@@ -1,4 +1,8 @@
 import type { Metadata } from "next";
+import { Inter, Nunito } from "next/font/google";
+
+const inter = Inter({ subsets: ["latin"], weight: ["400", "500", "600"], display: "swap", variable: "--font-inter" });
+const nunito = Nunito({ subsets: ["latin"], weight: ["400", "700", "800", "900"], display: "swap", variable: "--font-nunito" });
 
 export const metadata: Metadata = {
   title: "Protocolo de Diferenciação: Manejo de Comportamento",
@@ -11,7 +15,7 @@ export default function TeatodLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="teatod-layout">
+    <div className={`teatod-layout ${inter.variable} ${nunito.variable}`}>
       {children}
     </div>
   );

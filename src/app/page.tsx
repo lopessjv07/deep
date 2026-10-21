@@ -93,6 +93,14 @@ export default function Home() {
             <h1 className={styles.heroTitle}>
               +90 Protocolos Somáticos Para <span>Destravar o Corpo</span> Quando a Fala Chegou no Limite
             </h1>
+            <video
+              src="/copy.mp4"
+              poster="/copy-poster.webp"
+              controls
+              playsInline
+              preload="metadata"
+              style={{ width: '100%', maxWidth: '420px', aspectRatio: '900 / 1100', objectFit: 'cover', borderRadius: '25px', margin: '16px auto', display: 'block' }}
+            />
             <p className={styles.heroSub}>
               A primeira biblioteca clínica que une Neurobiologia e Teoria Polivagal em protocolos prontos para aplicar em sessão.
             </p>

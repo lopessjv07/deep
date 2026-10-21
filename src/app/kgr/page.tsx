@@ -65,8 +65,6 @@ export default function KgrPage() {
               O método simples para saber, em <strong>10 minutos por semana</strong>, para onde seu dinheiro está indo — e parar de
               trabalhar o ano inteiro para não sobrar nada no fim da safra.
             </p>
-            <Cta id="cta-hero">QUERO SABER SE MINHA ROÇA DÁ LUCRO</Cta>
-
             {/* 2. Aviso */}
             <div className="kgr-alert">
               <TriangleAlert className="kgr-alert-ic" size={28} />

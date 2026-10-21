@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Inter:wght@400;500;700&display=swap');
 
 .kgr {
   --bg: #fbf7ef;
@@ -13,11 +12,11 @@
   --radius: 18px;
   background: var(--bg);
   color: var(--ink);
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: var(--font-inter), system-ui, sans-serif;
   line-height: 1.6;
   min-height: 100vh;
 }
-.kgr h1, .kgr h2, .kgr h3 { font-family: 'Outfit', sans-serif; line-height: 1.2; margin: 0; }
+.kgr h1, .kgr h2, .kgr h3 { font-family: var(--font-outfit), sans-serif, sans-serif; line-height: 1.2; margin: 0; }
 .kgr p { margin: 0 0 1rem; }
 .kgr-wrap { max-width: 1040px; margin: 0 auto; padding: 0 1.25rem; }
 .kgr-narrow { max-width: 760px; }
@@ -44,7 +43,7 @@
   display: inline-block;
   background: linear-gradient(180deg, #f2bb3a, #d9961a);
   color: #2b2418;
-  font-family: 'Outfit', sans-serif;
+  font-family: var(--font-outfit), sans-serif, sans-serif;
   font-weight: 800;
   font-size: clamp(1rem, 2.4vw, 1.2rem);
   padding: 1.1rem 2rem;
@@ -99,7 +98,7 @@
   flex: 0 0 48px; height: 48px; border-radius: 50%;
   display: grid; place-items: center;
   background: var(--green); color: #fff;
-  font-family: 'Outfit'; font-weight: 800; font-size: 1.3rem;
+  font-family: var(--font-outfit), sans-serif; font-weight: 800; font-size: 1.3rem;
 }
 
 .kgr-carousel {
@@ -121,7 +120,7 @@
   margin: 2rem 0 0; padding: 1.5rem 2rem;
   border-left: 5px solid var(--gold);
   background: var(--card); border-radius: var(--radius);
-  font-family: 'Outfit'; font-size: 1.35rem; font-weight: 600;
+  font-family: var(--font-outfit), sans-serif; font-size: 1.35rem; font-weight: 600;
   color: var(--green-dark); font-style: italic;
 }
 
@@ -171,7 +170,7 @@
   padding: .4rem 1rem; border-radius: 999px; font-size: .9rem; margin-bottom: 1.5rem;
 }
 .kgr-from { color: #cfe0c8; font-size: 1.1rem; margin: 0; }
-.kgr-price { font-family: 'Outfit'; font-weight: 800; font-size: clamp(3rem, 9vw, 4.5rem); color: var(--gold); margin: 0; line-height: 1.1; }
+.kgr-price { font-family: var(--font-outfit), sans-serif; font-weight: 800; font-size: clamp(3rem, 9vw, 4.5rem); color: var(--gold); margin: 0; line-height: 1.1; }
 .kgr-install { color: #e6efe0; margin-bottom: 2rem; }
 .kgr-small { font-size: .9rem; color: #cfe0c8; margin: 1.25rem 0 0; }
 
@@ -190,7 +189,7 @@
   background: radial-gradient(circle, #f2bb3a, #c9861a);
   color: #2b2418; display: flex; flex-direction: column;
   align-items: center; justify-content: center;
-  font-family: 'Outfit'; font-weight: 800; letter-spacing: 2px;
+  font-family: var(--font-outfit), sans-serif; font-weight: 800; letter-spacing: 2px;
   box-shadow: 0 0 0 6px #fff, 0 0 0 9px var(--gold);
 }
 .kgr-badge span { font-size: 3rem; line-height: 1; }
