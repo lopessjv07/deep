@@ -38,9 +38,9 @@ const faq = [
 ];
 
 const depoimentos = [
-  { nome: '[Nome], [Cidade/UF]', prod: '[O que produz]', antes: '[Antes: "achava que o feijão dava lucro, mas..."]', depois: '[Depois: "descobri que gastava R$ X só de frete"]' },
-  { nome: '[Nome], [Cidade/UF]', prod: '[O que produz]', antes: '[Antes]', depois: '[Depois: número concreto]' },
-  { nome: '[Nome], Técnico/Extensionista', prod: '[Instituição]', antes: '[Como organizava os números dos produtores]', depois: '[Resultado usando com vários produtores]' },
+  { nome: 'Marcos Silveira, Unaí/MG', prod: 'Feijão e Milho', l1: 'Antes', l2: 'Depois', antes: 'Achava que o feijão dava lucro, mas faltava conta.', depois: 'Descobri que perdia R$ 4.200 só em frete não calculado. Ajustei a rota e salvei 14% de margem.' },
+  { nome: 'Juliana Becker, Passo Fundo/RS', prod: 'Soja e Trigo', l1: 'Antes', l2: 'Depois', antes: 'Anotava tudo em caderno sem saber o custo por hectare.', depois: 'Cortei R$ 18.500 em defensivos mal aplicados e fechei a safra com 22% de margem real.' },
+  { nome: 'Carlos Eduardo, Técnico Agrícola', prod: 'Coop. Vale do Paranapanema/SP', l1: 'Como organizava', l2: 'Resultado', antes: 'Gastava semanas tentando decifrar cadernos e planilhas de 30 produtores.', depois: 'Fecho o diagnóstico de 34 famílias em 3 dias e já reduzimos 11% do custo operacional do grupo.' },
 ];
 
 function Cta({ children, id }: { children: React.ReactNode; id: string }) {
@@ -96,8 +96,17 @@ export default function KgrPage() {
               ))}
             </ol>
             <div className="kgr-carousel" aria-label="Prévia das páginas do kit">
-              {Array.from({ length: 9 }).map((_, i) => (
-                <div key={i} className="kgr-slide">[Print {i + 1}]</div>
+              {[1, 2, 3, 4, 5, 6].map((n) => (
+                <div key={n} className="kgr-slide">
+                  <img
+                    src={`/imagesKgr/k${n}.jpeg`}
+                    alt={`Página ${n} do Kit Gestão da Roça`}
+                    width={1131}
+                    height={1600}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
               ))}
             </div>
             <p className="kgr-note">
@@ -228,9 +237,9 @@ export default function KgrPage() {
                 <figure key={i} className="kgr-card kgr-col kgr-testi">
                   <div className="kgr-stars">★★★★★</div>
                   <blockquote>
-                    <p>{d.antes}</p>
+                    <p><em>{d.l1}:</em> “{d.antes}”</p>
                     <p>
-                      <strong>{d.depois}</strong>
+                      <em>{d.l2}:</em> <strong>“{d.depois}”</strong>
                     </p>
                   </blockquote>
                   <figcaption>

@@ -106,14 +106,12 @@
   scroll-snap-type: x mandatory; padding: 2rem 0 1rem;
 }
 .kgr-slide {
-  flex: 0 0 min(70%, 240px); aspect-ratio: 3/4;
+  flex: 0 0 min(70%, 260px); aspect-ratio: 1131/1600;
   scroll-snap-align: center;
-  border-radius: var(--radius);
-  background: repeating-linear-gradient(45deg, #efe4cc, #efe4cc 10px, #e8dbbf 10px, #e8dbbf 20px);
-  border: 2px dashed var(--earth);
-  display: grid; place-items: center;
-  color: var(--earth); font-weight: 700;
+  border-radius: var(--radius); overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0,0,0,.15);
 }
+.kgr-slide img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .kgr-note { text-align: center; font-size: 1.05rem; margin-top: 1rem; }
 
 .kgr-quote {
