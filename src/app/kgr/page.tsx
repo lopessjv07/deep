@@ -5,8 +5,10 @@ import {
   PencilLine, SearchCheck, Handshake, Landmark,
   TriangleAlert, Smartphone, Printer, Tractor, ClipboardList, Gift, Zap, ShieldCheck,
 } from 'lucide-react';
+import KgrCountdownBar from '@/components/KgrCountdownBar';
+import KgrToastsWrapper from '@/components/KgrToastsWrapper';
 
-const CHECKOUT_URL = '#oferta'; // [trocar pelo link do checkout]
+const CHECKOUT_URL = 'https://pay.kirvano.com/ccbb4aa3-bfcb-4ae9-a8a6-b52e2c4717cb';
 
 const materiais = [
   { icon: ScanSearch, nome: 'Raio-X da Roça', desc: 'Descobrir o custo real de cada cultura ou criação: semente, adubo, defensivo, diesel, diária, frete' },
@@ -55,6 +57,8 @@ function Cta({ children, id }: { children: React.ReactNode; id: string }) {
 export default function KgrPage() {
   return (
     <div className="kgr">
+      <KgrCountdownBar />
+      <KgrToastsWrapper />
       <main>
         {/* 1. Topo */}
         <section className="kgr-hero">
@@ -224,13 +228,24 @@ export default function KgrPage() {
           <div className="kgr-wrap kgr-narrow">
             <div className="kgr-offer">
               <div className="kgr-seal">Acesso vitalício · Pagamento único</div>
+              <Image
+                src="/imagesKgr/mocve.png"
+                alt="Mockup do Kit Gestão da Roça"
+                width={600}
+                height={400}
+                quality={75}
+                sizes="(max-width: 768px) 90vw, 500px"
+                loading="lazy"
+                style={{ width: '100%', maxWidth: '500px', height: 'auto', borderRadius: '12px', margin: '16px auto 24px', display: 'block' }}
+              />
               <p className="kgr-from">
-                De <s>R$ 97,00</s> por
+                De <s>R$197,00</s> por
               </p>
               <p className="kgr-price">R$ 37,90</p>
               <p className="kgr-install">ou 5x de R$ 7,58</p>
               <Cta id="cta-oferta">QUERO MEU KIT AGORA</Cta>
               <p className="kgr-small">
+                <br />
                 <Zap size={16} className="kgr-inline" /> Acesso imediato pelo celular.{' '}
                 <ShieldCheck size={16} className="kgr-inline" /> Garantia de 7 dias.
               </p>

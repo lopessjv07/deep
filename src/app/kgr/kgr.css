@@ -15,6 +15,7 @@
   font-family: var(--font-inter), system-ui, sans-serif;
   line-height: 1.6;
   min-height: 100vh;
+  padding-top: 72px;
 }
 .kgr h1, .kgr h2, .kgr h3 { font-family: var(--font-outfit), sans-serif, sans-serif; line-height: 1.2; margin: 0; }
 .kgr p { margin: 0 0 1rem; }
@@ -160,20 +161,23 @@
 /* Offer */
 .kgr-offer {
   text-align: center;
-  background: linear-gradient(160deg, #1f4a27, #2f6b3a);
-  color: #fff; border-radius: 28px;
-  padding: 3rem 1.5rem;
-  box-shadow: 0 20px 50px rgba(31,74,39,.35);
+  background: linear-gradient(160deg, #fefdf9, #f7f3e8);
+  color: var(--ink);
+  border: 1px solid rgba(138,90,43,.15);
+  border-radius: 28px;
+  padding: 2.5rem 1.5rem;
+  box-shadow: 0 10px 30px rgba(60,40,10,.08);
 }
 .kgr-seal {
-  display: inline-block; background: rgba(255,255,255,.12);
-  border: 1px solid rgba(255,255,255,.3);
-  padding: .4rem 1rem; border-radius: 999px; font-size: .9rem; margin-bottom: 1.5rem;
+  display: inline-block; background: var(--green);
+  color: #fff;
+  padding: .4rem 1rem; border-radius: 999px; font-size: .9rem; margin-bottom: 1rem;
 }
-.kgr-from { color: #cfe0c8; font-size: 1.1rem; margin: 0; }
-.kgr-price { font-family: var(--font-outfit), sans-serif; font-weight: 800; font-size: clamp(3rem, 9vw, 4.5rem); color: var(--gold); margin: 0; line-height: 1.1; }
-.kgr-install { color: #e6efe0; margin-bottom: 2rem; }
-.kgr-small { font-size: .9rem; color: #cfe0c8; margin: 1.25rem 0 0; }
+.kgr-from { color: var(--muted); font-size: 1.1rem; margin: 0; }
+.kgr-price { font-family: var(--font-outfit), sans-serif; font-weight: 800; font-size: clamp(3rem, 9vw, 4.5rem); color: var(--green-dark); margin: 0; line-height: 1.1; }
+.kgr-install { color: var(--muted); margin-bottom: 1.5rem; }
+.kgr-small { font-size: .9rem; color: var(--muted); margin: 1rem 0 0; }
+.kgr-offer img { margin: 8px auto 16px !important; }
 
 /* Testimonials */
 .kgr-testi blockquote { margin: .5rem 0 1rem; }
