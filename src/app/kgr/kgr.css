@@ -28,16 +28,19 @@
 /* Hero */
 .kgr-hero {
   background:
-    radial-gradient(ellipse at top right, rgba(224,165,38,.25), transparent 60%),
-    linear-gradient(160deg, #1f4a27 0%, #2f6b3a 55%, #5b7a2e 100%);
-  color: #fff;
+    radial-gradient(ellipse at top right, rgba(224,165,38,.18), transparent 55%),
+    radial-gradient(ellipse at bottom left, rgba(47,107,58,.14), transparent 60%),
+    linear-gradient(180deg, #ffffff 0%, #f7f3e8 55%, #eaf3e4 100%);
+  color: var(--green-dark);
   padding: 4rem 0 3.5rem;
   text-align: center;
 }
 .kgr-proof { color: var(--gold); font-size: 1.3rem; letter-spacing: 2px; margin-bottom: 1rem; }
-.kgr-proof span { font-size: .85rem; color: #e6efe0; letter-spacing: 0; }
-.kgr-hero h1 { font-size: clamp(2rem, 5vw, 3.3rem); font-weight: 800; max-width: 860px; margin: 0 auto 1.25rem; }
-.kgr-sub { font-size: clamp(1.05rem, 2.2vw, 1.25rem); color: #e6efe0; max-width: 720px; margin: 0 auto 2rem; }
+.kgr-proof span { font-size: .85rem; color: var(--green); letter-spacing: 0; }
+.kgr-hero h1 { font-size: clamp(2rem, 5vw, 3.3rem); font-weight: 800; max-width: 860px; margin: 0 auto 1.25rem; text-align: center; color: var(--green-dark); }
+.kgr-hero .kgr-hl { color: #b8860b; }
+.kgr .kgr-sub { font-size: clamp(1.05rem, 2.2vw, 1.25rem); color: var(--green); max-width: 720px; margin: 0 auto 2rem; text-align: center; }
+.kgr-hero-img { display: block; width: 100%; max-width: 460px; height: auto; aspect-ratio: 900 / 880; object-fit: cover; object-position: center; margin: -1rem auto .5rem; }
 
 .kgr-btn {
   display: inline-block;
@@ -62,14 +65,14 @@
 
 .kgr-alert {
   display: flex; gap: 1rem; text-align: left;
-  background: rgba(255,255,255,.1);
+  background: #f1f7ee;
   backdrop-filter: blur(8px);
-  border: 1px solid rgba(255,255,255,.25);
+  border: 1px solid rgba(47,107,58,.2);
   border-left: 5px solid var(--gold);
   border-radius: var(--radius);
   padding: 1.25rem 1.5rem;
   max-width: 760px;
-  margin: 3rem auto 0;
+  margin: 1.5rem auto 0;
 }
 .kgr-alert p { margin: 0; }
 .kgr-alert-ic { font-size: 1.6rem; }

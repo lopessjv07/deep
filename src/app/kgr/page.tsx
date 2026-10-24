@@ -1,4 +1,5 @@
 import './kgr.css';
+import Image from 'next/image';
 import {
   ScanSearch, NotebookPen, Wheat, Milk, BadgeDollarSign,
   PencilLine, SearchCheck, Handshake, Landmark,
@@ -65,6 +66,15 @@ export default function KgrPage() {
               O método simples para saber, em <strong>10 minutos por semana</strong>, para onde seu dinheiro está indo — e parar de
               trabalhar o ano inteiro para não sobrar nada no fim da safra.
             </p>
+            <Image
+              src="/imagesKgr/herokgr.png"
+              alt="Kit Gestão da Roça: planilha no celular e PDF para imprimir"
+              width={900}
+              height={1100}
+              preload
+              sizes="(max-width: 600px) 90vw, 460px"
+              className="kgr-hero-img"
+            />
             {/* 2. Aviso */}
             <div className="kgr-alert">
               <TriangleAlert className="kgr-alert-ic" size={28} />
