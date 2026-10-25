@@ -192,7 +192,7 @@ export default function LandingPage() {
             <div className="price-badge">♾️ Acesso vitalício · Pagamento único</div>
             <div className="price-old">De R$ 97,00</div>
             <div className="price-new">
-              <span className="price-currency">R$</span>47,90
+              <span className="price-currency">R$</span>19,90
             </div>
             <div className="price-installments">
               ou <strong>5x de R$ 9,58</strong>

@@ -241,7 +241,7 @@ export default function KgrPage() {
               <p className="kgr-from">
                 De <s>R$197,00</s> por
               </p>
-              <p className="kgr-price">R$ 19,90</p>
+              <p className="kgr-price">R$ 37,90</p>
               <p className="kgr-install">ou 5x de R$ 7,58</p>
               <Cta id="cta-oferta">QUERO MEU KIT AGORA</Cta>
               <p className="kgr-small">
