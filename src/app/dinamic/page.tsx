@@ -147,7 +147,6 @@ export default function DinamicPage() {
             <strong>E mais:</strong> quiz de Natal com gabarito, Cartas de Pistas para a revelação, 10 Desafios de 1 minuto,
             20 certificados divertidos e etiquetas de presente.
           </p>
-          <Cta id="cta-includes" />
         </div>
       </section>
 
@@ -240,7 +239,6 @@ export default function DinamicPage() {
               </article>
             ))}
           </div>
-          <Cta id="cta-bonus" />
         </div>
       </section>
 
