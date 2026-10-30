@@ -1,6 +1,7 @@
 'use client';
 
 import Script from 'next/script';
+import { usePathname } from 'next/navigation';
 
 /**
  * Utmify UTM tracking script and Pixel.
@@ -8,6 +9,11 @@ import Script from 'next/script';
  * and tracks events with the Utmify Pixel.
  */
 export default function UtmifyScript() {
+  const pathname = usePathname();
+  // A /kgr usa apenas o pixel próprio (1420260723593752). O pixel da Utmify
+  // dispara o pixel Meta da NeuroSoma (2313907359416805), então não carrega lá.
+  const isKgr = pathname === '/kgr' || pathname?.startsWith('/kgr/');
+
   return (
     <>
       {/* UTM Script para repassar os parâmetros pros links */}
@@ -21,8 +27,8 @@ export default function UtmifyScript() {
         strategy="lazyOnload"
       />
       
-      {/* Pixel Script para enviar eventos */}
-      <Script
+      {/* Pixel Script para enviar eventos (NeuroSoma) - fora da /kgr */}
+      {!isKgr && <Script
         id="utmify-pixel"
         strategy="lazyOnload"
         dangerouslySetInnerHTML={{
@@ -35,7 +41,7 @@ export default function UtmifyScript() {
             document.head.appendChild(a);
           `
         }}
-      />
+      />}
     </>
   );
 }
