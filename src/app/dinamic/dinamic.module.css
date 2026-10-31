@@ -68,7 +68,8 @@
 .red { color: var(--red); }
 .lead { font-size: 1.2rem; opacity: .92; max-width: 640px; margin: 0 auto; }
 
-.mockup { position: relative; height: 300px; margin: 2.5rem auto; max-width: 560px; }
+.mockup { position: relative; margin: 2.5rem auto; max-width: 560px; }
+.mockup img { display: block; width: 100%; height: auto; }
 .sheet {
   position: absolute;
   top: 20px;
@@ -157,6 +158,12 @@
   place-items: center;
   font-size: 3.5rem;
   transition: transform .3s ease, box-shadow .3s ease;
+}
+.pageThumb { overflow: hidden; }
+.pageThumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+@media (max-width: 640px) {
+  .pagesGrid { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 1rem; padding: 0 .5rem 1rem; -webkit-overflow-scrolling: touch; }
+  .pageCard { flex: 0 0 72%; scroll-snap-align: center; }
 }
 .pageCard:hover .pageThumb { transform: translateY(-6px) rotate(-1.5deg); box-shadow: 0 18px 36px rgba(142,11,32,.18); }
 .pageCard figcaption { margin-top: .7rem; font-weight: 700; }
@@ -306,7 +313,6 @@
 .footer { background: var(--red-dark); color: #ffd9de; text-align: center; padding: 1.6rem 1rem; font-size: .9rem; }
 
 @media (max-width: 560px) {
-  .mockup { height: 250px; }
   .sheet { width: 130px; height: 180px; }
   .sheetCenter { width: 160px; height: 220px; }
   .bingoGrid span { font-size: .6rem; padding: 3px 0; }

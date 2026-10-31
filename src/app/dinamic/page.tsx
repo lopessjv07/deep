@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 };
 
 // TODO: troque pelo link real do checkout
-const CHECKOUT_URL = "#oferta";
+const CHECKOUT_URL = "https://pay.kirvano.com/f6bc385f-d24c-4580-a20b-e90c3cf68c03";
 
 function Cta({ label = "QUERO MEU KIT AGORA", id }: { label?: string; id: string }) {
   return (
@@ -22,14 +22,14 @@ function Cta({ label = "QUERO MEU KIT AGORA", id }: { label?: string; id: string
 }
 
 const pages = [
-  { t: "Amigo Secreto Roubado", e: "🎁" },
-  { t: "Cartas de Reviravolta", e: "🔄" },
-  { t: "Dado do Presente", e: "🎲" },
-  { t: "História do Direita e Esquerda", e: "↔️" },
-  { t: "Bingo com 30 cartelas", e: "🔢" },
-  { t: "Quem é mais provável?", e: "🤔" },
-  { t: "Mímica natalina", e: "🎭" },
-  { t: "Certificados divertidos", e: "🏆" },
+  { t: "Amigo Secreto Roubado", e: "🎁", img: "/imagesDinamic/d1.jpeg" },
+  { t: "Cartas de Reviravolta", e: "🔄", img: "/imagesDinamic/d3.jpeg" },
+  { t: "Dado do Presente", e: "🎲", img: "/imagesDinamic/d4.jpeg" },
+  { t: "História do Direita e Esquerda", e: "↔️", img: "/imagesDinamic/d5.jpeg" },
+  { t: "Bingo com 30 cartelas", e: "🔢", img: "/imagesDinamic/d6.jpeg" },
+  { t: "Quem é mais provável?", e: "🤔", img: "/imagesDinamic/d7.jpeg" },
+  { t: "Mímica natalina", e: "🎭", img: "/imagesDinamic/d8.jpeg" },
+  { t: "Certificados divertidos", e: "🏆", img: "/imagesDinamic/d9.jpeg" },
 ];
 
 const includes = [
@@ -89,24 +89,9 @@ export default function DinamicPage() {
             O kit pronto para imprimir que anima a confraternização do começo ao fim, sem você precisar inventar nada.
           </p>
 
-          <div className={s.mockup} role="img" aria-label="Kit Amigo Secreto Sem Climão: capa, cartela de bingo e certificado">
-            <div className={`${s.sheet} ${s.sheetLeft}`}>
-              <b>BINGO</b>
-              <div className={s.bingoGrid}>
-                {[7, 12, 33, 41, 58, 3, 19, "★", 44, 60, 9, 25, 37, 50, 71].map((n, i) => <span key={i}>{n}</span>)}
-              </div>
-            </div>
-            <div className={`${s.sheet} ${s.sheetCenter}`}>
-              <span className={s.sheetEmoji}>🎄</span>
-              <b>Kit Amigo Secreto</b>
-              <em>Sem Climão</em>
-              <small>+10 jogos e dinâmicas</small>
-            </div>
-            <div className={`${s.sheet} ${s.sheetRight}`}>
-              <span className={s.sheetEmoji}>🏆</span>
-              <b>Certificado</b>
-              <small>Rei do Pavê</small>
-            </div>
+          <div className={s.mockup}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/imagesDinamic/mocved.png" alt="Kit Amigo Secreto Sem Climão: capa, cartela de bingo e certificado" />
           </div>
 
           <div className={s.alert}>
@@ -127,7 +112,8 @@ export default function DinamicPage() {
             {pages.map((p) => (
               <figure key={p.t} className={s.pageCard}>
                 <div className={s.pageThumb} role="img" aria-label={`Página do kit: ${p.t}`}>
-                  <span>{p.e}</span>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={p.img} alt="" loading="lazy" />
                 </div>
                 <figcaption>{p.t}</figcaption>
               </figure>
