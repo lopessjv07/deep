@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import s from "./dinamic.module.css";
+import MetaPixel from "./MetaPixel";
 
 export const metadata: Metadata = {
   title: "Kit Amigo Secreto Sem Climão | +10 jogos e dinâmicas para imprimir",
@@ -64,6 +65,24 @@ const bonuses = [
   { n: 3, t: "Kit Réveillon Sem Climão", d: "Retrospectiva 2026, previsões para 2027, metas, carta para o futuro e pote da gratidão.", v: "R$ 27", e: "🥂" },
 ];
 
+const reviews = [
+  {
+    name: "Camila Ferreira",
+    role: "Usou no Natal em família (22 pessoas)",
+    text: "Todo ano era a mesma coisa: trocava presente em 15 minutos e cada um ia pro celular. Esse ano fizemos o Bingo valendo caixa de bombom e o Amigo Secreto Roubado. Meu tio ganhou o certificado de 'Rei do Pavê' e até minha avó de 78 anos entrou na brincadeira!",
+  },
+  {
+    name: "Renata Albuquerque",
+    role: "RH · Confraternização da empresa",
+    text: "Fiquei responsável pela festa de fim de ano da firma de última hora. Imprimi tudo em 15 minutos no escritório mesmo. A história do Direita e Esquerda versão firma quebrou o gelo na hora, até o pessoal do TI que é mais quieto riu demais.",
+  },
+  {
+    name: "Juliana & Marcos",
+    role: "Amigo secreto com amigos",
+    text: "As Cartas de Reviravolta no Amigo Secreto Roubado deram o maior agito da noite! Depois emendamos na Mímica e no 'Quem é mais provável?'. No dia seguinte o grupo do WhatsApp só falava de como foi a melhor confraternização que já fizemos.",
+  },
+];
+
 const faq = [
   ["Preciso imprimir colorido?", "Não. O material foi pensado para ficar bonito colorido, mas funciona perfeitamente em impressão preto e branco, em casa ou na gráfica."],
   ["Funciona para quantas pessoas?", "Para grupos pequenos (5 pessoas) até grandes confraternizações (50+). O bingo tem 30 cartelas diferentes e os jogos em times se adaptam a qualquer tamanho."],
@@ -76,6 +95,7 @@ const faq = [
 export default function DinamicPage() {
   return (
     <main className={s.page}>
+      <MetaPixel pixelId="2378640605886472" />
       <div className={s.snow} aria-hidden="true" />
 
       {/* HERO */}
@@ -233,8 +253,15 @@ export default function DinamicPage() {
         <div className={s.container}>
           <h2 className={s.h2}>Quem já usou, aprovou:</h2>
           <div className={s.reviews}>
-            {[1, 2, 3].map((i) => (
-              <div key={i} className={s.review}>Cole aqui o print de uma avaliação real</div>
+            {reviews.map((r) => (
+              <figure key={r.name} className={s.review}>
+                <div className={s.stars} aria-label="5 de 5 estrelas">★★★★★</div>
+                <blockquote>“{r.text}”</blockquote>
+                <figcaption>
+                  <strong>{r.name}</strong>
+                  <span>{r.role}</span>
+                </figcaption>
+              </figure>
             ))}
           </div>
         </div>

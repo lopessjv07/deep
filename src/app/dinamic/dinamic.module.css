@@ -262,11 +262,25 @@
 .bonusVal { margin-top: .8rem; }
 .bonusVal b { color: var(--green-2); }
 
-.reviews { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.2rem; margin-top: 2rem; }
+.reviews { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.4rem; margin-top: 2rem; }
 .review {
-  min-height: 220px; border: 2px dashed #e4cbb9; border-radius: 18px;
-  display: grid; place-items: center; text-align: center; padding: 1rem; color: var(--muted); background: #fff;
+  margin: 0;
+  border: 1px solid #f1dfd0;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+  text-align: left;
+  padding: 1.6rem;
+  background: #fff;
+  box-shadow: 0 12px 28px rgba(142,11,32,.08);
 }
+.stars { color: #f5a623; font-size: 1.15rem; letter-spacing: 2px; line-height: 1; }
+.review blockquote { margin: 0; color: var(--ink); line-height: 1.55; font-size: .98rem; }
+.review figcaption { display: flex; flex-direction: column; gap: .15rem; border-top: 1px dashed #ecd9ca; padding-top: .85rem; }
+.review figcaption strong { font-family: 'Nunito', sans-serif; font-weight: 800; color: var(--ink); }
+.review figcaption span { font-size: .85rem; color: var(--muted); }
 
 .guarantee { display: flex; gap: 2rem; align-items: center; flex-wrap: wrap; justify-content: center; }
 .guarantee > div:last-child { flex: 1; min-width: 260px; }
