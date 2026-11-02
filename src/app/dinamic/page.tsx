@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import s from "./dinamic.module.css";
 import MetaPixel from "./MetaPixel";
+import DinamicCountdownBar from "../../components/DinamicCountdownBar";
+import DinamicToastsWrapper from "../../components/DinamicToastsWrapper";
 
 export const metadata: Metadata = {
   title: "Kit Amigo Secreto Sem Climão | +10 jogos e dinâmicas para imprimir",
@@ -96,6 +98,8 @@ export default function DinamicPage() {
   return (
     <main className={s.page}>
       <MetaPixel pixelId="2378640605886472" />
+      <DinamicCountdownBar />
+      <DinamicToastsWrapper />
       <div className={s.snow} aria-hidden="true" />
 
       {/* HERO */}
