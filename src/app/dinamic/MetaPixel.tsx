@@ -22,9 +22,9 @@ function newEventId() {
 }
 
 /** Dispara o evento no Pixel (browser) e na Conversions API (servidor) com o mesmo event_id. */
-function track(eventName: string) {
+function track(pixelId: string, eventName: string) {
   const eventId = newEventId();
-  window.fbq?.("track", eventName, {}, { eventID: eventId });
+  window.fbq?.("trackSingle", pixelId, eventName, {}, { eventID: eventId });
 
   let fbc = getCookie("_fbc");
   const fbclid = new URLSearchParams(location.search).get("fbclid");
@@ -48,18 +48,18 @@ function track(eventName: string) {
 export default function MetaPixel({ pixelId }: { pixelId: string }) {
   useEffect(() => {
     // pequeno atraso para o fbevents criar o cookie _fbp antes do envio ao CAPI
-    const t = setTimeout(() => track("PageView"), 800);
+    const t = setTimeout(() => track(pixelId, "PageView"), 800);
 
     const onClick = (e: MouseEvent) => {
       const el = (e.target as HTMLElement | null)?.closest("a[href^=\"https://pay.kirvano.com\"]");
-      if (el) track("InitiateCheckout");
+      if (el) track(pixelId, "InitiateCheckout");
     };
     document.addEventListener("click", onClick);
     return () => {
       clearTimeout(t);
       document.removeEventListener("click", onClick);
     };
-  }, []);
+  }, [pixelId]);
 
   return (
     <>

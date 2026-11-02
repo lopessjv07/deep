@@ -1,47 +1,21 @@
 'use client';
 
 import Script from 'next/script';
-import { usePathname } from 'next/navigation';
 
 /**
- * Utmify UTM tracking script and Pixel.
- * Captures UTM parameters from the URL and appends them to outbound links,
- * and tracks events with the Utmify Pixel.
+ * Utmify UTM tracking script.
+ * Captures UTM parameters from the URL and appends them to outbound links.
  */
 export default function UtmifyScript() {
-  const pathname = usePathname();
-  // A /kgr usa apenas o pixel próprio (1420260723593752). O pixel da Utmify
-  // dispara o pixel Meta da NeuroSoma (2313907359416805), então não carrega lá.
-  const isKgr = pathname === '/kgr' || pathname?.startsWith('/kgr/');
-
   return (
-    <>
-      {/* UTM Script para repassar os parâmetros pros links */}
-      <Script
-        id="utmify-script"
-        src="https://cdn.utmify.com.br/scripts/utms/latest.js"
-        data-utmify-prevent-xcod-sck=""
-        data-utmify-prevent-subids=""
-        async
-        defer
-        strategy="lazyOnload"
-      />
-      
-      {/* Pixel Script para enviar eventos (NeuroSoma) - fora da /kgr */}
-      {!isKgr && <Script
-        id="utmify-pixel"
-        strategy="lazyOnload"
-        dangerouslySetInnerHTML={{
-          __html: `
-            window.pixelId = "6a52a95f3e380ffa64a49d07";
-            var a = document.createElement("script");
-            a.setAttribute("async", "");
-            a.setAttribute("defer", "");
-            a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
-            document.head.appendChild(a);
-          `
-        }}
-      />}
-    </>
+    <Script
+      id="utmify-script"
+      src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+      data-utmify-prevent-xcod-sck=""
+      data-utmify-prevent-subids=""
+      async
+      defer
+      strategy="lazyOnload"
+    />
   );
 }
