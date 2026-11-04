@@ -22,9 +22,9 @@ function newEventId() {
 }
 
 /** Dispara o evento no Pixel (browser) e na Conversions API (servidor) com o mesmo event_id. */
-function track(pixelId: string, eventName: string) {
+function track(eventName: string) {
   const eventId = newEventId();
-  window.fbq?.("trackSingle", pixelId, eventName, {}, { eventID: eventId });
+  window.fbq?.("track", eventName, {}, { eventID: eventId });
 
   let fbc = getCookie("_fbc");
   const fbclid = new URLSearchParams(location.search).get("fbclid");
@@ -48,18 +48,18 @@ function track(pixelId: string, eventName: string) {
 export default function MetaPixel({ pixelId }: { pixelId: string }) {
   useEffect(() => {
     // pequeno atraso para o fbevents criar o cookie _fbp antes do envio ao CAPI
-    const t = setTimeout(() => track(pixelId, "PageView"), 800);
+    const t = setTimeout(() => track("PageView"), 800);
 
     const onClick = (e: MouseEvent) => {
       const el = (e.target as HTMLElement | null)?.closest(".kgr-btn");
-      if (el) track(pixelId, "InitiateCheckout");
+      if (el) track("InitiateCheckout");
     };
     document.addEventListener("click", onClick);
     return () => {
       clearTimeout(t);
       document.removeEventListener("click", onClick);
     };
-  }, [pixelId]);
+  }, []);
 
   return (
     <>

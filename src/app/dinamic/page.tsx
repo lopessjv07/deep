@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import s from "./dinamic.module.css";
 import MetaPixel from "./MetaPixel";
 import DinamicCountdownBar from "../../components/DinamicCountdownBar";
@@ -114,8 +115,14 @@ export default function DinamicPage() {
           </p>
 
           <div className={s.mockup}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/imagesDinamic/mocved.png" alt="Kit Amigo Secreto Sem Climão: capa, cartela de bingo e certificado" />
+            <Image
+              src="/imagesDinamic/mocved.png"
+              alt="Kit Amigo Secreto Sem Climão: capa, cartela de bingo e certificado"
+              width={900}
+              height={1100}
+              preload
+              sizes="(max-width: 600px) 92vw, 560px"
+            />
           </div>
 
           <div className={s.alert}>
@@ -135,9 +142,14 @@ export default function DinamicPage() {
           <div className={s.pagesGrid}>
             {pages.map((p) => (
               <figure key={p.t} className={s.pageCard}>
-                <div className={s.pageThumb} role="img" aria-label={`Página do kit: ${p.t}`}>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={p.img} alt="" loading="lazy" />
+                <div className={s.pageThumb}>
+                  <Image
+                    src={p.img}
+                    alt={`Página do kit: ${p.t}`}
+                    width={1131}
+                    height={1600}
+                    sizes="(max-width: 640px) 72vw, 240px"
+                  />
                 </div>
                 <figcaption>{p.t}</figcaption>
               </figure>

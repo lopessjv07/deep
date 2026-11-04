@@ -112,13 +112,12 @@ export default function KgrPage() {
             <div className="kgr-carousel" aria-label="Prévia das páginas do kit">
               {[1, 2, 3, 4, 5, 6].map((n) => (
                 <div key={n} className="kgr-slide">
-                  <img
+                  <Image
                     src={`/imagesKgr/k${n}.jpeg`}
                     alt={`Página ${n} do Kit Gestão da Roça`}
                     width={1131}
                     height={1600}
-                    loading="lazy"
-                    decoding="async"
+                    sizes="(max-width: 640px) 82vw, 320px"
                   />
                 </div>
               ))}
