@@ -1,4 +1,20 @@
 import type { Metadata } from "next";
+import { Outfit, Plus_Jakarta_Sans } from "next/font/google";
+import "./courses.css";
+
+const heading = Outfit({
+  subsets: ["latin"],
+  weight: ["600", "700", "800", "900"],
+  variable: "--cnc-font-heading",
+  display: "swap",
+});
+
+const body = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--cnc-font-body",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "300 Pegadinhas Comentadas para Concursos | Guia de Revisão",
@@ -15,6 +31,7 @@ export default function CoursesLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <>{children}</>;
+  return (
+    <div className={`cnc ${heading.variable} ${body.variable}`}>{children}</div>
+  );
 }
-
