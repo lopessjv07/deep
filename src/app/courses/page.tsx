@@ -86,8 +86,6 @@ const BONUSES = [
   {
     tag: "BÔNUS 1",
     title: "40 FLASHCARDS DE REVISÃO",
-    img: IMAGES.bonus1,
-    imgLabel: "Capa e um cartão real do bônus",
     description:
       "Teste sua memória com perguntas e respostas de Português, Matemática, Raciocínio Lógico e Informática.",
     howTo:
@@ -98,8 +96,6 @@ const BONUSES = [
   {
     tag: "BÔNUS 2",
     title: "MAPA DE FÓRMULAS E CONVERSÕES",
-    img: IMAGES.bonus2,
-    imgLabel: "Capa e uma página real do mapa",
     description:
       "Consulte 24 fórmulas com exemplos, condições de uso e cuidados para evitar trocas.",
     howTo: "Confira a situação, a unidade e o regime de cálculo antes de escolher a fórmula.",
@@ -109,8 +105,6 @@ const BONUSES = [
   {
     tag: "BÔNUS 3",
     title: "PLANO DE REVISÃO DE 15 DIAS",
-    img: IMAGES.bonus3,
-    imgLabel: "Capa e uma página real da agenda",
     description:
       "Organize suas sessões com metas diárias, ficha de estudo e acompanhamento das dificuldades.",
     howTo: "Adapte a agenda ao seu tempo e às matérias previstas no edital.",
@@ -382,19 +376,9 @@ export default function CoursesPage() {
             <h2 className="cnc-h2">RECEBA O GUIA E LEVE TRÊS BÔNUS PARA CONTINUAR A REVISÃO</h2>
           </div>
 
-          <div className="cnc-media-center">
-            <ImageSlot
-              img={IMAGES.bonusMockup}
-              label="Mockup do guia com os três bônus"
-              ratio="16 / 9"
-              sizes="(max-width: 768px) 92vw, 760px"
-            />
-          </div>
-
-          <div className="cnc-grid cnc-grid-3 cnc-mt-xl">
+          <div className="cnc-grid cnc-grid-3">
             {BONUSES.map((b) => (
               <article key={b.tag} className="cnc-card cnc-bonus">
-                <ImageSlot img={b.img} label={b.imgLabel} ratio="4 / 3" sizes="(max-width: 768px) 92vw, 360px" />
                 <div className="cnc-bonus-body">
                   <span className="cnc-bonus-tag">{b.tag}</span>
                   <h3 className="cnc-h3">{b.title}</h3>

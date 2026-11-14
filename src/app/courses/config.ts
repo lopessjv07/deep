@@ -54,10 +54,22 @@ export const CONFIG = {
    -------------------------------------------------------------------------- */
 export const IMAGES = {
   /** [MOCKUP DO GUIA COM A CAPA E DUAS PÁGINAS INTERNAS REAIS] */
-  heroMockup: null as Img,
+  heroMockup: {
+    src: "/imgsCourses/mocved.png",
+    alt: "Mockup do guia com a capa e duas páginas internas reais",
+    width: 900,
+    height: 1100,
+  } as Img,
 
   /** [CARROSSEL COM SEIS PÁGINAS REAIS DO GUIA] — 6 itens */
-  gallery: [null, null, null, null, null, null] as Img[],
+  gallery: [
+    { src: "/imgsCourses/1.png", alt: "Página real do guia 1", width: 1100, height: 1514 },
+    { src: "/imgsCourses/2.png", alt: "Página real do guia 2", width: 1100, height: 1514 },
+    { src: "/imgsCourses/3.png", alt: "Página real do guia 3", width: 1100, height: 1514 },
+    { src: "/imgsCourses/4.png", alt: "Página real do guia 4", width: 1100, height: 1514 },
+    { src: "/imgsCourses/5.png", alt: "Página real do guia 5", width: 1100, height: 1514 },
+    { src: "/imgsCourses/6.png", alt: "Página real do guia 6", width: 1100, height: 1514 },
+  ] as Img[],
 
   /** [MOCKUP DO GUIA COM OS TRÊS BÔNUS] */
   bonusMockup: null as Img,
