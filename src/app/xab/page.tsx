@@ -3,18 +3,36 @@
 import Script from "next/script";
 import React, { useEffect, useState } from "react";
 import "./xab.css";
+import XabCarousel, { type CartilhaSlide } from "./XabCarousel";
 
 const CHECKOUT_URL = "https://pay.kiwify.com.br/xcahy6n";
 
+const CARTILHAS_SLIDES: CartilhaSlide[] = [
+  { src: "/imagesXab/1.png", alt: "Cartilha 01 - Fundamentos do Ventilador" },
+  { src: "/imagesXab/2.png", alt: "Cartilha 02 - Modos Ventilatórios" },
+  { src: "/imagesXab/3.png", alt: "Cartilha 03 - Ajuste Inicial Passo a Passo" },
+  { src: "/imagesXab/4.png", alt: "Cartilha 04 - Leitura das Curvas" },
+  { src: "/imagesXab/5.png", alt: "Cartilha 05 - Assincronias Paciente-Ventilador" },
+  { src: "/imagesXab/6.png", alt: "Cartilha 06 - Gasometria e Valores de Referência" },
+  { src: "/imagesXab/7.png", alt: "Cartilha 07 - Ventilação Protetora e SDRA" },
+  { src: "/imagesXab/8.png", alt: "Cartilha 08 - Mnemônico DOPE e Alarme de Pressão" },
+  { src: "/imagesXab/9.png", alt: "Cartilha 09 - Fluxograma de Desmame e Extubação" },
+  { src: "/imagesXab/10.png", alt: "Cartilha 10 - O Ventilador Apitou, e Agora?" },
+  { src: "/imagesXab/11.png", alt: "Tabela Geral de Parâmetros e Valores de Referência" },
+];
+
 export default function XabPage() {
-  const [today, setToday] = useState("13/11/2026");
+  const [today, setToday] = useState("14/11/2026");
 
   useEffect(() => {
-    const now = new Date();
-    const d = String(now.getDate()).padStart(2, "0");
-    const m = String(now.getMonth() + 1).padStart(2, "0");
-    const y = now.getFullYear();
-    setToday(`${d}/${m}/${y}`);
+    const timer = setTimeout(() => {
+      const now = new Date();
+      const d = String(now.getDate()).padStart(2, "0");
+      const m = String(now.getMonth() + 1).padStart(2, "0");
+      const y = now.getFullYear();
+      setToday(`${d}/${m}/${y}`);
+    }, 0);
+    return () => clearTimeout(timer);
   }, []);
 
   const scrollToPlanos = (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -248,45 +266,8 @@ export default function XabPage() {
                   Conteúdo organizado de forma visual para acelerar seu aprendizado e consulta rápida à beira do leito.
                 </p>
 
-                {/* Carrossel 1: Páginas internas */}
-                <div className="overflow-hidden mt-10">
-                  <div className="mvt-track-zdwkwj gap-4">
-                    {[
-                      "https://origin.mentoriaprocesso.com/img/3b4f349e-e5e5-48fb-b6b5-ef16c680c186/ea6f636e-1055-41a3-bf90-cba19f689d4f/materiais-mat_1-1793375910281.webp",
-                      "https://origin.mentoriaprocesso.com/img/3b4f349e-e5e5-48fb-b6b5-ef16c680c186/ea6f636e-1055-41a3-bf90-cba19f689d4f/materiais-mat_2-1793376203018.webp",
-                      "https://origin.mentoriaprocesso.com/img/3b4f349e-e5e5-48fb-b6b5-ef16c680c186/ea6f636e-1055-41a3-bf90-cba19f689d4f/materiais-mat_3-1793376248948.webp",
-                      "https://origin.mentoriaprocesso.com/img/3b4f349e-e5e5-48fb-b6b5-ef16c680c186/ea6f636e-1055-41a3-bf90-cba19f689d4f/materiais-mat_4-1793376269451.webp",
-                      "https://origin.mentoriaprocesso.com/img/3b4f349e-e5e5-48fb-b6b5-ef16c680c186/ea6f636e-1055-41a3-bf90-cba19f689d4f/materiais-mat_42e6b2a8-1793376309175.webp",
-                      "https://origin.mentoriaprocesso.com/img/3b4f349e-e5e5-48fb-b6b5-ef16c680c186/ea6f636e-1055-41a3-bf90-cba19f689d4f/materiais-mat_4f8cdb48-1793376356600.webp",
-                      "https://origin.mentoriaprocesso.com/img/3b4f349e-e5e5-48fb-b6b5-ef16c680c186/ea6f636e-1055-41a3-bf90-cba19f689d4f/materiais-mat_1-1793375910281.webp",
-                      "https://origin.mentoriaprocesso.com/img/3b4f349e-e5e5-48fb-b6b5-ef16c680c186/ea6f636e-1055-41a3-bf90-cba19f689d4f/materiais-mat_2-1793376203018.webp",
-                    ].map((src, idx) => (
-                      <div key={idx} className="shrink-0 w-64 sm:w-80 rounded-[var(--pv-radius)] overflow-hidden shadow-md">
-                        <img src={src} alt="Exemplo de Cartilha" className="w-full h-auto object-cover" loading="lazy" />
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Carrossel 2: Detalhes, fluxogramas e curvas */}
-                <div className="overflow-hidden mt-6">
-                  <div className="mvt-track-1fyax9h gap-4">
-                    {[
-                      "https://origin.mentoriaprocesso.com/img/3b4f349e-e5e5-48fb-b6b5-ef16c680c186/ea6f636e-1055-41a3-bf90-cba19f689d4f/materiais-el_30719941_95c639-1793376442294.webp",
-                      "https://origin.mentoriaprocesso.com/img/3b4f349e-e5e5-48fb-b6b5-ef16c680c186/ea6f636e-1055-41a3-bf90-cba19f689d4f/materiais-el_30719941_44e209-1793376462638.webp",
-                      "https://origin.mentoriaprocesso.com/img/3b4f349e-e5e5-48fb-b6b5-ef16c680c186/ea6f636e-1055-41a3-bf90-cba19f689d4f/materiais-el_30719941_18e741-1793376499356.webp",
-                      "https://origin.mentoriaprocesso.com/img/3b4f349e-e5e5-48fb-b6b5-ef16c680c186/ea6f636e-1055-41a3-bf90-cba19f689d4f/materiais-el_30719941_70c211-1793376523024.webp",
-                      "https://origin.mentoriaprocesso.com/img/3b4f349e-e5e5-48fb-b6b5-ef16c680c186/ea6f636e-1055-41a3-bf90-cba19f689d4f/materiais-el_30719941_1896ff-1793376560072.webp",
-                      "https://origin.mentoriaprocesso.com/img/3b4f349e-e5e5-48fb-b6b5-ef16c680c186/ea6f636e-1055-41a3-bf90-cba19f689d4f/materiais-el_30719941_c34ac1-1793376632534.webp",
-                      "https://origin.mentoriaprocesso.com/img/3b4f349e-e5e5-48fb-b6b5-ef16c680c186/ea6f636e-1055-41a3-bf90-cba19f689d4f/materiais-el_30719941_95c639-1793376442294.webp",
-                      "https://origin.mentoriaprocesso.com/img/3b4f349e-e5e5-48fb-b6b5-ef16c680c186/ea6f636e-1055-41a3-bf90-cba19f689d4f/materiais-el_30719941_44e209-1793376462638.webp",
-                    ].map((src, idx) => (
-                      <div key={idx} className="shrink-0 w-64 sm:w-80 rounded-[var(--pv-radius)] overflow-hidden shadow-md">
-                        <img src={src} alt="Exemplo de Detalhe" className="w-full h-auto object-cover" loading="lazy" />
-                      </div>
-                    ))}
-                  </div>
-                </div>
+                {/* Carrossel com a mesma UI de /courses */}
+                <XabCarousel items={CARTILHAS_SLIDES} />
               </div>
             </section>
 
@@ -800,19 +781,27 @@ export default function XabPage() {
                     style={{
                       background: "linear-gradient(180deg, #2A1D16 0%, #1A1412 100%)",
                       border: "3px solid var(--pv-accent)",
+                      paddingTop: "52px",
                     }}
                   >
-                    <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 whitespace-nowrap">
+                    <div
+                      className="absolute left-1/2 -translate-x-1/2 whitespace-nowrap z-10"
+                      style={{ top: "0", transform: "translate(-50%, -50%)" }}
+                    >
                       <span
-                        className="text-xs sm:text-sm font-extrabold px-4 py-1.5 rounded-full shadow-lg"
-                        style={{ background: "var(--pv-accent)", color: "#fff" }}
+                        className="text-[11px] sm:text-xs md:text-sm font-extrabold px-3.5 sm:px-5 py-1.5 sm:py-2 rounded-full shadow-xl tracking-wide uppercase inline-flex items-center gap-1.5"
+                        style={{
+                          background: "var(--pv-accent)",
+                          color: "#fff",
+                          boxShadow: "0 6px 18px rgba(0,0,0,0.4)",
+                        }}
                       >
                         ⚡ MAIS VENDIDO · ⚡ MAIS CONTEÚDO
                       </span>
                     </div>
 
                     <div>
-                      <div className="mt-3 mb-4">
+                      <div className="mb-4">
                         <h3
                           className="text-2xl sm:text-3xl font-extrabold uppercase"
                           style={{ fontFamily: "var(--pv-font-heading)", color: "#fff" }}

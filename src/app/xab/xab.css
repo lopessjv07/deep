@@ -165,12 +165,14 @@ font-family: var(--pv-font-heading); font-weight: var(--pv-heading-weight, 700);
 
 /* Animações dos carrosséis de imagens */
 @keyframes mvtMq-zdwkwj { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-.mvt-track-zdwkwj { display: flex; width: max-content; animation: mvtMq-zdwkwj 16.668s linear infinite; animation-direction: normal; }
+.mvt-track-zdwkwj { display: flex; width: max-content; animation: mvtMq-zdwkwj 35s linear infinite; animation-direction: normal; }
+.mvt-track-zdwkwj:hover { animation-play-state: paused; }
 .mvt-item-zdwkwj { flex: 0 0 auto; padding: 0 12px; box-sizing: border-box; display: flex; align-items: center; }
 .mvt-img-zdwkwj { height: 420px; width: auto; display: block; }
 
 @keyframes mvtMq-1fyax9h { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-.mvt-track-1fyax9h { display: flex; width: max-content; animation: mvtMq-1fyax9h 16.668s linear infinite; animation-direction: reverse; }
+.mvt-track-1fyax9h { display: flex; width: max-content; animation: mvtMq-1fyax9h 35s linear infinite; animation-direction: reverse; }
+.mvt-track-1fyax9h:hover { animation-play-state: paused; }
 .mvt-item-1fyax9h { flex: 0 0 auto; padding: 0 12px; box-sizing: border-box; display: flex; align-items: center; }
 .mvt-img-1fyax9h { height: 420px; width: auto; display: block; }
 
@@ -183,5 +185,140 @@ font-family: var(--pv-font-heading); font-weight: var(--pv-heading-weight, 700);
   .pv-marquee-trilho, .mvt-track-zdwkwj, .mvt-track-1fyax9h, .pv-gradiente, [data-pv-fx~="brilho"] .pv-cta::after {
     animation: none !important;
   }
+}
+
+/* ==========================================================================
+   UI do Carrossel (idêntica à /courses - 4 por vez no desktop, 1 no mobile)
+   ========================================================================== */
+.cnc-carousel {
+  max-width: 1140px;
+  margin: 2.5rem auto 0;
+  width: 100%;
+}
+
+.cnc-carousel-track {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 88%;
+  gap: 14px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+  padding: 8px 12px 14px;
+  touch-action: pan-x pan-y;
+  cursor: grab;
+}
+
+.cnc-carousel-track:active {
+  cursor: grabbing;
+}
+
+.cnc-carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
+/* Tablet: 2 por vez */
+@media (min-width: 640px) {
+  .cnc-carousel-track {
+    grid-auto-columns: calc((100% - 16px) / 2);
+    padding: 8px 4px 14px;
+  }
+}
+
+/* Desktop intermediário: 3 por vez */
+@media (min-width: 860px) {
+  .cnc-carousel-track {
+    grid-auto-columns: calc((100% - 32px) / 3);
+  }
+}
+
+/* Desktop: 4 por vez */
+@media (min-width: 1040px) {
+  .cnc-carousel-track {
+    grid-auto-columns: calc((100% - 48px) / 4);
+  }
+}
+
+.cnc-carousel-slide {
+  scroll-snap-align: center;
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: 0 10px 30px -12px rgba(15, 23, 42, 0.18);
+  overflow: hidden;
+  transition: transform 0.2s ease;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+@media (min-width: 640px) {
+  .cnc-carousel-slide {
+    scroll-snap-align: start;
+  }
+}
+
+.cnc-carousel-slide img {
+  pointer-events: none;
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
+.cnc-carousel-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.cnc-carousel-btn {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 999px;
+  background: #ffffff;
+  color: #0f172a;
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: background 0.2s, opacity 0.2s, transform 0.15s;
+}
+
+.cnc-carousel-btn:hover:not(:disabled) {
+  background: #f1f5f9;
+  transform: scale(1.05);
+}
+
+.cnc-carousel-btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.cnc-carousel-dots {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 320px;
+}
+
+.cnc-carousel-dot {
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: #cbd5e1;
+  cursor: pointer;
+  transition: width 0.2s, background 0.2s;
+}
+
+.cnc-carousel-dot.is-active {
+  width: 26px;
+  background: #d97706;
 }
 
