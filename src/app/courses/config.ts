@@ -12,7 +12,7 @@ export type Img = {
 
 export const CONFIG = {
   /** [LINK DO CHECKOUT] */
-  checkoutUrl: "https://pay.kiwify.com.br/xcahy6n",
+  checkoutUrl: "https://pay.kirvano.com/cc4f242f-045d-406d-95d3-832cc04610f6",
 
   /** Preço sugerido */
   price: "R$ 29,90",
@@ -61,14 +61,11 @@ export const IMAGES = {
     height: 1100,
   } as Img,
 
-  /** [CARROSSEL COM SEIS PÁGINAS REAIS DO GUIA] — 6 itens */
+  /** [CARROSSEL COM OS BÔNUS DO GUIA: C7, C8, C9] */
   gallery: [
-    { src: "/imgsCourses/1.png", alt: "Página real do guia 1", width: 1100, height: 1514 },
-    { src: "/imgsCourses/2.png", alt: "Página real do guia 2", width: 1100, height: 1514 },
-    { src: "/imgsCourses/3.png", alt: "Página real do guia 3", width: 1100, height: 1514 },
-    { src: "/imgsCourses/4.png", alt: "Página real do guia 4", width: 1100, height: 1514 },
-    { src: "/imgsCourses/5.png", alt: "Página real do guia 5", width: 1100, height: 1514 },
-    { src: "/imgsCourses/6.png", alt: "Página real do guia 6", width: 1100, height: 1514 },
+    { src: "/imgsCourses/c7.png", alt: "Bônus 1 - 40 Flashcards de Revisão", width: 1254, height: 1254 },
+    { src: "/imgsCourses/c8.png", alt: "Bônus 2 - Mapa de Fórmulas e Conversões", width: 1254, height: 1254 },
+    { src: "/imgsCourses/c9.png", alt: "Bônus 3 - Plano de Revisão de 15 Dias", width: 1254, height: 1254 },
   ] as Img[],
 
   /** [MOCKUP DO GUIA COM OS TRÊS BÔNUS] */
@@ -84,15 +81,35 @@ export const IMAGES = {
   bonus3: null as Img,
 
   /** [UMA PÁGINA REAL DE PORTUGUÊS, AMPLIÁVEL] */
-  samplePortugues: null as Img,
+  samplePortugues: {
+    src: "/imgsCourses/portugues.png",
+    alt: "Página real de Português",
+    width: 1600,
+    height: 1131,
+  } as Img,
 
   /** [UMA PÁGINA REAL DE MATEMÁTICA, AMPLIÁVEL] */
-  sampleMatematica: null as Img,
+  sampleMatematica: {
+    src: "/imgsCourses/matematica.png",
+    alt: "Página real de Matemática",
+    width: 1600,
+    height: 1131,
+  } as Img,
 
   /** [UM FLASHCARD REAL, AMPLIÁVEL] */
-  sampleFlashcard: null as Img,
+  sampleFlashcard: {
+    src: "/imgsCourses/revisa.png",
+    alt: "Flashcard real de revisão",
+    width: 1254,
+    height: 1254,
+  } as Img,
 
   /** [MOCKUP DO PACOTE COMPLETO] */
-  offerMockup: null as Img,
+  offerMockup: {
+    src: "/imgsCourses/mocved.png",
+    alt: "Mockup do pacote completo de 300 Pegadinhas Comentadas",
+    width: 900,
+    height: 1100,
+  } as Img,
 };
 

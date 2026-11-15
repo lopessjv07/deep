@@ -314,36 +314,44 @@
 /* ---------- 2. Por dentro ---------- */
 
 .cnc-carousel {
-  max-width: 1040px;
+  max-width: 580px;
   margin: 0 auto;
 }
 
 .cnc-carousel-track {
   display: grid;
   grid-auto-flow: column;
-  grid-auto-columns: 86%;
+  grid-auto-columns: 100%;
   gap: 16px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
-  padding: 4px 2px 8px;
+  padding: 4px 2px 12px;
+  touch-action: pan-x;
+  -webkit-overflow-scrolling: touch;
 }
 
 .cnc-carousel-track::-webkit-scrollbar {
   display: none;
 }
 
-@media (min-width: 768px) {
-  .cnc-carousel-track {
-    grid-auto-columns: calc((100% - 16px) / 2);
-  }
+.cnc-carousel-slide {
+  scroll-snap-align: center;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.12);
+  user-select: none;
+  -webkit-user-select: none;
+  overflow: hidden;
 }
 
-.cnc-carousel-slide {
-  scroll-snap-align: start;
-  border-radius: 12px;
-  background: #fff;
-  box-shadow: var(--shadow);
+.cnc-carousel-slide img {
+  pointer-events: none;
+  -webkit-user-drag: none;
+  user-select: none;
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .cnc-carousel-controls {

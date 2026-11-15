@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Outfit, Plus_Jakarta_Sans } from "next/font/google";
+import CoursesMetaPixel from "./_components/MetaPixel";
 import "./courses.css";
 
 const heading = Outfit({
@@ -31,7 +32,12 @@ export default function CoursesLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const pixel = process.env.COURSES_META_PIXEL || "";
+
   return (
-    <div className={`cnc ${heading.variable} ${body.variable}`}>{children}</div>
+    <div className={`cnc ${heading.variable} ${body.variable}`}>
+      {pixel && <CoursesMetaPixel pixelId={pixel} />}
+      {children}
+    </div>
   );
 }
