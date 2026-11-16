@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Script from "next/script";
 import React, { useEffect, useState } from "react";
 import "./xab.css";
@@ -162,20 +163,20 @@ export default function XabPage() {
                     Entenda os modos, leia as curvas e saiba o que fazer quando o ventilador apitar.
                   </p>
 
-                  <div className="my-6">
-                    <img
-                      src="https://origin.mentoriaprocesso.com/img/3b4f349e-e5e5-48fb-b6b5-ef16c680c186/ea6f636e-1055-41a3-bf90-cba19f689d4f/hero-mockup_hero-1793377125632.webp"
-                      width="900"
-                      height="900"
-                      alt="Mockup Cartilhas Visuais de Ventilação Mecânica"
-                      className="max-h-[480px] mx-auto object-contain rounded-[var(--pv-radius)] shadow-2xl"
-                      loading="eager"
-                      fetchPriority="high"
+                  <div className="my-8 flex justify-center">
+                    <Image
+                      src="/imagesXab/11.png"
+                      width={900}
+                      height={1100}
+                      alt="Mockup Cartilhas Visuais de Ventilação Mecânica + Bônus"
+                      className="mx-auto object-contain rounded-[var(--pv-radius)] shadow-2xl"
+                      style={{ maxHeight: "480px", maxWidth: "100%", width: "auto", height: "auto" }}
+                      priority
                     />
                   </div>
 
                   <p
-                    className="pv-hero-paragrafo text-base sm:text-xl max-w-3xl mx-auto leading-relaxed mt-4"
+                    className="pv-hero-paragrafo text-base sm:text-xl max-w-3xl mx-auto leading-relaxed mt-6"
                     style={{ color: "rgba(255,255,255,0.95)" }}
                   >
                     Você vai receber cartilhas visuais em PDF com fluxogramas, ilustrações e checklists de ventilação mecânica. Revise modos ventilatórios, curvas, gasometria, desmame e alarmes de forma rápida e organizada, sem precisar reler livros e apostilas extensas antes do estágio, da residência ou do plantão.
@@ -526,13 +527,13 @@ export default function XabPage() {
 
                 <div className="grid lg:grid-cols-2 gap-10 items-center max-w-6xl mx-auto mt-12">
                   <div className="flex justify-center">
-                    <img
-                      src="https://origin.mentoriaprocesso.com/img/3b4f349e-e5e5-48fb-b6b5-ef16c680c186/ea6f636e-1055-41a3-bf90-cba19f689d4f/pacote-mockup_pacote-1793376719912.webp"
-                      alt="Mockup do pacote completo"
-                      width="700"
-                      height="700"
-                      className="max-h-[460px] object-contain rounded-[var(--pv-radius)] shadow-2xl"
-                      loading="lazy"
+                    <Image
+                      src="/imagesXab/11.png"
+                      alt="Mockup do pacote completo das Cartilhas Visuais"
+                      width={900}
+                      height={1100}
+                      className="object-contain rounded-[var(--pv-radius)] shadow-2xl"
+                      style={{ maxHeight: "460px", maxWidth: "100%", width: "auto", height: "auto" }}
                     />
                   </div>
 
@@ -813,12 +814,14 @@ export default function XabPage() {
                         </p>
                       </div>
 
-                      <div className="my-4 flex justify-center">
-                        <img
-                          src="https://origin.mentoriaprocesso.com/img/3b4f349e-e5e5-48fb-b6b5-ef16c680c186/ea6f636e-1055-41a3-bf90-cba19f689d4f/planos-completo_mockup-1793376921739.webp"
+                      <div className="my-6 flex justify-center">
+                        <Image
+                          src="/imagesXab/11.png"
                           alt="Mockup Completo com Bônus"
-                          className="h-32 object-contain"
-                          loading="lazy"
+                          width={900}
+                          height={1100}
+                          className="object-contain mx-auto rounded-xl drop-shadow-2xl"
+                          style={{ maxHeight: "420px", maxWidth: "100%", width: "auto", height: "auto" }}
                         />
                       </div>
 
