@@ -19,7 +19,6 @@ const CARTILHAS_SLIDES: CartilhaSlide[] = [
   { src: "/imagesXab/8.png", alt: "Cartilha 08 - Mnemônico DOPE e Alarme de Pressão" },
   { src: "/imagesXab/9.png", alt: "Cartilha 09 - Fluxograma de Desmame e Extubação" },
   { src: "/imagesXab/10.png", alt: "Cartilha 10 - O Ventilador Apitou, e Agora?" },
-  { src: "/imagesXab/11.png", alt: "Tabela Geral de Parâmetros e Valores de Referência" },
 ];
 
 export default function XabPage() {
@@ -169,8 +168,8 @@ export default function XabPage() {
                       width={900}
                       height={1100}
                       alt="Mockup Cartilhas Visuais de Ventilação Mecânica + Bônus"
-                      className="mx-auto object-contain rounded-[var(--pv-radius)] shadow-2xl"
-                      style={{ maxHeight: "480px", maxWidth: "100%", width: "auto", height: "auto" }}
+                      className="mx-auto object-contain"
+                      style={{ maxHeight: "576px", maxWidth: "100%", width: "auto", height: "auto" }}
                       priority
                     />
                   </div>
@@ -532,8 +531,8 @@ export default function XabPage() {
                       alt="Mockup do pacote completo das Cartilhas Visuais"
                       width={900}
                       height={1100}
-                      className="object-contain rounded-[var(--pv-radius)] shadow-2xl"
-                      style={{ maxHeight: "460px", maxWidth: "100%", width: "auto", height: "auto" }}
+                      className="object-contain"
+                      style={{ maxHeight: "552px", maxWidth: "100%", width: "auto", height: "auto" }}
                     />
                   </div>
 
@@ -820,7 +819,7 @@ export default function XabPage() {
                           alt="Mockup Completo com Bônus"
                           width={900}
                           height={1100}
-                          className="object-contain mx-auto rounded-xl drop-shadow-2xl"
+                          className="object-contain mx-auto"
                           style={{ maxHeight: "420px", maxWidth: "100%", width: "auto", height: "auto" }}
                         />
                       </div>
