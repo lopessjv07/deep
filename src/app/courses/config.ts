@@ -14,6 +14,9 @@ export const CONFIG = {
   /** [LINK DO CHECKOUT] */
   checkoutUrl: "https://pay.kirvano.com/cc4f242f-045d-406d-95d3-832cc04610f6",
 
+  /** Preço original (riscado) */
+  originalPrice: "R$ 197,00",
+
   /** Preço sugerido */
   price: "R$ 29,90",
 

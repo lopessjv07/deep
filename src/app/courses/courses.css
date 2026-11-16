@@ -851,6 +851,13 @@
   text-align: center;
 }
 
+.cnc-price-old {
+  font-size: 1.1rem;
+  color: var(--muted);
+  text-decoration: line-through;
+  margin-bottom: 4px !important;
+}
+
 .cnc-price {
   font-size: clamp(2.6rem, 8vw, 3.4rem);
   font-weight: 900;

@@ -481,6 +481,9 @@ export default function CoursesPage() {
               </ul>
 
               <div className="cnc-price-box">
+                {CONFIG.originalPrice && (
+                  <p className="cnc-price-old">De {CONFIG.originalPrice} por apenas:</p>
+                )}
                 <p className="cnc-price">{CONFIG.price}</p>
                 <p className="cnc-price-cond">Pagamento único.</p>
                 {CONFIG.installments && (
