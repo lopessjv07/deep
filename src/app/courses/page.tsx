@@ -576,10 +576,7 @@ export default function CoursesPage() {
                   <p className="cnc-price-old">De {CONFIG.originalPrice} por apenas:</p>
                 )}
                 <p className="cnc-price">{CONFIG.price}</p>
-                <p className="cnc-price-cond">Pagamento único.</p>
-                {CONFIG.installments && (
-                  <p className="cnc-price-inst">{CONFIG.installments}</p>
-                )}
+                <p className="cnc-price-cond">{CONFIG.installments || "ou 3x de R$ 9,96"}</p>
               </div>
 
               <a href={CONFIG.checkoutUrl} className="cnc-btn cnc-btn-block">

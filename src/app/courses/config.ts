@@ -25,7 +25,7 @@ export const CONFIG = {
    * Deixe `null` para não exibir parcelamento.
    * Ex.: "ou em até 3x de R$ 10,46 no cartão"
    */
-  installments: null as string | null,
+  installments: "ou 3x de R$ 9,96" as string | null,
 
   /** [E-MAIL OU CANAL DE SUPORTE] — exibido no bloco de garantia */
   supportChannel: "[E-MAIL OU CANAL DE SUPORTE]",
