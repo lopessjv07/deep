@@ -1,0 +1,149 @@
+.toastContainer {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  z-index: 110;
+  pointer-events: none;
+  font-family: inherit;
+}
+
+@media (max-width: 600px) {
+  .toastContainer {
+    bottom: 20px;
+    left: 16px;
+    right: 16px;
+  }
+}
+
+.toast {
+  pointer-events: auto;
+  background: #ffffff;
+  color: #0b132b;
+  padding: 12px 16px;
+  border-radius: 12px;
+  box-shadow: 0 10px 35px rgba(11, 19, 43, 0.16), 0 0 0 1px rgba(11, 19, 43, 0.08);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: 380px;
+  width: 100%;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+}
+
+.slideIn {
+  animation: slideInUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.slideOut {
+  animation: slideOutDown 0.4s ease forwards;
+}
+
+.iconWrapper {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: rgba(5, 150, 105, 0.12);
+  color: #059669;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.content {
+  flex: 1;
+  min-width: 0;
+}
+
+.buyerInfo {
+  font-size: 0.88rem;
+  line-height: 1.35;
+  color: #1e293b;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.buyerName {
+  font-weight: 700;
+  color: #0b132b;
+}
+
+.actionText {
+  color: #475569;
+  font-weight: 400;
+}
+
+.targetInfo {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  color: #64748b;
+  margin-top: 3px;
+}
+
+.role {
+  font-weight: 600;
+  color: #059669;
+}
+
+.separator {
+  opacity: 0.5;
+}
+
+.location {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.time {
+  margin-left: auto;
+  font-size: 0.75rem;
+  color: #94a3b8;
+  white-space: nowrap;
+  padding-left: 6px;
+}
+
+.closeBtn {
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.closeBtn:hover {
+  color: #0b132b;
+  background: #f1f5f9;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes slideOutDown {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(16px) scale(0.96);
+  }
+}
+

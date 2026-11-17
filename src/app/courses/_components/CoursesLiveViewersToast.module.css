@@ -1,0 +1,111 @@
+.toast {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  background: #ffffff;
+  color: #0b132b;
+  padding: 13px 16px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(11, 19, 43, 0.15), 0 0 0 1px rgba(11, 19, 43, 0.08);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 110;
+  animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  max-width: 320px;
+  font-family: inherit;
+}
+
+@media (max-width: 600px) {
+  .toast {
+    bottom: 20px;
+    left: 16px;
+    right: 16px;
+    max-width: none;
+  }
+}
+
+.pulseIndicator {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 12px;
+  height: 12px;
+  flex-shrink: 0;
+}
+
+.pulseDot {
+  width: 10px;
+  height: 10px;
+  background-color: #059669;
+  border-radius: 50%;
+  position: relative;
+}
+
+.pulseDot::after {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  right: -6px;
+  bottom: -6px;
+  border-radius: 50%;
+  border: 2px solid rgba(5, 150, 105, 0.4);
+  animation: pulseRipple 2s cubic-bezier(0.24, 0, 0.38, 1) infinite;
+}
+
+.content {
+  font-size: 0.88rem;
+  line-height: 1.4;
+  color: #334155;
+  font-weight: 500;
+  flex: 1;
+}
+
+.number {
+  font-weight: 800;
+  color: #0b132b;
+}
+
+.closeBtn {
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  margin-left: -4px;
+}
+
+.closeBtn:hover {
+  color: #0b132b;
+  background: #f1f5f9;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulseRipple {
+  0% {
+    transform: scale(0.6);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+

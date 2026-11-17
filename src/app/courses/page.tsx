@@ -113,6 +113,27 @@ const BONUSES = [
   },
 ];
 
+const TESTIMONIALS = [
+  {
+    name: "Mariana Souza",
+    role: "Aprovada no CNU (Bloco 7)",
+    initials: "MS",
+    text: "O guia direto ao ponto me poupou muitas questões que eu errava de bobeira em Português e Raciocínio Lógico. O formato visual facilitou demais na semana final de revisão.",
+  },
+  {
+    name: "Rodrigo Almeida",
+    role: "Estudando para Caixa / INSS",
+    initials: "RA",
+    text: "Eu sempre caía nas mesmas pegadinhas de negação lógica e crase. Quando você bate o olho na explicação objetiva, finalmente 'vira a chave'. Recomendo muito!",
+  },
+  {
+    name: "Camila Ferreira",
+    role: "Concurseira da Área Administrativa",
+    initials: "CF",
+    text: "Os 40 flashcards de revisão são ouro puro. Imprimi e levo comigo para revisar no transporte. Material objetivo, sem enrolação e muito bem diagramado.",
+  },
+];
+
 const OFFER_ITEMS: { text: string; bonus?: boolean; sub?: boolean }[] = [
   { text: "Guia com 300 pegadinhas comentadas." },
   { text: "80 itens de Português.", sub: true },
@@ -440,6 +461,43 @@ export default function CoursesPage() {
             As imagens mostram o conteúdo e a organização dos arquivos. Assim, você pode
             conhecer o material antes de decidir pela compra.
           </p>
+        </div>
+      </section>
+
+      {/* ==================================================================
+          PROVA SOCIAL / AVALIAÇÕES DE CONCURSEIROS
+      ================================================================== */}
+      <section className="cnc-section cnc-testimonials-section">
+        <div className="cnc-container">
+          <div className="cnc-section-head">
+            <span className="cnc-tag">O QUE DIZ QUEM JÁ UTILIZA O GUIA</span>
+            <h2 className="cnc-h2">QUEM REVISA COM O MATERIAL APROVA</h2>
+            <p className="cnc-sub">
+              Veja a experiência de quem já incluiu as 300 pegadinhas na rotina de preparação para concursos públicos.
+            </p>
+          </div>
+
+          <div className="cnc-testimonials-grid">
+            {TESTIMONIALS.map((t, idx) => (
+              <div key={idx} className="cnc-testimonial-card">
+                <div>
+                  <div className="cnc-testimonial-stars" aria-label="Avaliação 5 estrelas">
+                    ★★★★★
+                  </div>
+                  <p className="cnc-testimonial-text">“{t.text}”</p>
+                </div>
+                <div className="cnc-testimonial-author">
+                  <div className="cnc-testimonial-avatar" aria-hidden="true">
+                    {t.initials}
+                  </div>
+                  <div>
+                    <h3 className="cnc-testimonial-name">{t.name}</h3>
+                    <p className="cnc-testimonial-role">{t.role}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
