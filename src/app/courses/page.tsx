@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { CONFIG, IMAGES } from "./config";
 import ImageSlot from "./_components/ImageSlot";
 import Carousel from "./_components/Carousel";
@@ -86,6 +87,7 @@ const BONUSES = [
   {
     tag: "BÔNUS 1",
     title: "40 FLASHCARDS DE REVISÃO",
+    img: IMAGES.bonus1,
     description:
       "Teste sua memória com perguntas e respostas de Português, Matemática, Raciocínio Lógico e Informática.",
     howTo:
@@ -96,6 +98,7 @@ const BONUSES = [
   {
     tag: "BÔNUS 2",
     title: "MAPA DE FÓRMULAS E CONVERSÕES",
+    img: IMAGES.bonus2,
     description:
       "Consulte 24 fórmulas com exemplos, condições de uso e cuidados para evitar trocas.",
     howTo: "Confira a situação, a unidade e o regime de cálculo antes de escolher a fórmula.",
@@ -105,6 +108,7 @@ const BONUSES = [
   {
     tag: "BÔNUS 3",
     title: "PLANO DE REVISÃO DE 15 DIAS",
+    img: IMAGES.bonus3,
     description:
       "Organize suas sessões com metas diárias, ficha de estudo e acompanhamento das dificuldades.",
     howTo: "Adapte a agenda ao seu tempo e às matérias previstas no edital.",
@@ -258,7 +262,25 @@ export default function CoursesPage() {
             </p>
           </div>
 
-          <Carousel images={IMAGES.gallery} labelPrefix="Página real do guia" />
+          {/* Desktop: Mostra 4 imagens */}
+          <div className="cnc-preview-desktop">
+            <div className="cnc-grid cnc-grid-4">
+              {IMAGES.gallery.map((img, i) => (
+                <Zoomable
+                  key={i}
+                  img={img}
+                  label={`Página real do guia ${i + 1}`}
+                  caption={`Página real do guia ${i + 1}`}
+                  ratio="1600 / 1131"
+                />
+              ))}
+            </div>
+          </div>
+
+          {/* Celular: Carrossel deslizável */}
+          <div className="cnc-preview-mobile">
+            <Carousel images={IMAGES.gallery} labelPrefix="Página real do guia" ratio="1600 / 1131" />
+          </div>
 
           <div className="cnc-grid cnc-grid-4 cnc-mt-xl">
             {SUBJECTS.map((s) => (
@@ -402,6 +424,18 @@ export default function CoursesPage() {
               <article key={b.tag} className="cnc-card cnc-bonus">
                 <div className="cnc-bonus-body">
                   <span className="cnc-bonus-tag">{b.tag}</span>
+                  {b.img && (
+                    <div className="cnc-bonus-media">
+                      <Image
+                        src={b.img.src}
+                        alt={b.img.alt}
+                        width={b.img.width}
+                        height={b.img.height}
+                        className="cnc-bonus-img"
+                        sizes="(max-width: 768px) 92vw, 360px"
+                      />
+                    </div>
+                  )}
                   <h3 className="cnc-h3">{b.title}</h3>
                   <p>{b.description}</p>
                   <dl className="cnc-bonus-details">
@@ -424,11 +458,9 @@ export default function CoursesPage() {
       </section>
 
       {/* ==================================================================
-          7. CONFIRA ANTES DE ESCOLHER
-          Orientação: quando houver depoimentos reais e autorizados, eles podem
-          ser acrescentados neste bloco. Até lá, mantenha a demonstração do
-          produto, sem números de alunos ou avaliações inventadas.
+          7. CONFIRA ANTES DE ESCOLHER (OCULTADO)
       ================================================================== */}
+      {/*
       <section className="cnc-section">
         <div className="cnc-container">
           <div className="cnc-section-head">
@@ -463,6 +495,7 @@ export default function CoursesPage() {
           </p>
         </div>
       </section>
+      */}
 
       {/* ==================================================================
           PROVA SOCIAL / AVALIAÇÕES DE CONCURSEIROS
@@ -635,7 +668,16 @@ export default function CoursesPage() {
             <span aria-hidden="true">•</span>
             <a href={CONFIG.links.refund}>Política de reembolso</a>
           </nav>
-          <p className="cnc-footer-supplier">{CONFIG.supplier}</p>
+          <div className="cnc-footer-logo-wrap">
+            <Image
+              src="/imgsCourses/logo.png"
+              alt="Concursos na Prática"
+              width={1600}
+              height={500}
+              className="cnc-footer-logo"
+              loading="eager"
+            />
+          </div>
         </div>
       </footer>
     </main>

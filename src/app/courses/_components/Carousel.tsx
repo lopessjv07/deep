@@ -7,9 +7,10 @@ import ImageSlot from "./ImageSlot";
 type Props = {
   images: Img[];
   labelPrefix: string;
+  ratio?: string;
 };
 
-export default function Carousel({ images, labelPrefix }: Props) {
+export default function Carousel({ images, labelPrefix, ratio = "1600 / 1131" }: Props) {
   const trackRef = useRef<HTMLDivElement>(null);
   const [index, setIndex] = useState(0);
 
@@ -104,7 +105,7 @@ export default function Carousel({ images, labelPrefix }: Props) {
             <ImageSlot
               img={img}
               label={`${labelPrefix} ${i + 1}`}
-              ratio="1 / 1"
+              ratio={ratio}
               sizes="(max-width: 640px) 92vw, 580px"
               priority={i === 0}
             />

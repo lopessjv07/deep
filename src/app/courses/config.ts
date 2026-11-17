@@ -64,24 +64,40 @@ export const IMAGES = {
     height: 1100,
   } as Img,
 
-  /** [CARROSSEL COM OS BÔNUS DO GUIA: C7, C8, C9] */
+  /** [PÁGINAS DO GUIA POR DENTRO: C1, C2, C3, C4] */
   gallery: [
-    { src: "/imgsCourses/c7.png", alt: "Bônus 1 - 40 Flashcards de Revisão", width: 1254, height: 1254 },
-    { src: "/imgsCourses/c8.png", alt: "Bônus 2 - Mapa de Fórmulas e Conversões", width: 1254, height: 1254 },
-    { src: "/imgsCourses/c9.png", alt: "Bônus 3 - Plano de Revisão de 15 Dias", width: 1254, height: 1254 },
+    { src: "/imgsCourses/c1.png", alt: "Página real do guia de Português - Item 01", width: 1600, height: 1131 },
+    { src: "/imgsCourses/c2.png", alt: "Página real do guia de Português - Item 02", width: 1600, height: 1131 },
+    { src: "/imgsCourses/c3.png", alt: "Página real do guia de Matemática - Item 01", width: 1600, height: 1131 },
+    { src: "/imgsCourses/c4.png", alt: "Página real do guia de Matemática - Item 02", width: 1600, height: 1131 },
   ] as Img[],
 
   /** [MOCKUP DO GUIA COM OS TRÊS BÔNUS] */
   bonusMockup: null as Img,
 
   /** [CAPA E UM CARTÃO REAL DO BÔNUS] */
-  bonus1: null as Img,
+  bonus1: {
+    src: "/imgsCourses/bonus1.png",
+    alt: "Bônus 1 - 40 Flashcards de Revisão",
+    width: 1254,
+    height: 1254,
+  } as Img,
 
   /** [CAPA E UMA PÁGINA REAL DO MAPA] */
-  bonus2: null as Img,
+  bonus2: {
+    src: "/imgsCourses/bonus2.png",
+    alt: "Bônus 2 - Mapa de Fórmulas e Conversões",
+    width: 1254,
+    height: 1254,
+  } as Img,
 
   /** [CAPA E UMA PÁGINA REAL DA AGENDA] */
-  bonus3: null as Img,
+  bonus3: {
+    src: "/imgsCourses/bonus3.png",
+    alt: "Bônus 3 - Plano de Revisão de 15 Dias",
+    width: 1254,
+    height: 1254,
+  } as Img,
 
   /** [UMA PÁGINA REAL DE PORTUGUÊS, AMPLIÁVEL] */
   samplePortugues: {
