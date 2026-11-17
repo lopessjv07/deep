@@ -335,30 +335,28 @@
   margin: 0 auto;
 }
 
-.cnc-carousel-track {
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: 100%;
-  gap: 16px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scrollbar-width: none;
-  padding: 4px 2px 12px;
-  touch-action: pan-x;
-  -webkit-overflow-scrolling: touch;
+.cnc-carousel.cnc-carousel-wide {
+  max-width: 100%;
 }
 
-.cnc-carousel-track::-webkit-scrollbar {
-  display: none;
+.cnc-carousel-viewport {
+  overflow: hidden;
+  padding: 4px 0 12px;
+  touch-action: pan-y;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.cnc-carousel-track {
+  display: flex;
+  will-change: transform;
 }
 
 .cnc-carousel-slide {
-  scroll-snap-align: center;
+  min-width: 0;
   border-radius: 16px;
   background: #fff;
   box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.12);
-  user-select: none;
-  -webkit-user-select: none;
   overflow: hidden;
 }
 

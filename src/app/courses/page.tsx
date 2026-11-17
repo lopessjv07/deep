@@ -262,25 +262,14 @@ export default function CoursesPage() {
             </p>
           </div>
 
-          {/* Desktop: Mostra 4 imagens */}
-          <div className="cnc-preview-desktop">
-            <div className="cnc-grid cnc-grid-4">
-              {IMAGES.gallery.map((img, i) => (
-                <Zoomable
-                  key={i}
-                  img={img}
-                  label={`Página real do guia ${i + 1}`}
-                  caption={`Página real do guia ${i + 1}`}
-                  ratio="1600 / 1131"
-                />
-              ))}
-            </div>
-          </div>
-
-          {/* Celular: Carrossel deslizável */}
-          <div className="cnc-preview-mobile">
-            <Carousel images={IMAGES.gallery} labelPrefix="Página real do guia" ratio="1600 / 1131" />
-          </div>
+          {/* Carrossel: 4 por vez no desktop, 1 por vez no celular */}
+          <Carousel
+            images={IMAGES.gallery}
+            labelPrefix="Página real do guia"
+            ratio="1600 / 1131"
+            desktopPerView={4}
+            className="cnc-carousel-wide"
+          />
 
           <div className="cnc-grid cnc-grid-4 cnc-mt-xl">
             {SUBJECTS.map((s) => (

@@ -64,12 +64,14 @@ export const IMAGES = {
     height: 1100,
   } as Img,
 
-  /** [PÁGINAS DO GUIA POR DENTRO: C1, C2, C3, C4] */
+  /** [PÁGINAS DO GUIA POR DENTRO: PORTUGUÊS E MATEMÁTICA] */
   gallery: [
-    { src: "/imgsCourses/c1.png", alt: "Página real do guia de Português - Item 01", width: 1600, height: 1131 },
-    { src: "/imgsCourses/c2.png", alt: "Página real do guia de Português - Item 02", width: 1600, height: 1131 },
-    { src: "/imgsCourses/c3.png", alt: "Página real do guia de Matemática - Item 01", width: 1600, height: 1131 },
-    { src: "/imgsCourses/c4.png", alt: "Página real do guia de Matemática - Item 02", width: 1600, height: 1131 },
+    { src: "/imgsCourses/portugues.png", alt: "Página real de Português", width: 1600, height: 1131 },
+    { src: "/imgsCourses/c2.png", alt: "Página real de Português - continuação", width: 1600, height: 1131 },
+    { src: "/imgsCourses/matematica.png", alt: "Página real de Matemática", width: 1600, height: 1131 },
+    { src: "/imgsCourses/c4.png", alt: "Página real de Matemática - continuação", width: 1600, height: 1131 },
+    { src: "/imgsCourses/c5.png", alt: "Página real do guia", width: 1600, height: 1131 },
+    { src: "/imgsCourses/c6.png", alt: "Página real do guia", width: 1600, height: 1131 },
   ] as Img[],
 
   /** [MOCKUP DO GUIA COM OS TRÊS BÔNUS] */
