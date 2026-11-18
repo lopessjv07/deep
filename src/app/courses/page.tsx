@@ -233,15 +233,33 @@ export default function CoursesPage() {
             />
           </div>
 
-          <div className="cnc-frame cnc-max-900 cnc-mt-md">
-            <p>
-              Pode apoiar a preparação para seleções como CNU, Correios, Banco do Brasil, Caixa
-              e INSS, <strong>nos assuntos efetivamente exigidos pelo edital</strong>. O conteúdo
-              das provas varia conforme o concurso, o cargo e a edição.
+          <div className="cnc-target-concursos cnc-max-900">
+            <div className="cnc-target-badge">
+              <span className="cnc-target-badge-dot"></span>
+              SELEÇÕES & CONCURSOS ABRANGIDOS
+            </div>
+
+            <div className="cnc-target-pills">
+              <span className="cnc-pill">CNU</span>
+              <span className="cnc-pill">Correios</span>
+              <span className="cnc-pill">Banco do Brasil</span>
+              <span className="cnc-pill">Caixa Econômica</span>
+              <span className="cnc-pill">INSS</span>
+              <span className="cnc-pill cnc-pill-outline">+ Diversas Carreiras</span>
+            </div>
+
+            <p className="cnc-target-desc">
+              Pode apoiar sua preparação nas disciplinas fundamentais, <strong>nos assuntos efetivamente exigidos pelo seu edital</strong>. O conteúdo das provas varia conforme o concurso, o cargo e a edição.
             </p>
-            <p className="cnc-note">
-              Não substitui um curso completo nem os conhecimentos específicos do seu cargo.
-            </p>
+
+            <div className="cnc-target-footer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="10" />
+                <line x1="12" y1="16" x2="12" y2="12" />
+                <line x1="12" y1="8" x2="12.01" y2="8" />
+              </svg>
+              <span>Não substitui um curso preparatório completo nem os conhecimentos específicos do seu cargo.</span>
+            </div>
           </div>
 
           <p className="cnc-text-lg">
