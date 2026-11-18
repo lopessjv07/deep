@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import { Outfit, Plus_Jakarta_Sans } from "next/font/google";
-import CoursesMetaPixel from "./_components/MetaPixel";
 import CoursesCountdownBar from "./_components/CoursesCountdownBar";
 import CoursesToastsWrapper from "./_components/CoursesToastsWrapper";
 import "./courses.css";
@@ -35,8 +34,6 @@ export default function CoursesLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const pixel = process.env.COURSES_META_PIXEL || "";
-
   return (
     <div className={`cnc ${heading.variable} ${body.variable}`}>
       <CoursesCountdownBar />
@@ -51,7 +48,6 @@ export default function CoursesLayout({
         data-cfasync="false"
         strategy="afterInteractive"
       />
-      {pixel && <CoursesMetaPixel pixelId={pixel} />}
       {children}
     </div>
   );
