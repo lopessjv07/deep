@@ -233,6 +233,17 @@ export default function CoursesPage() {
             />
           </div>
 
+          <div className="cnc-frame cnc-max-900 cnc-mt-md">
+            <p>
+              Pode apoiar a preparação para seleções como CNU, Correios, Banco do Brasil, Caixa
+              e INSS, <strong>nos assuntos efetivamente exigidos pelo edital</strong>. O conteúdo
+              das provas varia conforme o concurso, o cargo e a edição.
+            </p>
+            <p className="cnc-note">
+              Não substitui um curso completo nem os conhecimentos específicos do seu cargo.
+            </p>
+          </div>
+
           <p className="cnc-text-lg">
             Uma crase, uma palavra no enunciado ou uma mudança na base do cálculo pode alterar
             sua resposta. Este guia reúne 300 pontos de atenção, com exemplos e explicações
@@ -383,17 +394,6 @@ export default function CoursesPage() {
                 <p>{a.text}</p>
               </article>
             ))}
-          </div>
-
-          <div className="cnc-frame cnc-max-900">
-            <p>
-              Pode apoiar a preparação para seleções como CNU, Correios, Banco do Brasil, Caixa
-              e INSS, <strong>nos assuntos efetivamente exigidos pelo edital</strong>. O conteúdo
-              das provas varia conforme o concurso, o cargo e a edição.
-            </p>
-            <p className="cnc-note">
-              Não substitui um curso completo nem os conhecimentos específicos do seu cargo.
-            </p>
           </div>
         </div>
       </section>
