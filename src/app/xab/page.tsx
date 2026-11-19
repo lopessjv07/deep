@@ -6,7 +6,7 @@ import React, { useEffect, useState } from "react";
 import "./xab.css";
 import XabCarousel, { type CartilhaSlide } from "./XabCarousel";
 
-const CHECKOUT_URL = "https://pay.kiwify.com.br/xcahy6n";
+const CHECKOUT_URL = "https://pay.kirvano.com/243994ef-0017-4c2d-ac1f-1adeb827fc4f";
 
 const CARTILHAS_SLIDES: CartilhaSlide[] = [
   { src: "/imagesXab/1.png", alt: "Cartilha 01 - Fundamentos do Ventilador" },
@@ -35,27 +35,16 @@ export default function XabPage() {
     return () => clearTimeout(timer);
   }, []);
 
-  const scrollToPlanos = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    const element = document.getElementById("planos");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
     <>
       <Script
-        id="packpronto-init"
-        strategy="beforeInteractive"
-        dangerouslySetInnerHTML={{
-          __html: "window.__pvHeadInjected = 1;",
-        }}
-      />
-      <Script
-        id="packpronto-tracking"
-        src="https://site.packpronto.com.br/t/p.js?w=387eea4d-2257-472f-b4ed-f4104c95473b&o=f1f979a7-f4af-4dde-88d6-caf925e688c9"
-        data-offer="f1f979a7-f4af-4dde-88d6-caf925e688c9"
+        id="cashflow-tracking"
+        src="https://site.packpronto.com.br/t/p.js?w=5d8e9518-19c6-4853-bac0-da5892a0a2e4&o=ea39b9c1-d380-46d2-9b56-c1b1f71a933d"
+        data-offer="ea39b9c1-d380-46d2-9b56-c1b1f71a933d"
+        data-nowprocket="true"
+        data-no-minify="1"
+        data-no-optimize="1"
+        data-cfasync="false"
         strategy="afterInteractive"
       />
 
@@ -675,74 +664,8 @@ export default function XabPage() {
                   </p>
                 </div>
 
-                <div className="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto items-stretch">
-                  {/* CARD 1: PLANO BÁSICO */}
-                  <div
-                    className="rounded-2xl p-7 sm:p-9 flex flex-col justify-between"
-                    style={{
-                      background: "rgba(255,255,255,0.05)",
-                      border: "2px solid rgba(255,255,255,0.15)",
-                    }}
-                  >
-                    <div>
-                      <div className="flex justify-between items-center mb-4">
-                        <span
-                          className="text-xs sm:text-sm font-extrabold px-3 py-1 rounded-md"
-                          style={{ background: "#FFE08A", color: "#2D1107" }}
-                        >
-                          🔥 ÚLTIMA CHANCE
-                        </span>
-                      </div>
-
-                      <h3
-                        className="text-2xl sm:text-3xl font-extrabold uppercase mb-4"
-                        style={{ fontFamily: "var(--pv-font-heading)" }}
-                      >
-                        PLANO BÁSICO
-                      </h3>
-
-                      <ul className="space-y-3 mb-8">
-                        {[
-                          "Acesso às 10 cartilhas visuais de ventilação mecânica",
-                          "Material digital em PDF de alta qualidade",
-                          "Fluxogramas e checklists para prática rápida",
-                          "Acesso imediato após a compra",
-                        ].map((item, idx) => (
-                          <li key={idx} className="flex items-start gap-3 text-base">
-                            <span className="text-emerald-400 font-bold">✓</span>
-                            <span style={{ color: "rgba(255,255,255,0.9)" }}>{item}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    <div className="pt-6 border-t border-white/10 text-center">
-                      <p className="text-sm line-through opacity-60">de R$ 97,90 por:</p>
-                      <p
-                        className="text-4xl sm:text-5xl font-black my-1"
-                        style={{ color: "var(--pv-success)", fontFamily: "var(--pv-font-heading)" }}
-                      >
-                        R$ 19,90
-                      </p>
-                      <p className="text-sm opacity-80 mb-2">ou 2x de R$ 10,38</p>
-                      <p className="text-xs font-semibold text-emerald-300 mb-6">
-                        Você economiza R$ 78,00
-                      </p>
-
-                      <a
-                        href={CHECKOUT_URL}
-                        className="w-full py-4 px-6 rounded-full font-bold text-lg inline-block uppercase transition-transform duration-300 hover:scale-[1.03] active:scale-[0.98]"
-                        style={{
-                          background: "#fff",
-                          color: "var(--pv-primary)",
-                        }}
-                      >
-                        QUERO O PLANO BÁSICO
-                      </a>
-                    </div>
-                  </div>
-
-                  {/* CARD 2: PRODUTO + BÔNUS (DESTAQUE) */}
+                <div className="max-w-xl mx-auto">
+                  {/* CARD: PRODUTO + BÔNUS (DESTAQUE) */}
                   <div
                     className="rounded-2xl p-7 sm:p-9 flex flex-col justify-between relative shadow-2xl"
                     style={{
