@@ -199,24 +199,6 @@ export default function XabPage() {
                       ))}
                     </ul>
                   </div>
-
-                  <div className="mt-10">
-                    <a
-                      href="#planos"
-                      onClick={scrollToPlanos}
-                      className="px-8 py-4 sm:px-10 sm:py-5 text-[18px] sm:text-[20px] font-bold inline-block text-center rounded-full transition-transform duration-300 hover:scale-[1.04] active:scale-[0.98] pv-cta uppercase cursor-pointer"
-                      style={{
-                        background: "var(--pv-accent)",
-                        color: "#fff",
-                        boxShadow: "0 14px 30px -10px color-mix(in srgb, var(--pv-accent) 60%, transparent)",
-                      }}
-                    >
-                      QUERO RECEBER AS CARTILHAS AGORA
-                    </a>
-                    <p className="mt-3 text-sm sm:text-base font-medium opacity-90 text-white">
-                      📲 Você recebe tudo na hora, direto no seu e-mail
-                    </p>
-                  </div>
                 </div>
               </div>
             </section>
@@ -414,21 +396,6 @@ export default function XabPage() {
                 <p className="text-lg sm:text-2xl font-medium opacity-90 mt-3">
                   Garanta suas cartilhas e chegue ao próximo plantão preparado.
                 </p>
-
-                <div className="mt-8">
-                  <a
-                    href="#planos"
-                    onClick={scrollToPlanos}
-                    className="px-8 py-4 sm:px-10 sm:py-5 text-[18px] sm:text-[20px] font-bold inline-block text-center rounded-full transition-transform duration-300 hover:scale-[1.05] active:scale-[0.98] pv-cta uppercase cursor-pointer"
-                    style={{
-                      background: "var(--pv-accent)",
-                      color: "#fff",
-                      boxShadow: "0 14px 30px -10px color-mix(in srgb, var(--pv-accent) 60%, transparent)",
-                    }}
-                  >
-                    QUERO GARANTIR AS MINHAS
-                  </a>
-                </div>
               </div>
             </section>
 
@@ -601,7 +568,7 @@ export default function XabPage() {
                   {[
                     {
                       num: "BÔNUS #1",
-                      img: "https://origin.mentoriaprocesso.com/img/3b4f349e-e5e5-48fb-b6b5-ef16c680c186/ea6f636e-1055-41a3-bf90-cba19f689d4f/bonus-bonus_1_img-1793376807741.webp",
+                      img: "/imagesXab/b1.jpeg",
                       title: "CARTILHA VISUAL DE VNI",
                       content:
                         "O que é ventilação não invasiva. Indicações. Contraindicações. Tipos de interface. Modos mais usados. Ajustes iniciais de referência. Sinais de sucesso e de falha. Quando escalar para intubação. Fluxograma visual. Checklist de revisão rápida.",
@@ -610,7 +577,7 @@ export default function XabPage() {
                     },
                     {
                       num: "BÔNUS #2",
-                      img: "https://origin.mentoriaprocesso.com/img/3b4f349e-e5e5-48fb-b6b5-ef16c680c186/ea6f636e-1055-41a3-bf90-cba19f689d4f/bonus-bonus_2_img-1793376816132.webp",
+                      img: "/imagesXab/b2.jpeg",
                       title: "CARTILHA VISUAL DE OXIGENOTERAPIA E ALTO FLUXO",
                       content:
                         "Dispositivos de baixo e alto fluxo. Cateter nasal, máscara simples, máscara com reservatório e Venturi. Cateter nasal de alto fluxo. Faixas de FiO2 de cada dispositivo. Como escolher o dispositivo. Tabela visual comparativa. Checklist de revisão rápida.",
@@ -619,7 +586,7 @@ export default function XabPage() {
                     },
                     {
                       num: "BÔNUS #3",
-                      img: "https://origin.mentoriaprocesso.com/img/3b4f349e-e5e5-48fb-b6b5-ef16c680c186/ea6f636e-1055-41a3-bf90-cba19f689d4f/bonus-bonus_3_img-1793376824765.webp",
+                      img: "/imagesXab/b3.jpeg",
                       title: "TABELA DE PESO PREDITO E VOLUME CORRENTE",
                       content:
                         "O que é peso predito e por que usar. Fórmulas para homens e mulheres. Tabela pronta por altura. Volume corrente correspondente em mL/kg. Exemplos de cálculo. Erros comuns no cálculo.",
@@ -628,7 +595,7 @@ export default function XabPage() {
                     },
                     {
                       num: "BÔNUS #4",
-                      img: "https://origin.mentoriaprocesso.com/img/3b4f349e-e5e5-48fb-b6b5-ef16c680c186/ea6f636e-1055-41a3-bf90-cba19f689d4f/bonus-bonus_4_img-1793376832127.webp",
+                      img: "/imagesXab/b4.jpeg",
                       title: "CHECKLIST DE PASSAGEM DE PLANTÃO EM UTI",
                       content:
                         "O que verificar no paciente ventilado. Parâmetros a registrar. Via aérea e fixação do tubo. Pressão do cuff. Gasometria e exames recentes. Plano de desmame. Modelo de passagem de plantão pronto para imprimir.",
@@ -641,15 +608,15 @@ export default function XabPage() {
                       className="rounded-[14px] overflow-hidden flex flex-col transition-transform duration-300 hover:scale-[1.03] shadow-md"
                       style={{ background: "var(--pv-cream)" }}
                     >
-                      <div className="relative bg-black/[0.04] flex items-center justify-center p-3">
+                      <div className="relative bg-black/[0.04] flex items-center justify-center p-5 sm:p-6">
                         <img
                           src={bonus.img}
                           alt={bonus.title}
-                          className="h-64 sm:h-72 w-full object-contain"
+                          className="w-full aspect-square object-cover rounded-2xl shadow-md"
                           loading="lazy"
                         />
                         <span
-                          className="absolute top-3 right-3 text-xs sm:text-sm font-extrabold px-3 py-1.5 rounded-md"
+                          className="absolute top-7 right-7 text-xs sm:text-sm font-extrabold px-3 py-1.5 rounded-md shadow-md"
                           style={{ background: "#FFE08A", color: "#2D1107" }}
                         >
                           {bonus.num}
