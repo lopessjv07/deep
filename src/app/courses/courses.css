@@ -104,6 +104,7 @@
 }
 
 @media (min-width: 640px) {
+
   .cnc-grid-2,
   .cnc-grid-4 {
     grid-template-columns: repeat(2, 1fr);
@@ -115,6 +116,7 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
   }
+
   .cnc-grid-4 {
     grid-template-columns: repeat(4, 1fr);
   }
@@ -334,8 +336,17 @@
 }
 
 @keyframes cnc-pulse {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.6; transform: scale(0.9); }
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.6;
+    transform: scale(0.9);
+  }
 }
 
 .cnc-target-pills {
@@ -370,6 +381,7 @@
 }
 
 .cnc-target-desc {
+
   font-size: 1rem;
   line-height: 1.6;
   color: #334155;
@@ -406,13 +418,16 @@
     padding: 20px 16px;
     margin: 0 auto 28px;
   }
+
   .cnc-target-pills {
     gap: 8px;
   }
+
   .cnc-target-pills .cnc-pill {
     padding: 6px 12px;
     font-size: 0.85rem;
   }
+
   .cnc-target-footer {
     flex-direction: column;
     text-align: center;
@@ -460,6 +475,7 @@
   .cnc-preview-desktop {
     display: none;
   }
+
   .cnc-preview-mobile {
     display: block;
   }
@@ -561,10 +577,21 @@
   border-top: 4px solid var(--tone);
 }
 
-.cnc-tone-blue { --tone: #2563eb; }
-.cnc-tone-green { --tone: #059669; }
-.cnc-tone-amber { --tone: #d97706; }
-.cnc-tone-purple { --tone: #7c3aed; }
+.cnc-tone-blue {
+  --tone: #2563eb;
+}
+
+.cnc-tone-green {
+  --tone: #059669;
+}
+
+.cnc-tone-amber {
+  --tone: #d97706;
+}
+
+.cnc-tone-purple {
+  --tone: #7c3aed;
+}
 
 .cnc-subject-count {
   display: block;
@@ -705,7 +732,7 @@
   color: #cbd5e1;
 }
 
-.cnc-bg-dark .cnc-stats + .cnc-note {
+.cnc-bg-dark .cnc-stats+.cnc-note {
   margin-top: 28px !important;
 }
 
@@ -739,8 +766,8 @@
   overflow: hidden;
 }
 
-.cnc-bonus > .cnc-img,
-.cnc-bonus > .cnc-img-placeholder {
+.cnc-bonus>.cnc-img,
+.cnc-bonus>.cnc-img-placeholder {
   border-radius: 0;
   border-width: 0 0 2px;
 }
@@ -815,8 +842,8 @@
   letter-spacing: 0.04em;
 }
 
-.cnc-bonus-details + .cnc-included,
-.cnc-bonus-body .cnc-note + .cnc-included {
+.cnc-bonus-details+.cnc-included,
+.cnc-bonus-body .cnc-note+.cnc-included {
   margin-top: 18px;
 }
 
@@ -984,7 +1011,7 @@
   color: #1e293b;
 }
 
-.cnc-offer-list li > span {
+.cnc-offer-list li>span {
   flex-shrink: 0;
   width: 18px;
   font-weight: 900;
@@ -1002,7 +1029,7 @@
   color: var(--amber-dark);
 }
 
-.cnc-offer-list li.is-bonus > span {
+.cnc-offer-list li.is-bonus>span {
   color: var(--amber);
 }
 
@@ -1381,6 +1408,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   .cnc *,
   .cnc *::before,
   .cnc *::after {
