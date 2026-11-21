@@ -40,8 +40,8 @@ export default function CoursesLayout({
       <CoursesToastsWrapper />
       <Script
         id="cashflow-tracking"
-        src="https://site.packpronto.com.br/t/p.js?w=5d8e9518-19c6-4853-bac0-da5892a0a2e4&o=630a8c8d-d419-4d58-8b45-08188b4088c3"
-        data-offer="630a8c8d-d419-4d58-8b45-08188b4088c3"
+        src="https://site.packpronto.com.br/t/p.js?w=5d8e9518-19c6-4853-bac0-da5892a0a2e4&o=2f2ff76e-f5db-4e78-a3e2-8cb42f9a53b5"
+        data-offer="2f2ff76e-f5db-4e78-a3e2-8cb42f9a53b5"
         data-nowprocket="true"
         data-no-minify="1"
         data-no-optimize="1"
